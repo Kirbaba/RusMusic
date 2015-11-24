@@ -208,7 +208,8 @@ ul {
     border-top: 5px solid #CB0000; }
   .topline-soc--but {
     display: block;
-    float: right; }
+    float: right;
+    margin-right: 160px; }
     .topline-soc--but a {
       color: #fff;
       display: block;
