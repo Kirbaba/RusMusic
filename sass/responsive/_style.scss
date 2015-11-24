@@ -1,0 +1,27 @@
+@media only screen and (max-width: 980px) {
+	.hamburger-slim {
+		display: block;
+	}
+	.header__navigation--menu {
+		.navbar-header {
+			display: block;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 770px) {
+	.align-left {
+		text-align: center;
+	}
+	.align-right {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.header__navigation--menu {
+		margin-left: 82px;
+		width: 81%;
+	}
+}

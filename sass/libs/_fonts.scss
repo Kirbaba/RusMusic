@@ -1,0 +1,43 @@
+$m900: 'MuseoCyrl900';
+$m500i: 'MuseoCyrl500Italic';
+$cir: 'CirceBold';
+$cirEB: 'CirceExtraBold';
+
+@font-face {
+    font-family: 'MuseoCyrl900';
+    src: url('../fonts/MuseoCyrl/MuseoCyrl900.eot');
+    src: url('../fonts/MuseoCyrl/MuseoCyrl900.eot') format('embedded-opentype'),
+         url('../fonts/MuseoCyrl/MuseoCyrl900.woff2') format('woff2'),
+         url('../fonts/MuseoCyrl/MuseoCyrl900.woff') format('woff'),
+         url('../fonts/MuseoCyrl/MuseoCyrl900.ttf') format('truetype'),
+         url('../fonts/MuseoCyrl/MuseoCyrl900.svg#MuseoCyrl900') format('svg');
+}
+
+@font-face {
+    font-family: 'MuseoCyrl500Italic';
+    src: url('../fonts/MuseoCyrl/MuseoCyrl500Italic.eot');
+    src: url('../fonts/MuseoCyrl/MuseoCyrl500Italic.eot') format('embedded-opentype'),
+         url('../fonts/MuseoCyrl/MuseoCyrl500Italic.woff2') format('woff2'),
+         url('../fonts/MuseoCyrl/MuseoCyrl500Italic.woff') format('woff'),
+         url('../fonts/MuseoCyrl/MuseoCyrl500Italic.ttf') format('truetype'),
+         url('../fonts/MuseoCyrl/MuseoCyrl500Italic.svg#MuseoCyrl500Italic') format('svg');
+}
+
+@font-face {
+    font-family: 'CirceBold';
+    src: url('../fonts/Circe/CirceBold.eot');
+    src: url('../fonts/Circe/CirceBold.eot') format('embedded-opentype'),
+         url('../fonts/Circe/CirceBold.woff2') format('woff2'),
+         url('../fonts/Circe/CirceBold.woff') format('woff'),
+         url('../fonts/Circe/CirceBold.ttf') format('truetype'),
+         url('../fonts/Circe/CirceBold.svg#CirceBold') format('svg');
+}
+
+@font-face {
+    font-family: 'CirceExtraBold';
+    src: url('../fonts/Circe/circe-extrabold.eot');
+    src: url('../fonts/Circe/circe-extrabold.eot') format('embedded-opentype'),
+         url('../fonts/Circe/circe-extrabold.woff') format('woff'),
+         url('../fonts/Circe/circe-extrabold.ttf') format('truetype'),
+         url('../fonts/Circe/circe-extrabold.svg#circe-extrabold') format('svg');
+}

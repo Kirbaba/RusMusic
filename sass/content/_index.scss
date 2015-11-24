@@ -1,0 +1,19 @@
+.enter-slideshow {
+	&__text {
+		color: #FFF;
+		margin-top: 15%;
+		h1 {
+			font-family: $m900;
+			font-size: 68px;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+		}
+		h4 {
+			font-size: 24px;
+			font-family: $m500i;
+			text-transform: uppercase;
+			letter-spacing: 7px;
+		}
+	}
+}
+

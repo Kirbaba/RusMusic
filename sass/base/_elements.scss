@@ -1,0 +1,43 @@
+.hamburger-slim {
+  background: transparent;
+  /* margin: 60px auto 40px; */
+  position: relative;
+  height: 30px;
+  width: 50px;
+  display: none;
+  //display: block;
+  float: right;
+  top: 10px;
+  right: 15px;
+  z-index: 99;
+  &:before,
+  &:after {
+    background: #db5523;
+    backface-visibility: hidden;
+    content: "";
+    height: 2px;
+    left: 0;
+    transition: 0.75s;
+    width: 50px;
+  }
+  &:before {
+    box-shadow: #db5523 0 14px 0 0;
+    position: absolute;
+    top: 0;
+  }
+  &:after {
+    position: absolute;
+    top: 28px;
+  }
+  &--active {
+    &:before {
+      box-shadow: transparent 0 0 0 0;
+      top: 15px;
+      transform: rotate(225deg);
+    }
+    &:after {  
+      top: 15px;
+      transform: rotate(315deg);
+    }
+  }
+}

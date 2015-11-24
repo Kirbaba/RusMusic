@@ -1,0 +1,134 @@
+.topline-soc {
+	display: block;
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	text-align: right;
+	z-index: 9;		
+	&--logobord {
+		display: block;
+		float: left;
+		position: relative;
+		width: 110px;
+		border-top: 5px solid #CB0000;
+	}
+	&--but {
+		display: block;
+		float: right;
+		a {
+			color: #fff;
+			display: block;
+			float: left;
+			font-size: 20px;
+			line-height: 40px;
+			margin: 0 10px;
+			@include skew-def;
+		}
+	}
+	
+}
+.header {
+	display: block;
+	position: fixed;
+	top: 40px;
+	width: 100%;
+	z-index: 9;
+	@include  inside-pad;
+	&__navigation {
+		display: block;
+		float: left;
+		width: 100%;		
+		&--logo {
+			background-color: rgba(42, 42, 42, 1);			
+			color: #FFF;
+			text-decoration: none;
+			width: 100%;
+			font-size: 34px;
+			display: block;
+			float: left;
+			h3 {
+				font-family: $cirEB;
+				@include skew-def;
+				display: block;
+				float: left;
+				text-align: center;
+				font-size: 34px;
+				margin-left: 15px;
+			}
+			span {
+				width: 100px;
+				text-align: center;
+				display: block;
+				float: left;
+				border: 15px solid $red;
+				background-color: #373737;					
+				b {
+					@include skew-def;
+					font-family: $cirEB;
+					display: block;
+				}
+			}
+			&:hover, &:active, &:focus {
+				color: #FFF;
+			}
+		}
+		&--menu {		
+		    padding: 14px 0;
+			background-color: rgba(115, 115, 115, 0.35);			
+		}
+	}
+	&__account {
+		display: block;
+		float: left;
+		margin: 5px 30px;
+		a.header__navigation--menu--account {
+			display: block;
+			float: left;
+			padding: 10px;	
+			text-decoration: none;
+			span {
+				@include skew-def;
+				color: #CDCFB9;
+				font-size: 14px;
+				text-transform: uppercase;
+				display: block;
+				text-decoration: none;
+			}			
+			&:hover {
+				background-color: #932424;
+				span {
+					color: #C8C3AE;
+				}
+			}			
+		}
+	}
+	&__search {
+		display: block;
+		float: left;
+		margin: 10px 0;
+		@include skew-def;
+		.header__search--input {
+			display: none;
+			float: left;
+		    width: 0;
+		    height: 26px;
+			margin: 0 10px;
+			background-color: rgba(255, 255, 255, 0);
+			border-width: 1px;
+			border-right: 1px solid transparent;
+			border-top: 1px solid transparent;
+			border-left: 1px solid transparent;
+			outline: none;
+			padding: 2px 0;
+			color: #fff;
+		}
+		.header__search--butt {
+			display: block;
+			float: left;
+			font-size: 20px;
+			color: #FFF;
+			margin-left: 50px;			
+		}
+	}
+}
