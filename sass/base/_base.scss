@@ -43,6 +43,17 @@ ul {
 	@include skew-min;
 }
 
+.img-skew-wrap {
+	-webkit-transform: skewX(15deg);
+	   -moz-transform: skewX(15deg);
+	    -ms-transform: skewX(15deg);
+	     -o-transform: skewX(15deg);
+	        transform: skewX(15deg);
+    display: block;
+    position: absolute;
+    height: 325px;
+    left: -15%;
+}
 
 
 

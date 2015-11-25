@@ -32,9 +32,9 @@
 }
 	
 @mixin text-shadow ($shadow) {
-	text-shadow: $shadow;
+ 	text-shadow: $shadow;
 }
-	
+
 @mixin skew-min() {
 	-webkit-transform: skewX(-15deg);
 	   -moz-transform: skewX(-15deg);
@@ -74,4 +74,13 @@
 		top: 50%;
 		transform: translate(-50%,-50%);
 	}
+}
+
+@mixin grayscale($n) {
+	-webkit-filter: grayscale($n);
+	-moz-filter: grayscale($n);
+	-ms-filter: grayscale($n);
+	-o-filter: grayscale($n);
+	filter: grayscale($n);
+	filter: gray; /* IE 6-9 */
 }

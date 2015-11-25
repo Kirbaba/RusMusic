@@ -127,7 +127,40 @@
 
 	<section class="becomeastar">
 		<div class="container">
-			
+			<div class="row">
+				<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
+					<h3>Стань звездой</h3>
+					<p>МЕЧТАЕШЬ О СЦЕНЕ И СЛАВЕ, МНОГО ИДЕЙ НО НЕТ ВОЗМОЖНОСТИ РЕАЛИЗОВАТЬ НА ВСЮ КАТУШКУ СВОЙ ПОТЕНЦИАЛ - МЫ ПОМОЖЕМ!</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="becomeastar--link-line">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
+						<a href="#" class="becomeastar--link-line--item">
+							<span class="img-skew-wrap">							
+								<img src="<?php bloginfo('template_directory'); ?>/img/755645743456-(6).jpg" alt="">
+								<span class="becomeastar--link-line--item--text align-right">
+									<h3>Заработай на музыке</h3>
+									<p>ПРОДАЖА МУЗЫКАЛЬНО КОНТЕНТА НА ГИПЕР ПЛОЩАДКАХ: ITUNES, GOOGLE DRIVE</p>
+								</span>								
+							</span>
+							<span class="link-line--border"></span>
+						</a>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
+						<a href="#" class="becomeastar--link-line--item">
+							<span class="img-skew-wrap">
+								<img src="<?php bloginfo('template_directory'); ?>/img/1-(12).jpg" alt="">
+								<span class="becomeastar--link-line--item--text align-left">
+									<h3>Запиши хит</h3>
+									<p>СТУДИЯ ЗВУКОЗАПИСИ, АРАНЖИРОВКИ, ПРОМОУШЕН</p>
+								</span>
+							</span>
+							<span class="link-line--border"></span>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
