@@ -439,7 +439,7 @@ ul {
   .becomeastar--link-line {
     display: block;
     position: relative;
-    width: 90%;
+    width: 85%;
     background-color: #142226;
     margin: 25px auto 0;
     -webkit-transform: skewX(-15deg);
@@ -520,7 +520,14 @@ ul {
       .becomeastar--link-line--item .align-left {
         left: 20%; }
       .becomeastar--link-line--item .align-right {
-        right: 25%; }
+        right: 27%; }
+    .becomeastar--link-line:after {
+      content: "";
+      display: block;
+      height: 325px;
+      background-color: #7b1c1c;
+      width: 100%;
+      margin-left: 50px; }
 
 @media only screen and (max-width: 980px) {
   .hamburger-slim {

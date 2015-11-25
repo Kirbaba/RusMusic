@@ -85,7 +85,7 @@
 	&--link-line {
 		display: block;
 		position: relative;
-		width: 90%;
+		width: 85%;
 		background-color: #142226;
 		margin: 25px auto 0;
 		@include skew-min;
@@ -143,8 +143,16 @@
 				left: 20%;
 			}
 			.align-right {
-				right: 25%;
+				right: 27%;
 			}
+		}
+		&:after {
+			content: "";
+			display: block;
+			height: 325px;
+			background-color: #7b1c1c;
+			width: 100%;
+			margin-left: 50px;
 		}
 	}
 }
