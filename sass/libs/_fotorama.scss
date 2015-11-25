@@ -1,5 +1,6 @@
 .enter-slideshow {
 	.fotorama__arr {
+		display: none!important;
 		width: 52px;
 		height: 52px;
 		background: url("../img/Right-Square-Button Outlineh.png");
@@ -53,27 +54,27 @@
 	}
 
 	.fotorama__nav-wrap {
-	    margin-top: -12%;
-	    height: 60px;
-	    margin-bottom: 110px;
+	    margin-top: -40px;
+	    height: 40px;
+	    margin-bottom: 0;
 	}
 
 	.fotorama__dot {
 		@include border-radius(0);
 		border: 0;
-		background-color: #FFF;
 		width: 40px;
-		height: 3px;
+		height: 2px;
 		margin: 0 5px;
-		background-color: #ededed;
+		background-color: #555555;
 
 	}
 		
 	.fotorama__nav__frame.fotorama__active .fotorama__dot {
 		width: 40px;
-		height: 3px;
-		background-color: #c94d3f;
-		border: none;	
+		height: 5px;
+		margin-top: -3px;
+		background-color: #c94d3f;		
+		border: none;
 	}
 
 	.fotorama__nav--dots .fotorama__nav__frame {

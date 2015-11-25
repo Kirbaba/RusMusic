@@ -1,19 +1,59 @@
 .enter-slideshow {
 	&__text {
-		color: #FFF;
-		margin-top: 15%;
+		display: block;
+		position: absolute;
+		bottom: 50px;
 		h1 {
 			font-family: $m900;
 			font-size: 68px;
 			text-transform: uppercase;
 			letter-spacing: 3px;
+			color: #CDCFB9;
+			span {
+				color: #78796e;
+			}
 		}
 		h4 {
 			font-size: 24px;
 			font-family: $m500i;
 			text-transform: uppercase;
 			letter-spacing: 7px;
+			color: #CDCFB9;
 		}
+		&--listen {
+			margin-top: 10px;
+			display: block;
+			float: left;			
+			@include background-clip(padding-box);
+			background-color: #932424;
+			@include skew-min;
+			text-decoration: none;
+			span {
+				@include skew-def;
+				padding: 5px;	
+				display: block;			
+				color: #cccfb8;
+				font-size: 14px;	
+				text-decoration: none;			
+			}
+			&:hover {
+				background-color: $red;
+				text-decoration: none;
+			}
+		}
+	}
+	&__video {
+		display: block;
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		   -moz-transform: translateY(-50%);
+		    -ms-transform: translateY(-50%);
+		     -o-transform: translateY(-50%);
+		        transform: translateY(-50%);
+		right: 15%;
+		width: 354px;
+		height: 247px;
 	}
 }
 

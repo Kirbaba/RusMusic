@@ -98,12 +98,16 @@
 
 
 	<section class="enter-slideshow">		
-		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover">			
+		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover" data-arrows="false">			
 			<div data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg">
 				<div class="container">
 					<div class="enter-slideshow__text">					
-						<h1>Rihanna</h1>
-						<h4>НОВЫЙ КОНЦЕРТНЫЙ ТУР ПО РОССИИ И КАЗАХСТАНУ</h4>
+						<h1>ЕЛКА <span>/</span> ХОЧУ</h1>
+						<h4>Премия Ru.Tv 2012</h4>
+						<a href="#" class="enter-slideshow__text--listen"><span>СЛУШАТЬ</span></a>
+					</div>	
+					<div class="enter-slideshow__video">					
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t4mUEKCKCtw" frameborder="0" allowfullscreen></iframe>
 					</div>		
 				</div>		
 			</div>
@@ -113,9 +117,18 @@
 						<h1>Slide #2</h1>
 						<h4>НОВЫЙ КОНЦЕРТНЫЙ ТУР ПО РОССИИ И КАЗАХСТАНУ</h4>
 					</div>
+					<div class="enter-slideshow__video">					
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t4mUEKCKCtw" frameborder="0" allowfullscreen></iframe>
+					</div>	
 				</div>
 			</div>			
 		</div>	
+	</section>
+
+	<section class="becomeastar">
+		<div class="container">
+			
+		</div>
 	</section>
 
     

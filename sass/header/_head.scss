@@ -78,6 +78,15 @@
 		    padding: 14px 0;
 			background-color: rgba(115, 115, 115, 0.35);			
 		}
+		&:after{
+			content: "";
+			width: 1000px;
+			height: 78px;
+			display: block;
+			position: absolute;
+			right: -1010px;
+			background-color: $red;
+		}
 	}
 	&__account {
 		display: block;
@@ -131,5 +140,5 @@
 			color: #FFF;
 			margin-left: 50px;			
 		}
-	}
+	}	
 }
