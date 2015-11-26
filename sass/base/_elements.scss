@@ -159,34 +159,42 @@
     height: 170px;
     margin-bottom: 0;
   }
+  .slick-slider { margin-bottom: 0px; }
   .slick-prev, .slick-next {
-    width: 60px;
-    height: 60px;
-    background-color: #464D4B;
-    top: -30px;
-    left: -105px; 
-    margin-top: 0;   
+    width: 33px;
+    height: 54px;
+    margin-top: -27px;
     &:hover {
-      background-color: #AFA376;
     }
      &:before {
       content: "";
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
+      background-repeat: no-repeat;     
+      background-image: url('../img/stars-arrows.png');
       display: block;
       width: 100%;
       height: 100%;
     }
   }
   .slick-prev {
-    top: 30px;
+    left: -43px; 
     &:before {
-      background-image: url('../img/Down.png');
+      background-position: -2px 0;
+    }
+    &:hover {
+      &:before {
+        background-position: -36px 0;
+      }
     }
   }
   .slick-next {
-    &:before {
-      background-image: url('../img/up.png');
+    right: -43px;
+    &:before {      
+      background-position: -96px 0;
+    }
+    &:hover {
+      &:before {
+        background-position: -65px 0;
+      }
     }
   }
 }

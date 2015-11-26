@@ -414,34 +414,34 @@
 						</a>
 						
 						<a href="#" class="stars-slider__item">
-							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<img src="<?php bloginfo('template_directory'); ?>/img/placebo.jpg" alt="">
 							<span class="stars-slider__item--text">
-								<h4></h4>
-								<h5></h5>
+								<h4>Плацебо</h4>
+								<h5>АНАСТАСИЯ КОВАЛЕВА</h5>
 							</span>
 						</a>
 						
 						<a href="#" class="stars-slider__item">
-							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<img src="<?php bloginfo('template_directory'); ?>/img/mans.jpg" alt="">
 							<span class="stars-slider__item--text">
-								<h4></h4>
-								<h5></h5>
+								<h4>ПОЭТ ПЕСЕННИК</h4>
+								<h5>Mans Zelmerlow</h5>
 							</span>
 						</a>
 
 						<a href="#" class="stars-slider__item">
-							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<img src="<?php bloginfo('template_directory'); ?>/img/semenovich.jpg" alt="">
 							<span class="stars-slider__item--text">
-								<h4></h4>
-								<h5></h5>
+								<h4>ПЕВИЦА ВОКАЛИСТКА ПРОДЮСЕР</h4>
+								<h5>АННА СЕМЕНОВИЧ</h5>
 							</span>
 						</a>
 						
 						<a href="#" class="stars-slider__item">
-							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<img src="<?php bloginfo('template_directory'); ?>/img/rodriges.jpg" alt="">
 							<span class="stars-slider__item--text">
-								<h4></h4>
-								<h5></h5>
+								<h4>АРТИСТ ПРОДЮСЕР ШОУМЭН</h4>
+								<h5>ТИМУР РОДРИГЕЗ</h5>
 							</span>
 						</a>
 
