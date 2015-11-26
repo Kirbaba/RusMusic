@@ -24,4 +24,11 @@
 		margin-left: 82px;
 		width: 81%;
 	}
+	.col5 {
+		width: 50%;
+		&:last-of-type {
+			margin: 0 25%;
+		}
+
+	}
 }
