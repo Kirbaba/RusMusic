@@ -232,74 +232,230 @@
 	</section>
 
 	<section class="news">
-			<div class="container">
-				<div class="row">
-					<div class="news-wrapper">
-						<h4>НОВОСТИ ПРОДЮСЕРСКОГО ЦЕНТРА</h4>
-						<div class="responsive">					           
-							<div class="news__item">
-								<div class="news__item--img">
-									<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
+		<div class="container">
+			<div class="row">
+				<div class="news-wrapper">
+					<h4>НОВОСТИ ПРОДЮСЕРСКОГО ЦЕНТРА</h4>
+					<div class="responsive">					           
+						<div class="news__item">
+							<div class="news__item--img">
+								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
+							</div>
+							<div class="news__item--soc">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-vk"></i></a>
+							</div>
+							<div class="news__item--title">
+								<p>19.06.2015</p>
+								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
+								<a href="#">> ПОДРОБНЕЕ</a>
+							</div>										                       
+		                </div>		
+		                				           
+						<div class="news__item">
+							<div class="news__item--img">
+								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
+							</div>
+							<div class="news__item--soc">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-vk"></i></a>
+							</div>
+							<div class="news__item--title">
+								<p>19.06.2015</p>
+								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
+								<a href="#">> ПОДРОБНЕЕ</a>
+							</div>										                       
+		                </div>	
+		                				           
+						<div class="news__item">
+							<div class="news__item--img">
+								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
+							</div>
+							<div class="news__item--soc">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-vk"></i></a>
+							</div>
+							<div class="news__item--title">
+								<p>19.06.2015</p>
+								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
+								<a href="#">> ПОДРОБНЕЕ</a>
+							</div>										                       
+		                </div>	
+
+						<div class="news__item">
+							<div class="news__item--img">
+								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
+							</div>
+							<div class="news__item--soc">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-vk"></i></a>
+							</div>
+							<div class="news__item--title">
+								<p>19.06.2015</p>
+								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
+								<a href="#">> ПОДРОБНЕЕ</a>
+							</div>										                       
+		                </div>					           
+			        </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="social-network">
+		<div class="container">
+			<div class="row">
+			<div class="social-network-wrapper">
+				<div class="row">				
+					<h4>НАШ ИНСТАГРАМ</h4>
+					<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+						<div class="insta--wrapper">						
+								<div class="col-lg-10 p0">									
+									<div class="slider-item-slider">
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/11410496_202365863429996_1088910130_n.jpg" alt="">
+											<div class="insta--liks">
+												<p><i class="fa fa-heart"></i>12730</p>
+											</div>												
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/1921928_893827157376295_753702593_n.jpg" alt="">										
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/12120229_1656778934596228_287584296_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/12120263_1699297110314488_1772948494_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/12145093_418405665037172_958160522_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/12145502_411674379029941_1074693874_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/11380158_1702125156683339_285776453_n.jpg" alt="">
+										</div>
+									</div>
+								  <!-- .slider-item-slider -->
+									<div class="slider-thumb-slider">
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/11410496_202365863429996_1088910130_n.jpg" alt="">
+										</div> 
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/1921928_893827157376295_753702593_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/12120229_1656778934596228_287584296_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/12120263_1699297110314488_1772948494_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/12145093_418405665037172_958160522_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/12145502_411674379029941_1074693874_n.jpg" alt="">
+										</div>
+										<div class="slick-slider-item">
+											<img src="<?php bloginfo('template_directory'); ?>/img/11380158_1702125156683339_285776453_n.jpg" alt="">
+										</div>
+									</div>
+								  <!-- .slider-thumb-slider -->
+									
 								</div>
-								<div class="news__item--soc">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-vk"></i></a>
+								<div class="col-lg-2">
+									<div class="insta--title">
+										<a href="#">
+											<img src="<?php bloginfo('template_directory'); ?>/img/2015-06-09.png" alt="">
+											<span>rusmusic.pro</span>
+										</a>
+
+										<div class="insta--title--info">
+											<p>Публикации:</p>
+											<h5>116</h5>
+										</div>
+										<div class="insta--title--info">
+											<p>подписчиков:</p>
+											<h5>118</h5>
+										</div>
+										<div class="insta--title--info">
+											<p>подписки:</p>
+											<h5>103</h5>
+										</div>
+
+									</div>
 								</div>
-								<div class="news__item--title">
-									<p>19.06.2015</p>
-									<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
-									<a href="#">> ПОДРОБНЕЕ</a>
-								</div>										                       
-			                </div>		
-			                				           
-							<div class="news__item">
-								<div class="news__item--img">
-									<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
-								</div>
-								<div class="news__item--soc">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-vk"></i></a>
-								</div>
-								<div class="news__item--title">
-									<p>19.06.2015</p>
-									<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
-									<a href="#">> ПОДРОБНЕЕ</a>
-								</div>										                       
-			                </div>	
-			                				           
-							<div class="news__item">
-								<div class="news__item--img">
-									<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
-								</div>
-								<div class="news__item--soc">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-vk"></i></a>
-								</div>
-								<div class="news__item--title">
-									<p>19.06.2015</p>
-									<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
-									<a href="#">> ПОДРОБНЕЕ</a>
-								</div>										                       
-			                </div>	
-			                				           
-							<div class="news__item">
-								<div class="news__item--img">
-									<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
-								</div>
-								<div class="news__item--soc">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-vk"></i></a>
-								</div>
-								<div class="news__item--title">
-									<p>19.06.2015</p>
-									<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
-									<a href="#">> ПОДРОБНЕЕ</a>
-								</div>										                       
-			                </div>					           
-				        </div>
+					
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						<div class="social-network--facebook">
+							<img src="<?php bloginfo('template_directory'); ?>/img/facebook-screen.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="stars-slider">
+		<div class="container">
+			<div class="row">
+				<div class="stars-slider__wrapper">
+					<div class="stars-slick">
+						<a href="#" class="stars-slider__item">
+							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<span class="stars-slider__item--text">
+								<h4>Раненая<br>птица</h4>
+								<h5>A-DESSA</h5>
+							</span>
+						</a>
+						
+						<a href="#" class="stars-slider__item">
+							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<span class="stars-slider__item--text">
+								<h4></h4>
+								<h5></h5>
+							</span>
+						</a>
+						
+						<a href="#" class="stars-slider__item">
+							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<span class="stars-slider__item--text">
+								<h4></h4>
+								<h5></h5>
+							</span>
+						</a>
+
+						<a href="#" class="stars-slider__item">
+							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<span class="stars-slider__item--text">
+								<h4></h4>
+								<h5></h5>
+							</span>
+						</a>
+						
+						<a href="#" class="stars-slider__item">
+							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<span class="stars-slider__item--text">
+								<h4></h4>
+								<h5></h5>
+							</span>
+						</a>
+
+						<a href="#" class="stars-slider__item">
+							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
+							<span class="stars-slider__item--text">
+								<h4></h4>
+								<h5></h5>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
     

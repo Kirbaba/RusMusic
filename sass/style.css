@@ -187,6 +187,82 @@ ul {
 .news .slick-next:before {
   background-image: url("../img/up.png"); }
 
+.social-network .slick-slider {
+  margin-bottom: 0; }
+.social-network .slider-item-slider {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  margin-bottom: 0;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0; }
+  .social-network .slider-item-slider .slick-slider-item {
+    outline: none;
+    width: 300px !important;
+    height: 300px !important;
+    overflow: hidden; }
+    .social-network .slider-item-slider .slick-slider-item img {
+      min-width: 100%;
+      height: auto;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+    .social-network .slider-item-slider .slick-slider-item img {
+      width: auto;
+      max-width: 100%; }
+.social-network .slider-thumb-slider .slick-slider-item {
+  padding: 5px; }
+.social-network .slider-thumb-slider .slick-active img {
+  outline: 2px solid transparent; }
+.social-network .slider-thumb-slider .slick-slider-item {
+  outline: none;
+  width: 100px !important;
+  height: 100px !important;
+  overflow: hidden; }
+  .social-network .slider-thumb-slider .slick-slider-item img {
+    min-width: 100%;
+    height: auto;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  .social-network .slider-thumb-slider .slick-slider-item img {
+    width: auto;
+    max-width: 100%; }
+.social-network .slider-thumb-slider .slick-prev, .social-network .slider-thumb-slider .slick-next {
+  width: 33px;
+  height: 54px;
+  margin-top: -27px; }
+  .social-network .slider-thumb-slider .slick-prev:before, .social-network .slider-thumb-slider .slick-next:before {
+    content: "";
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: block;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%; }
+.social-network .slider-thumb-slider .slick-prev {
+  z-index: 9;
+  left: 10px; }
+  .social-network .slider-thumb-slider .slick-prev:before {
+    background-image: url("../img/insta-prev.png"); }
+.social-network .slider-thumb-slider .slick-next {
+  right: 10px; }
+  .social-network .slider-thumb-slider .slick-next:before {
+    background-image: url("../img/insta-next.png"); }
+.social-network .slick-slider-item.slick-slide.slick-active {
+  outline: none; }
+.social-network .slick-slider {
+  margin-bottom: 0px; }
+
+.stars-slider .slick-slide {
+  height: 170px; }
+
 .header__navigation--menu .navbar-nav > li > a {
   color: #fff;
   text-transform: uppercase;
@@ -692,6 +768,144 @@ ul {
         font-size: 18px;
         text-transform: uppercase;
         color: #fff; }
+
+.social-network {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  overflow: hidden; }
+  .social-network-wrapper {
+    width: 90%;
+    height: 400px;
+    padding: 0;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    background-image: url("../img/social-bg.png"); }
+    .social-network-wrapper h4 {
+      text-transform: uppercase;
+      font-size: 16px;
+      color: #B5B6A8;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      position: absolute;
+      left: -90px;
+      top: 65px; }
+    .social-network-wrapper:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: url("../img/social-bg.png");
+      right: -100%;
+      top: 0; }
+    .social-network-wrapper .insta--wrapper {
+      display: block;
+      float: left;
+      width: 100%;
+      height: 400px;
+      position: relative;
+      background-color: #6A3636; }
+      .social-network-wrapper .insta--wrapper .insta--liks {
+        font-size: 12px;
+        color: #DCDECB;
+        position: absolute;
+        bottom: 10px;
+        left: 10px; }
+        .social-network-wrapper .insta--wrapper .insta--liks p {
+          margin: 0; }
+          .social-network-wrapper .insta--wrapper .insta--liks p i {
+            color: #ADBBBF; }
+    .social-network-wrapper .insta--title {
+      display: block;
+      float: left;
+      position: relative;
+      width: 100%; }
+      .social-network-wrapper .insta--title a {
+        display: block;
+        width: 100%;
+        margin: 15px 0;
+        text-align: center;
+        text-decoration: none; }
+        .social-network-wrapper .insta--title a img {
+          margin: 10px auto 5px;
+          display: block; }
+        .social-network-wrapper .insta--title a span {
+          color: #FFF;
+          font-size: 10px;
+          text-align: center;
+          text-transform: uppercase; }
+      .social-network-wrapper .insta--title--info {
+        display: block;
+        text-align: center;
+        color: #CDCFB9;
+        margin: 20px 0;
+        float: left;
+        width: 100%;
+        text-transform: uppercase; }
+        .social-network-wrapper .insta--title--info h5 {
+          font-size: 28px;
+          margin: 0; }
+        .social-network-wrapper .insta--title--info p {
+          font-size: 10px;
+          margin: 0; }
+  .social-network--facebook {
+    display: block;
+    float: left;
+    position: relative;
+    width: 100%;
+    padding: 15px 0; }
+    .social-network--facebook img {
+      width: 100%; }
+
+.stars-slider {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  border-top: 15px solid #cb0000; }
+  .stars-slider__wrapper {
+    width: 90%;
+    padding: 0;
+    display: block;
+    position: relative;
+    margin: 0 auto; }
+  .stars-slider__item {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden; }
+    .stars-slider__item img {
+      min-width: 100%;
+      height: auto;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+    .stars-slider__item--text {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      padding: 10px;
+      border: 4px solid #D0D0D0; }
+      .stars-slider__item--text h4 {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #606060;
+        top: 90px; }
+      .stars-slider__item--text h5 {
+        font-size: 11px;
+        color: #EE4949;
+        bottom: 0;
+        position: absolute; }
 
 @media only screen and (max-width: 980px) {
   .hamburger-slim {

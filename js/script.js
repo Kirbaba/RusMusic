@@ -91,7 +91,7 @@ jQuery(function ($) {
     });
 });
 
-jQuery(function () {
+jQuery(function ($) {
 
     jQuery('.responsive').slick({
         dots: false,
@@ -100,6 +100,70 @@ jQuery(function () {
         speed: 300,
         arrows: true,        
         slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
+     $('.slider-item-slider').on('init', function(event, slick, currentSlide){
+      var nrCurrentSlide = slick.currentSlide + 1, // din cauza ca e array si incepe de la 0
+          totalSlidesPerPage = nrCurrentSlide + 3; // daca ai 5 thumb-uri pe pagina pui + 4
+      $('.controls').html(nrCurrentSlide + " - " + totalSlidesPerPage + " of " + slick.slideCount);
+    });
+
+    $('.slider-thumb-slider').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      asNavFor: '.slider-item-slider',
+      dots: false,
+      arrows: true,
+      focusOnSelect: false,
+      infinite: true,
+      centerMode: true
+    });
+
+    $('.slider-item-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: false,
+      asNavFor: '.slider-thumb-slider',
+      infinite: true,
+      centerMode: true
+    });
+
+     jQuery('.stars-slick').slick({
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        speed: 300,
+        arrows: true,        
+        slidesToShow: 5,
         slidesToScroll: 3,
         responsive: [
             {
