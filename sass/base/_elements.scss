@@ -12,7 +12,7 @@
   z-index: 99;
   &:before,
   &:after {
-    background: #db5523;
+    background: $red;
     backface-visibility: hidden;
     content: "";
     height: 2px;
@@ -21,7 +21,7 @@
     width: 50px;
   }
   &:before {
-    box-shadow: #db5523 0 14px 0 0;
+    box-shadow: $red 0 14px 0 0;
     position: absolute;
     top: 0;
   }
@@ -30,6 +30,7 @@
     top: 28px;
   }
   &--active {
+    @include skew-def;
     &:before {
       box-shadow: transparent 0 0 0 0;
       top: 15px;

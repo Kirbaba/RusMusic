@@ -310,7 +310,7 @@
 					<h4>НАШ ИНСТАГРАМ</h4>
 					<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 						<div class="insta--wrapper">						
-								<div class="col-lg-10 p0">									
+								<div class="col-lg-10 col-sm-10 col-md-10 col-xs-10 p0">									
 									<div class="slider-item-slider">
 										<div class="slick-slider-item">
 											<img src="<?php bloginfo('template_directory'); ?>/img/11410496_202365863429996_1088910130_n.jpg" alt="">
@@ -364,7 +364,7 @@
 								  <!-- .slider-thumb-slider -->
 									
 								</div>
-								<div class="col-lg-2">
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 									<div class="insta--title">
 										<a href="#">
 											<img src="<?php bloginfo('template_directory'); ?>/img/2015-06-09.png" alt="">
@@ -463,27 +463,27 @@
 			<div class="row">				
 				<h4>НАШИ ПАРТНЕРЫ</h4>
 				
-				<div class="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-xs-6">
+				<div class="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-4 col-xs-6">
 					<div class="partners__item">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_03.png" alt="">
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+				<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
 					<div class="partners__item">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_05.png" alt="">
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+				<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
 					<div class="partners__item">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_07.png" alt="">
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+				<div class="col-lg-2 col-md-2 col-sm-4 col-sm-offset-2 col-lg-offset-0 col-md-offset-0 col-xs-6">
 					<div class="partners__item">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_09.png" alt="">
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 col-xs-offset-3 col-sm-offset-0">
+				<div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 col-xs-offset-3 col-sm-offset-0">
 					<div class="partners__item">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_11.png" alt="">
 					</div>

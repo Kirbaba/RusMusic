@@ -1,35 +1,3 @@
-
-/*-------------GOOGLE MAPS-----------------*/
-
-/*function initialize() {
-
-    var myLatlng = new google.maps.LatLng(59.934602, 30.334607);
-    var mapOptions = {
-        center: new google.maps.LatLng(59.934602, 30.334607),
-        zoom: 17,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        scrollwheel: false
-    };
-    var map = new google.maps.Map(document.getElementById("map_canvas"),
-        mapOptions);
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title:"Ditlogistic"
-    });
-}
-
-function loadScript() {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyAaOWKyamSxMTXclSDFmJ2N4Am20PCTD6I&sensor=FALSE&callback=initialize";
-    document.body.appendChild(script);
-}
-
-window.onload = loadScript;
-*/
-
-
 jQuery(function($) {
 
     $(window).scroll(function() {
@@ -54,7 +22,6 @@ jQuery(function($) {
     });
 });
 
-//jQuery( '.header__navigation--menu li:has(ul)' ).doubleTapToGo();
 jQuery(function ($) {
     $('.hamburger-slim').on('click', function (e) {
         e.preventDefault();
@@ -112,7 +79,7 @@ jQuery(function ($) {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 770,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
@@ -154,7 +121,35 @@ jQuery(function ($) {
       arrows: false,
       asNavFor: '.slider-thumb-slider',
       infinite: true,
-      centerMode: true
+      centerMode: true,
+       responsive: [
+            {
+                breakpoint: 1025,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 770,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
     });
 
      jQuery('.stars-slick').slick({
@@ -167,7 +162,7 @@ jQuery(function ($) {
         slidesToScroll: 3,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1025,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
@@ -176,7 +171,7 @@ jQuery(function ($) {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 770,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
@@ -195,4 +190,14 @@ jQuery(function ($) {
         ]
     });
 
+});
+
+jQuery(window).scroll(function() {
+    if (jQuery(".header").offset().top > 50) {
+        jQuery(".header").addClass("header--onScroll");
+        jQuery(".header__navigation--menu").addClass("header__navigation--menu--onScroll");              
+    } else {
+        jQuery(".header").removeClass("header--onScroll");  
+        jQuery(".header__navigation--menu").removeClass("header__navigation--menu--onScroll");       
+    }
 });

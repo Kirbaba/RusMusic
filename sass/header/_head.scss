@@ -36,6 +36,7 @@
 	width: 100%;
 	z-index: 9;
 	@include  inside-pad;
+	@include transition (0.5s);
 	&__navigation {
 		display: block;
 		float: left;
@@ -76,7 +77,8 @@
 		}
 		&--menu {		
 		    padding: 14px 0;
-			background-color: rgba(115, 115, 115, 0.35);			
+			background-color: rgba(115, 115, 115, 0.35);	
+			@include transition (0.5s);		
 		}
 		&:after{
 			content: "";
@@ -141,4 +143,14 @@
 			margin-left: 50px;			
 		}
 	}	
+}
+
+.header--onScroll {	
+	top: 0;
+	@include transition (0.5s);
+}
+
+.header__navigation--menu--onScroll {
+    background-color: rgba(115, 115, 115, 0.9);
+    @include transition (0.5s);
 }
