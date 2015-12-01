@@ -246,3 +246,10 @@ jQuery(window).scroll(function() {
     }
 });
 
+(function($){
+    $(window).load(function(){
+        $(".team__bio").mCustomScrollbar({
+            theme:"dark"
+        });
+    });
+})(jQuery);
