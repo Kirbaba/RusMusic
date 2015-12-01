@@ -47,8 +47,17 @@
 								</div>
 								
 								<!-- Collect the nav links, forms, and other content for toggling -->
-								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		      	     
-									<ul class="nav navbar-nav navbar-center navigation__list">		      
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+									<?php
+									wp_nav_menu( array(
+											'theme_location'    => 'primary',
+											'depth'             => 2,
+											'menu_class'        => 'nav navbar-nav',
+											'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+											'walker'            => new wp_bootstrap_navwalker())
+									);
+									?>
+									<!--<ul class="nav navbar-nav navbar-center navigation__list">
 										<li><a href="#">О компании</a></li>
 										<li class="dropdown"><a href="#" data-toggle="dropdown">НАПРАВЛЕНИЯ</a>
 											<ul class="dropdown-menu">
@@ -77,7 +86,7 @@
 										</li>
 										<li><a href="#">Новости</a></li>
 										<li><a href="#">Контакты</a></li>	        		       
-									</ul>
+									</ul>-->
 									<div class="header__account">
 										<a href="#" class="header__navigation--menu--account"><span>регистрация</span></a>
 										<a href="#" class="header__navigation--menu--account"><span>войти</span></a>
@@ -98,30 +107,31 @@
 
 
 	<section class="enter-slideshow">		
-		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover" data-arrows="false">			
-			<div data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg">
+		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover" data-arrows="false">
+			<?= do_shortcode('[mainSlider]'); ?>
+			<!--<div data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg">
 				<div class="container">
-					<div class="enter-slideshow__text">					
+					<div class="enter-slideshow__text">
 						<h1>ЕЛКА <span>/</span> ХОЧУ</h1>
 						<h4>Премия Ru.Tv 2012</h4>
 						<a href="#" class="enter-slideshow__text--listen"><span>СЛУШАТЬ</span></a>
-					</div>	
-					<div class="enter-slideshow__video">					
+					</div>
+					<div class="enter-slideshow__video">
 						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t4mUEKCKCtw" frameborder="0" allowfullscreen></iframe>
-					</div>		
-				</div>		
+					</div>
+				</div>
 			</div>
 			<div data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg">
 				<div class="container">
-					<div class="enter-slideshow__text">					
+					<div class="enter-slideshow__text">
 						<h1>Slide #2</h1>
 						<h4>НОВЫЙ КОНЦЕРТНЫЙ ТУР ПО РОССИИ И КАЗАХСТАНУ</h4>
 					</div>
-					<div class="enter-slideshow__video">					
+					<div class="enter-slideshow__video">
 						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t4mUEKCKCtw" frameborder="0" allowfullscreen></iframe>
-					</div>	
+					</div>
 				</div>
-			</div>			
+			</div>	-->
 		</div>	
 	</section>
 
@@ -135,7 +145,8 @@
 			</div>
 			<div class="row">
 				<div class="becomeastar--link-line">
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
+					<?php echo do_shortcode('[mainDirection paged="0"]'); ?>
+					<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
 						<a href="#" class="becomeastar--link-line--item">
 							<span class="img-skew-wrap">							
 								<img src="<?php bloginfo('template_directory'); ?>/img/755645743456-(6).jpg" alt="">
@@ -158,7 +169,7 @@
 							</span>
 							<span class="link-line--border"></span>
 						</a>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
@@ -169,7 +180,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="line--box">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
+						<?php echo do_shortcode('[mainDirection paged="2"]'); ?>
+						<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
 							<a href="#" class="becomeastar--link-line--item">
 								<span class="img-skew-wrap">							
 									<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_132936830.png" alt="">
@@ -192,7 +204,7 @@
 								</span>
 								<span class="link-line--border"></span>
 							</a>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>
@@ -201,7 +213,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="line--box">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
+						<?php echo do_shortcode('[mainDirection paged="4"]'); ?>
+						<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
 							<a href="#" class="becomeastar--link-line--item">
 								<span class="img-skew-wrap">							
 									<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_88537570.png" alt="">
@@ -224,7 +237,7 @@
 								</span>
 								<span class="link-line--border"></span>
 							</a>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>
