@@ -1,31 +1,36 @@
 jQuery(function($) {
 
-    $(window).scroll(function() {
-        if($(this).scrollTop() != 0) {
-            $('#toTop').fadeIn();
-        } else {
-            $('#toTop').fadeOut();
-        }
-    });
-    $('#toTop').click(function() {
-        $('body,html').animate({scrollTop: 0}, 1000);
-    });
+    // $(window).scroll(function() {
+    //     if($(this).scrollTop() != 0) {
+    //         $('#toTop').fadeIn();
+    //     } else {
+    //         $('#toTop').fadeOut();
+    //     }
+    // });
+    // $('#toTop').click(function() {
+    //     $('body,html').animate({scrollTop: 0}, 1000);
+    // });
 
-    $('.smoothScroll').click(function(event) {
-        event.preventDefault();
-        var href=$(this).attr('href');
-        var target=$(href);
-        var top=target.offset().top;
-        $('html,body').animate({
-            scrollTop: top
-        }, 1000);
-    });
+    // $('.smoothScroll').click(function(event) {
+    //     event.preventDefault();
+    //     var href=$(this).attr('href');
+    //     var target=$(href);
+    //     var top=target.offset().top;
+    //     $('html,body').animate({
+    //         scrollTop: top
+    //     }, 1000);
+    // });
 });
 
 jQuery(function ($) {
     $('.hamburger-slim').on('click', function (e) {
         e.preventDefault();
         $(this).toggleClass('hamburger-slim--active');
+    });
+
+    $('.team-carousel__item--open').on('hover', function (e) {
+        e.preventDefault();
+        $(this).parent().toggleClass('team-carousel__item--name--shadow');
     });
    
     $('.header__search--butt').on('click', function (e) {        
@@ -62,7 +67,7 @@ jQuery(function ($) {
 
     jQuery('.responsive').slick({
         dots: false,
-        infinite: false,
+        infinite: true,
         autoplay: true,
         speed: 300,
         arrows: true,        
@@ -83,6 +88,45 @@ jQuery(function ($) {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
+    jQuery('.team-carousel').slick({
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        focusOnSelect: false,
+        speed: 300,
+        arrows: true,        
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 770,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
                 }
             },
             {
@@ -201,3 +245,11 @@ jQuery(window).scroll(function() {
         jQuery(".header__navigation--menu").removeClass("header__navigation--menu--onScroll");       
     }
 });
+
+(function($){
+    $(window).load(function(){
+        $(".team__bio").mCustomScrollbar({
+            theme:"dark"
+        });
+    });
+})(jQuery);
