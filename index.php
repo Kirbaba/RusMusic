@@ -98,7 +98,7 @@
 
 
 	<section class="enter-slideshow">		
-		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover" data-arrows="false">			
+		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover" data-arrows="false">					
 			<div data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg">
 				<div class="container">
 					<div class="enter-slideshow__text">					
@@ -121,11 +121,14 @@
 						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t4mUEKCKCtw" frameborder="0" allowfullscreen></iframe>
 					</div>	
 				</div>
-			</div>			
+			</div>	
+
 		</div>	
+
 	</section>
 
 	<section class="becomeastar">
+		<canvas id="slider-canvas"></canvas>	
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
@@ -165,6 +168,7 @@
 	</section>
 
 	<section class="more-links">
+		<canvas id="more-links-canvas"></canvas>
 		<article class="second-line">
 			<div class="container">
 				<div class="row">

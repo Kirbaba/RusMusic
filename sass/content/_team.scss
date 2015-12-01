@@ -1,0 +1,112 @@
+.team__head {
+	background-image: url('../img/team-headbg.jpg');
+}
+
+.team__wrapper {
+	display: block;
+	float: left;
+	width: 100%;
+	position: relative;
+	padding: 15px 0 100px;
+	background-color: #424244;
+	background-image: url('../img/DECORATION-LAYER.png');
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	&--head {
+		width: 370px;
+		position: relative;
+		display: block;
+		margin: 25px auto;
+		padding-bottom: 20px;
+		background-image: url('../img/SEPARATOR.png');
+		background-repeat: no-repeat;
+		background-position: 50% 100%;
+	}
+}
+.team-carousel {
+	display: block;
+	width: 90%;
+	position: relative;
+	margin: 0 auto;
+	&__item {
+		position: relative;
+		margin: 25px 5px;	
+		overflow: hidden;
+		outline: none;
+		&--img {
+			width: 100%;
+			height: 370px;
+			display: block;
+			float: left;
+			@include overflow-img;	
+			position: relative;	
+			img {
+				z-index: -1;
+			}
+		}
+		
+		&--open {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			top: -44px;
+			left: 50%;
+			z-index: 10;
+			background-color: #EF233C;
+			-webkit-transform: rotate(-45deg) translateX(-50%);
+			 -moz-transform: rotate(-45deg) translateX(-50%);
+			  -ms-transform: rotate(-45deg) translateX(-50%);
+			   -o-transform: rotate(-45deg) translateX(-50%);
+			      transform: rotate(-45deg) translateX(-50%);
+			i {
+				font-size: 22px;
+				color: #FFF;
+				display: block;
+				margin: auto;
+				line-height: 50px;
+				text-align: center;
+				-webkit-transform: rotate(45deg) translateX(-50%);
+				 -moz-transform: rotate(45deg);
+				  -ms-transform: rotate(45deg);
+				   -o-transform: rotate(45deg);
+				      transform: rotate(45deg);
+			}
+		    &:hover {
+		      background-color: $red;
+		      text-decoration: none;		            
+		    }
+		}
+		.team-carousel__item--name--shadow {
+		      	-webkit-box-shadow: 0px -35px 40px 15px rgba(239, 35, 60, 0.75);
+				-moz-box-shadow:    0px -35px 40px 15px rgba(239, 35, 60, 0.75);
+				box-shadow:         0px -35px 40px 15px rgba(239, 35, 60, 0.75);
+		      }		
+		&--name {
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			float: left;
+			position: relative;
+			width: 100%;
+			height: 215px;
+			background-color: #FFF;
+			text-align: center;			
+			&--text {
+				width: 100%;
+				h3 {
+					font-family: $m900;
+					color: #2B2D42;
+					font-size: 31px;
+				}
+				p {
+					color: #2B2D42;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}

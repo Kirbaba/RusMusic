@@ -303,6 +303,45 @@ ul {
   .stars-slider .slick-next:hover:before {
     background-position: -65px 0; }
 
+#slider-canvas, #more-links-canvas {
+  display: block;
+  position: absolute;
+  z-index: 0; }
+
+.team-carousel .slick-prev, .team-carousel .slick-next {
+  width: 50px;
+  height: 50px;
+  margin-top: -50px;
+  z-index: 9;
+  background-color: #EF233C;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+  .team-carousel .slick-prev:hover, .team-carousel .slick-next:hover {
+    background-color: #cb0000; }
+  .team-carousel .slick-prev:before, .team-carousel .slick-next:before {
+    content: "";
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: block;
+    width: 100%;
+    height: 100%; }
+.team-carousel .slick-prev {
+  left: -20px; }
+  .team-carousel .slick-prev:before {
+    background-image: url("../img/Rectangle1.png"); }
+.team-carousel .slick-next {
+  right: -23px; }
+  .team-carousel .slick-next:before {
+    background-image: url("../img/Rectangle2.png"); }
+
 .header__navigation--menu .navbar-nav > li > a {
   color: #fff;
   text-transform: uppercase;
@@ -584,6 +623,7 @@ ul {
   display: block;
   float: left;
   position: relative;
+  overflow: hidden;
   width: 100%;
   background-image: url("../img/shutterstock_10518775.jpg"), linear-gradient(#222, #5f5f5f);
   background-repeat: no-repeat;
@@ -599,10 +639,12 @@ ul {
     color: #fff;
     font-size: 11px;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.49);
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    z-index: 2; }
   .becomeastar p {
     font-size: 15px;
-    color: #CDCFB9; }
+    color: #CDCFB9;
+    z-index: 2; }
   .becomeastar--link-line {
     display: block;
     position: relative;
@@ -997,6 +1039,131 @@ ul {
     font-size: 10px;
     display: block;
     margin-left: 6%; }
+
+.page-title-head {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 530px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  .page-title-head h1 {
+    font-family: "MuseoCyrl900";
+    font-size: 90px;
+    color: #EDF2F4;
+    text-align: center;
+    position: absolute;
+    bottom: 75px;
+    width: 100%; }
+
+.team__head {
+  background-image: url("../img/team-headbg.jpg"); }
+
+.team__wrapper {
+  display: block;
+  float: left;
+  width: 100%;
+  position: relative;
+  padding: 15px 0 100px;
+  background-color: #424244;
+  background-image: url("../img/DECORATION-LAYER.png");
+  background-position: 50% 0;
+  background-repeat: no-repeat; }
+  .team__wrapper--head {
+    width: 370px;
+    position: relative;
+    display: block;
+    margin: 25px auto;
+    padding-bottom: 20px;
+    background-image: url("../img/SEPARATOR.png");
+    background-repeat: no-repeat;
+    background-position: 50% 100%; }
+
+.team-carousel {
+  display: block;
+  width: 90%;
+  position: relative;
+  margin: 0 auto; }
+  .team-carousel__item {
+    position: relative;
+    margin: 25px 5px;
+    overflow: hidden;
+    outline: none; }
+    .team-carousel__item--img {
+      width: 100%;
+      height: 370px;
+      display: block;
+      float: left;
+      overflow: hidden;
+      position: relative; }
+      .team-carousel__item--img img {
+        min-width: 100%;
+        height: auto;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); }
+      .team-carousel__item--img img {
+        z-index: -1; }
+    .team-carousel__item--open {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: -44px;
+      left: 50%;
+      z-index: 10;
+      background-color: #EF233C;
+      -webkit-transform: rotate(-45deg) translateX(-50%);
+      -moz-transform: rotate(-45deg) translateX(-50%);
+      -ms-transform: rotate(-45deg) translateX(-50%);
+      -o-transform: rotate(-45deg) translateX(-50%);
+      transform: rotate(-45deg) translateX(-50%); }
+      .team-carousel__item--open i {
+        font-size: 22px;
+        color: #FFF;
+        display: block;
+        margin: auto;
+        line-height: 50px;
+        text-align: center;
+        -webkit-transform: rotate(45deg) translateX(-50%);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      .team-carousel__item--open:hover {
+        background-color: #cb0000;
+        text-decoration: none; }
+    .team-carousel__item .team-carousel__item--name--shadow {
+      -webkit-box-shadow: 0px -35px 40px 15px rgba(239, 35, 60, 0.75);
+      -moz-box-shadow: 0px -35px 40px 15px rgba(239, 35, 60, 0.75);
+      box-shadow: 0px -35px 40px 15px rgba(239, 35, 60, 0.75); }
+    .team-carousel__item--name {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      float: left;
+      position: relative;
+      width: 100%;
+      height: 215px;
+      background-color: #FFF;
+      text-align: center; }
+      .team-carousel__item--name--text {
+        width: 100%; }
+        .team-carousel__item--name--text h3 {
+          font-family: "MuseoCyrl900";
+          color: #2B2D42;
+          font-size: 31px; }
+        .team-carousel__item--name--text p {
+          color: #2B2D42;
+          font-size: 18px; }
 
 .footer {
   display: block;
