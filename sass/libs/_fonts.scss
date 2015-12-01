@@ -1,5 +1,6 @@
 $m900: 'MuseoCyrl900';
 $m500i: 'MuseoCyrl500Italic';
+$m700: 'MuseoCyrl700';
 $cir: 'CirceBold';
 $cirEB: 'CirceExtraBold';
 
@@ -22,6 +23,17 @@ $cirEB: 'CirceExtraBold';
          url('../fonts/MuseoCyrl/MuseoCyrl500Italic.ttf') format('truetype'),
          url('../fonts/MuseoCyrl/MuseoCyrl500Italic.svg#MuseoCyrl500Italic') format('svg');
 }
+
+@font-face {
+    font-family: 'MuseoCyrl700';
+    src: url('../fonts/MuseoCyrl/MuseoCyrl700.eot');
+    src: url('../fonts/MuseoCyrl/MuseoCyrl700.eot') format('embedded-opentype'),
+         url('../fonts/MuseoCyrl/MuseoCyrl700.woff2') format('woff2'),
+         url('../fonts/MuseoCyrl/MuseoCyrl700.woff') format('woff'),
+         url('../fonts/MuseoCyrl/MuseoCyrl700.ttf') format('truetype'),
+         url('../fonts/MuseoCyrl/MuseoCyrl700.svg#MuseoCyrl700') format('svg');
+}
+
 
 @font-face {
     font-family: 'CirceBold';

@@ -1,0 +1,114 @@
+.contacts__head {
+	background-color: #424244;
+	background-image: url('../img/DECORATION-LAYER.png');
+	background-position: 50% 150%;
+	background-repeat: no-repeat;
+	&--text {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		bottom: 40px;
+		h3 {
+			color: #EDF2F4;
+			font-family: $m900;
+			font-size: 53px;
+			margin-bottom: 25px;
+			span {
+				padding-bottom: 20px;
+				background-image: url('../img/SEPARATOR.png');
+				background-repeat: no-repeat;
+				background-position: 50% 100%;	
+				padding: 0 50px 20px;			
+			}
+		}
+		p {
+			font-size: 23px;
+			color: #EDF2F4;
+			font-family: $m700;
+		}
+		h2 {
+			font-size: 62px;
+			font-family: $m900;
+			color: #EDF2F4;
+			span {
+				color: #B66565;
+			}
+		}
+	}
+}
+
+.contacts-map {
+	display: block;
+	float: left;
+	position: relative;
+	height: 650px;
+	width: 100%;
+	@include inside-pad;
+	&__forms {
+		display: block;
+		position: relative;		
+		width: 100%;
+		bottom: 450px;
+		@include inside-pad;
+		&--social {
+			display: block;
+			border-top: 6px solid #EF233C;
+			background-color: #EDF2F4;
+			height: 360px;
+			margin-top: 15px;
+			padding: 30px;
+			a {
+				display: block;
+				font-family: $cir;
+				font-size: 20px;
+				color: #4B4C5F;
+				margin: 15px 0;
+				i {
+					color: #000;
+					margin-right: 20px;
+				}
+			}
+		}
+		&--contactform {
+			border-top: 6px solid #EF233C;
+			background-color: #EDF2F4;
+			height: 360px;
+			display: block;
+			margin-top: 15px;
+			padding: 30px 15px;
+			input {
+				display: block;
+				width: 100%;
+				padding: 25px;
+				background-color: #FFF;
+				outline: none;
+				border: none;
+				margin: 15px 0;
+			}
+			textarea {
+				display: block;
+				width: 100%;
+				padding: 25px;
+				background-color: #FFF;
+				outline: none;
+				border: none;
+				margin: 15px 0;
+				height: 155px;
+				resize: none;
+			}
+			.contacts--but {
+				display: block;
+				float: left;
+				width: inherit;
+				padding: 15px 25px;
+				background-color: #EF233C;
+				color: #fff;
+				margin-top: 0;
+				font-size: 26px;
+				&:hover {
+					background-color: $red;
+				}
+			}
+		}
+	}
+}

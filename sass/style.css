@@ -7,6 +7,10 @@
   src: url("../fonts/MuseoCyrl/MuseoCyrl500Italic.eot");
   src: url("../fonts/MuseoCyrl/MuseoCyrl500Italic.eot") format("embedded-opentype"), url("../fonts/MuseoCyrl/MuseoCyrl500Italic.woff2") format("woff2"), url("../fonts/MuseoCyrl/MuseoCyrl500Italic.woff") format("woff"), url("../fonts/MuseoCyrl/MuseoCyrl500Italic.ttf") format("truetype"), url("../fonts/MuseoCyrl/MuseoCyrl500Italic.svg#MuseoCyrl500Italic") format("svg"); }
 @font-face {
+  font-family: 'MuseoCyrl700';
+  src: url("../fonts/MuseoCyrl/MuseoCyrl700.eot");
+  src: url("../fonts/MuseoCyrl/MuseoCyrl700.eot") format("embedded-opentype"), url("../fonts/MuseoCyrl/MuseoCyrl700.woff2") format("woff2"), url("../fonts/MuseoCyrl/MuseoCyrl700.woff") format("woff"), url("../fonts/MuseoCyrl/MuseoCyrl700.ttf") format("truetype"), url("../fonts/MuseoCyrl/MuseoCyrl700.svg#MuseoCyrl700") format("svg"); }
+@font-face {
   font-family: 'CirceBold';
   src: url("../fonts/Circe/CirceBold.eot");
   src: url("../fonts/Circe/CirceBold.eot") format("embedded-opentype"), url("../fonts/Circe/CirceBold.woff2") format("woff2"), url("../fonts/Circe/CirceBold.woff") format("woff"), url("../fonts/Circe/CirceBold.ttf") format("truetype"), url("../fonts/Circe/CirceBold.svg#CirceBold") format("svg"); }
@@ -1194,6 +1198,118 @@ ul {
     color: #EF233C; }
     .team-carousel__item--social a:hover {
       color: #cb0000; }
+
+.contacts__head {
+  background-color: #424244;
+  background-image: url("../img/DECORATION-LAYER.png");
+  background-position: 50% 150%;
+  background-repeat: no-repeat; }
+  .contacts__head--text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 40px; }
+    .contacts__head--text h3 {
+      color: #EDF2F4;
+      font-family: "MuseoCyrl900";
+      font-size: 53px;
+      margin-bottom: 25px; }
+      .contacts__head--text h3 span {
+        padding-bottom: 20px;
+        background-image: url("../img/SEPARATOR.png");
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        padding: 0 50px 20px; }
+    .contacts__head--text p {
+      font-size: 23px;
+      color: #EDF2F4;
+      font-family: "MuseoCyrl700"; }
+    .contacts__head--text h2 {
+      font-size: 62px;
+      font-family: "MuseoCyrl900";
+      color: #EDF2F4; }
+      .contacts__head--text h2 span {
+        color: #B66565; }
+
+.contacts-map {
+  display: block;
+  float: left;
+  position: relative;
+  height: 650px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .contacts-map:before, .contacts-map:after {
+    display: table;
+    content: " "; }
+  .contacts-map:after {
+    clear: both; }
+  .contacts-map__forms {
+    display: block;
+    position: relative;
+    width: 100%;
+    bottom: 450px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .contacts-map__forms:before, .contacts-map__forms:after {
+      display: table;
+      content: " "; }
+    .contacts-map__forms:after {
+      clear: both; }
+    .contacts-map__forms--social {
+      display: block;
+      border-top: 6px solid #EF233C;
+      background-color: #EDF2F4;
+      height: 360px;
+      margin-top: 15px;
+      padding: 30px; }
+      .contacts-map__forms--social a {
+        display: block;
+        font-family: "CirceBold";
+        font-size: 20px;
+        color: #4B4C5F;
+        margin: 15px 0; }
+        .contacts-map__forms--social a i {
+          color: #000;
+          margin-right: 20px; }
+    .contacts-map__forms--contactform {
+      border-top: 6px solid #EF233C;
+      background-color: #EDF2F4;
+      height: 360px;
+      display: block;
+      margin-top: 15px;
+      padding: 30px 15px; }
+      .contacts-map__forms--contactform input {
+        display: block;
+        width: 100%;
+        padding: 25px;
+        background-color: #FFF;
+        outline: none;
+        border: none;
+        margin: 15px 0; }
+      .contacts-map__forms--contactform textarea {
+        display: block;
+        width: 100%;
+        padding: 25px;
+        background-color: #FFF;
+        outline: none;
+        border: none;
+        margin: 15px 0;
+        height: 155px;
+        resize: none; }
+      .contacts-map__forms--contactform .contacts--but {
+        display: block;
+        float: left;
+        width: inherit;
+        padding: 15px 25px;
+        background-color: #EF233C;
+        color: #fff;
+        margin-top: 0;
+        font-size: 26px; }
+        .contacts-map__forms--contactform .contacts--but:hover {
+          background-color: #cb0000; }
 
 .footer {
   display: block;
