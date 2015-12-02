@@ -1439,6 +1439,53 @@ a.news--read {
   a.news--read:hover {
     background-color: #cb0000; }
 
+.news__post--mediabox {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  height: 460px;
+  background-image: url("../img/IMAGE-PLACEHOLDER.jpg");
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  margin-top: 35px;
+  padding: 35px;
+  color: #FFF;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .news__post--mediabox:before, .news__post--mediabox:after {
+    display: table;
+    content: " "; }
+  .news__post--mediabox:after {
+    clear: both; }
+  .news__post--mediabox:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background-color: #EF233C;
+    top: -20px;
+    left: 0; }
+  .news__post--mediabox h3 {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif; }
+  .news__post--mediabox p {
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif; }
+  .news__post--mediabox a {
+    font-size: 12px;
+    color: #8D99AE;
+    text-decoration: none; }
+    .news__post--mediabox a i {
+      margin-right: 10px; }
+    .news__post--mediabox a:hover {
+      text-shadow: 0px 0px 10px white; }
+
 .footer {
   display: block;
   float: left;

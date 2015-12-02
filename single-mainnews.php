@@ -1,50 +1,43 @@
 <? get_header()?>
-	<section class="page-title-head team__head">
-		<div class="container-fluid">
-			<div class="row">
-				<h1>Команда 1111</h1>
-			</div>
-		</div>		
-	</section>
-
-	<section class="team__wrapper">
+	<section class="news-page">
 		<div class="container">
 			<div class="row">
-				<header class="team__wrapper--head">					
+				<header class="news-page--head">						
+					<h3><span>Новости</span></h3>
+					<div class="news-page--social">
+						<a href="#"><i class="fa fa-vk"></i></a>
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-odnoklassniki"></i></a>
+					</div>
 				</header>
 			</div>
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<?php if ( has_post_thumbnail() ): ?>
-			<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-				<div class="team-carousel__item">
-					<div class="team-carousel__item--img">
-						<?php the_post_thumbnail('full', array()); ?>							
+			<div class="row">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<article class="news-page__item--first">					
+					<?php if ( has_post_thumbnail() ): ?>
+					<div class="news-page__item--first--img">
+						<?php the_post_thumbnail('full', array()); ?>	
 					</div>
-					<div class="team-carousel__item--name">											
-						<div class="team-carousel__item--name--text">
-							<h3><?php the_title(); ?></h3>
-							<p>Prime Minister</p>
-							<div class="team-carousel__item--social">
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-								<a href="#"><i class="fa fa-pinterest"></i></a>
+					<?php  endif;?>	
+
+					<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
+						<small class="news__author">Written by <a href="#">Eric Snorker</a> on <span>Sunday 25 December 2016.</span></small>
+						<h3><?php the_title(); ?></h3>
+							<?php the_content(); ?>
+							<div class="news__post--mediabox">
+								<h4>Proin vel nulla</h4>
+								<p>gravida nibh vel velit auctor aliquet.</p>
+								<a href="#"><i class="fa fa-heart-o"></i>26</a>
 							</div>
-						</div>
 					</div>
-				</div>
-			</div>
-			<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
-				<article class="team__bio">
-					<?php the_content(); ?>
 				</article>
 			</div>
-			
 		</div>
-		
-		<?php  endif;?>	
+
 		<?php endwhile; ?>
 		<?php  endif;?>	
 	</section>
+
+	
+
 <? get_footer()?>

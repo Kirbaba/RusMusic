@@ -110,3 +110,50 @@ a.news--read {
 		background-color: $red;
 	}
 }
+
+.news__post--mediabox {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	height: 460px;
+	background-image: url('../img/IMAGE-PLACEHOLDER.jpg');
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	margin-top: 35px;
+	padding: 35px;
+	color: #FFF;
+	@include inside-pad;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 6px;
+		width: 100%;
+		background-color: #EF233C;
+		top: -20px;
+		left: 0;
+	}
+	h3 {
+		font-size: 18px;
+		font-family: $mont;
+	}
+	p {
+		font-size: 12px;
+		font-family: $os;
+	}
+	a {
+		font-size: 12px;
+		color: #8D99AE;
+		text-decoration: none;
+		i {
+			margin-right: 10px;
+		}
+		&:hover {
+			text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+		}
+	}
+}
