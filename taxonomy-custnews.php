@@ -41,7 +41,7 @@
 
 <?php
 $recent = new WP_Query(array(
-	'posts_per_page' => 1,
+	'posts_per_page' => 3,
 	'paged' => $_GET['page'],
 	'tax_query' => array(
 		array(
@@ -58,7 +58,7 @@ while ($recent->have_posts()) : $recent->the_post(); ?>
 		<article class="news-page__item">
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 				<div class="news-page__item--img">
-					<a href="#">
+					<a href="<?= get_permalink(get_the_ID()); ?>">
 						<?php  echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
 					</a>
 				</div>
