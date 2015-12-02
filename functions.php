@@ -406,3 +406,17 @@ function getNewsShortcode(){
 
 add_shortcode('mainNews', 'getNewsShortcode');
 /*-----------------------------------END NEWS--------------------------------------*/
+
+function get_custom_single_template($single_template) {
+    global $post;
+
+    $terms = get_the_terms($post->ID, 'custnews');
+    if($terms && !is_wp_error( $terms )) {
+        //Make a foreach because $terms is an array but it supposed to be only one term
+        foreach($terms as $term){
+            $single_template = TM_DIR . '/single-'.$term->slug.'.php';
+        }
+    }
+    return $single_template;
+}
+add_filter( "single_template", "get_custom_single_template" ) ;
