@@ -58,7 +58,7 @@ function initialize() {
     var isDraggable = w > 480 ? true : false;
 
   var mapOptions = {
-        center: new google.maps.LatLng(55.756107, 37.613662),
+        center: new google.maps.LatLng(55.756007, 37.613662),
         zoom: 17,
         draggable: isDraggable,
          mapTypeControlOptions: {

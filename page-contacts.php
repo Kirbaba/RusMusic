@@ -16,14 +16,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="contacts-map__forms">
-						<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 							<div class="contacts-map__forms--social">
 								<a href="#"><i class="fa fa-envelope-o"></i>office@rusmusic-records.ru</a>
 								<a href="#"><i class="fa fa-facebook-official"></i>facebook.com/rusmusicrecords</a>
 								<a href="#"><i class="fa fa-instagram"></i>@rusmusic.pro</a>
 							</div>
 						</div>
-						<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 							<div class="contacts-map__forms--contactform">
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 									<input type="email" name="contact-email" placeholder="Ваш e-mail:">
