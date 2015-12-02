@@ -21,7 +21,7 @@
 					<?php  endif;?>	
 
 					<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
-						<small class="news__author">Written by <a href="#">Eric Snorker</a> on <span>Sunday 25 December 2016.</span></small>
+						<small class="news__author">Written by <a ><?php the_author() ?></a> on <span><?php the_time('l j F Y') ?></span></small>
 						<h3><?php the_title(); ?></h3>
 							<?php the_content(); ?>
 							<div class="news__post--mediabox">
