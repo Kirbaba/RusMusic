@@ -305,7 +305,7 @@
 					</div>
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 						<div class="social-network--facebook">
-							<div class="fb-page" data-href="https://www.facebook.com/rusmusicrecords/" data-width="270" data-height="356" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/rusmusicrecords/"><a href="https://www.facebook.com/rusmusicrecords/">Продюсерский центр &quot;RusMusic Records&quot;</a></blockquote></div></div>
+							<div class="fb-page" data-href="https://www.facebook.com/rusmusicrecords/" data-width="270" data-height="356" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/rusmusicrecords/"><a href="https://www.facebook.com/rusmusicrecords/">Продюсерский центр &quot;RusMusic Records&quot;</a></blockquote></div></div>
 						</div>
 					</div>
 				</div>
