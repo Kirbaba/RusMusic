@@ -53,24 +53,47 @@ function prn($content) {
     echo '</pre>';
 }
 
-function my_pagenavi() {
+function my_pagenavi($recent) {
     global $wp_query;
-
+    /* $i = 0;
+     foreach($wp_query->posts as $post){
+         $cat = get_the_category( $post->ID );
+         if($cat[0]->name == 'Блог'){
+             $i++;
+         }
+     }*/
     $big = 999999999; // уникальное число для замены
 
     $args = array(
-        'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) )
-    ,'format' => ''
-    ,'current' => max( 1, get_query_var('paged') )
-    ,'total' => $wp_query->max_num_pages
+        'base' => '?page=%_%',
+        'format' => '%#%',
+        'total' => $recent->max_num_pages,
+        'show_all' => TRUE,
+        'current' => (isset($_GET['page'])) ? $_GET['page'] : 1,
+        'end_size' => 1,
+        'mid_size' => 2,
+        'prev_next' => true,
+        'prev_text' => '<img src="'.TM_URL.'/img/LEFT-ARROW.png" alt="">',
+        'next_text' => '<img src="'.TM_URL.'/img/RIGHT-ARROW.png" alt="">',
+        'type' => 'array',
+        'add_fragment' => '',
+        'add_args' => False,
+        'before_page_number' => '',
+        'after_page_number' => ''
     );
+    $result = paginate_links($args);
 
-    $result = paginate_links( $args );
-
+    if( is_array( $result ) ) {
+        // $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+        echo '<ul class="pagination">';
+        foreach ( $result as $page ) {
+            echo '<li>'.$page.'</li>';
+        }
+        echo '</ul>';
+    }
     // удаляем добавку к пагинации для первой страницы
-    $result = str_replace( '/page/1/', '', $result );
+    //$result = str_replace( '/page/1/', '', $result );
 
-    echo $result;
 }
 
 function excerpt_readmore($more) {
@@ -407,6 +430,7 @@ function getNewsShortcode(){
 add_shortcode('mainNews', 'getNewsShortcode');
 /*-----------------------------------END NEWS--------------------------------------*/
 
+/*CUSTOM SINGLES*/
 function get_custom_single_template($single_template) {
     global $post;
 
@@ -420,3 +444,15 @@ function get_custom_single_template($single_template) {
     return $single_template;
 }
 add_filter( "single_template", "get_custom_single_template" ) ;
+/*MINIMIZED CONTENT*/
+function content($num) {
+    $theContent = get_the_content();
+    $output = preg_replace('/<img[^>]+./','', $theContent);
+    $output = preg_replace( '/<blockquote>.*<\/blockquote>/', '', $output );
+    $output = preg_replace( '|\[(.+?)\](.+?\[/\\1\])?|s', '', $output );
+    $limit = $num+1;
+    $content = explode(' ', $output, $limit);
+    array_pop($content);
+    $content = implode(" ",$content)."...";
+    echo $content;
+}
