@@ -1,0 +1,88 @@
+.enter-page {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	background-color: #212121;
+	padding: 200px 0;
+	h3 {
+		font-family: $m900;
+		color: #ef233c;
+		font-size: 31px;
+		text-align: center;
+		margin-bottom: 60px;
+	}
+	.enter--input {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		font-size: 18px;
+		font-family: $os;
+		color: #fff;
+		border: 3px solid #fff;
+		outline: none;
+		padding: 20px;
+		margin: 10px 0;
+		background-color: transparent;
+	}
+	.enter--continue {
+		display: block;
+		margin: 25px auto;
+		color: #FFF;
+		padding: 20px 25px;
+		font-size: 18px;
+		background-color: #EF233C;
+		font-family: $os;
+		border: none;
+		outline: none;
+		font-weight: 900;
+		&:hover, &:focus, &:active {
+			background-color: $red;
+		}
+	}
+	.enter-forget--pass {
+		display: block;
+		margin: 10px 0;
+		color: #EDF2F4;
+		font-size: 14px;
+		font-family: $os;
+		text-align: right;
+	}
+	.enter-social {
+		display: block;
+		position: relative;
+		width: 100%;
+		text-align: center;
+		h4 {
+			font-size: 18px;
+			font-family: $os;
+			color: #EDF2F4;
+			margin: 25px 0;
+			display: block;
+		}
+		a {
+			display: inline-block;
+			margin: 0 5px;
+			i {
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				display: block;
+				width: 43px;
+				height: 43px;
+			}
+		}
+	}
+	.enter-newuser {
+		display: block;
+		text-align: center;
+		color: #EF233C;
+		font-family: $os;
+		font-size: 18px;
+		text-decoration: none;
+		margin: 25px 0;
+		&:hover, &:active, &:focus {
+			color: $red;
+		}
+	}
+}

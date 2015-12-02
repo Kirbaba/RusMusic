@@ -157,3 +157,18 @@ a.news--read {
 		}
 	}
 }
+
+.news-content--social {
+	display: block;
+	float: left;
+	position: relative;
+	margin-top: 25px;
+	a {
+		font-size: 22px;
+		padding: 0 15px 0 0;
+		color: #EF233C;
+		&:hover {
+			color: $red;
+		}
+	}
+}
