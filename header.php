@@ -32,7 +32,7 @@
 				<div class="skew-wrap">		
 					<div class="header__navigation">
 						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p0">
-							<a href="#" class="header__navigation--logo">
+							<a href="/" class="header__navigation--logo">
 								<span><b>R</b></span>
 								<h3>RUSMUSIC</h3>
 							</a>
@@ -47,37 +47,16 @@
 								</div>
 								
 								<!-- Collect the nav links, forms, and other content for toggling -->
-								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		      	     
-									<ul class="nav navbar-nav navbar-center navigation__list">		      
-										<li><a href="#">О компании</a></li>
-										<li class="dropdown"><a href="#" data-toggle="dropdown">НАПРАВЛЕНИЯ</a>
-											<ul class="dropdown-menu">
-												<li>
-													<a href='#'>Детская творческая мастерская</a>
-												</li>
-												<li>
-													<a href='#'>Организация концертов фестивалей, Дни Рождения</a>
-												</li>
-												<li>
-													<a href='#'>Стань звездой</a>
-												</li>
-												<li>
-													<a href='#'>Обучение</a>
-												</li>
-												<li>
-													<a href='#'>Заработай на музыке</a>
-												</li>
-												<li>
-													<a href='#'>Запиши хит</a>
-												</li>
-												<li>
-													<a href='#'>Найди свой хит</a>
-												</li>
-											</ul>
-										</li>
-										<li><a href="#">Новости</a></li>
-										<li><a href="#">Контакты</a></li>	        		       
-									</ul>
+								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+									<?php
+									wp_nav_menu( array(
+											'theme_location'    => 'primary',
+											'depth'             => 2,
+											'menu_class'        => 'nav navbar-nav',
+											'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+											'walker'            => new wp_bootstrap_navwalker())
+									);
+									?>
 									<div class="header__account">
 										<a href="#" class="header__navigation--menu--account"><span>регистрация</span></a>
 										<a href="#" class="header__navigation--menu--account"><span>войти</span></a>
