@@ -58,8 +58,8 @@
 									);
 									?>
 									<div class="header__account">
-										<a href="#" class="header__navigation--menu--account"><span>регистрация</span></a>
-										<a href="#" class="header__navigation--menu--account"><span>войти</span></a>
+										<a href="/enter" class="header__navigation--menu--account"><span>регистрация</span></a>
+										<a href="/enter" class="header__navigation--menu--account"><span>войти</span></a>
 									</div>
 									<div class="header__search">
 										<input type="text" name="search--input" class="header__search--input">
