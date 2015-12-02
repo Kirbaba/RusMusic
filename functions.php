@@ -346,3 +346,63 @@ function getMainDirectionShortcode($paged){
 add_shortcode('mainDirection', 'getMainDirectionShortcode');
 
 /*------------------------ КОНЕЦ СТРАНИЦ НА ГЛАВНОЙ --------------------------------*/
+
+/*------------------------------------NEWS------------------------------------------*/
+
+//хук в init action и вызов create_book_taxonomies когда хук сработает
+add_action( 'init', 'create_news_hierarchical_taxonomy', 0 );
+//задаем название для произвольной таксономии Topics для ваших записей
+
+function create_news_hierarchical_taxonomy() {
+
+// Добавляем новую таксономию, делаем ее иерархической вроде рубрик
+// также задаем перевод для интерфейса
+
+    $labels = array(
+        'name' => _x( 'Категории новостей', 'taxonomy general name' ),
+        'singular_name' => _x( 'Категория новостей', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Найти категорию новостей' ),
+        'all_items' => __( 'Все категории новостей' ),
+        'parent_item' => __( 'Родительская категория новостей' ),
+        'parent_item_colon' => __( 'Родительская категория новостей:' ),
+        'edit_item' => __( 'Родительская категория новостей' ),
+        'update_item' => __( 'Обновить категорию новостей' ),
+        'add_new_item' => __( 'Добавить новую категорию новостей' ),
+        'new_item_name' => __( 'Название новой категории новостей' ),
+        'menu_name' => __( 'Категории новостей' ),
+    );
+
+// Теперь регистрируем таксономию
+
+    register_taxonomy('custnews',array('post'), array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'custnews' ),
+    ));
+
+}
+
+function getNewsShortcode(){
+    $args = array(
+        'numberposts'     => -1, // тоже самое что posts_per_page
+        'post_type'       => 'post',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'custnews',
+                'field' => 'slug',
+                'terms' => 'mainnews'
+            )
+        )
+     );
+
+    $my_query = new WP_Query($args);
+    //prn($my_query);
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/main_news.php', ['my_query' => $my_query]);
+}
+
+add_shortcode('mainNews', 'getNewsShortcode');
+/*-----------------------------------END NEWS--------------------------------------*/

@@ -255,8 +255,9 @@
 			<div class="row">
 				<div class="news-wrapper">
 					<h4>НОВОСТИ ПРОДЮСЕРСКОГО ЦЕНТРА</h4>
-					<div class="responsive">					           
-						<div class="news__item">
+					<div class="responsive">
+						<?php echo do_shortcode('[mainNews]'); ?>
+						<!--<div class="news__item">
 							<div class="news__item--img">
 								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
 							</div>
@@ -314,7 +315,7 @@
 								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
 								<a href="#">> ПОДРОБНЕЕ</a>
 							</div>										                       
-		                </div>					           
+		                </div>		-->
 			        </div>
 				</div>
 			</div>
