@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&subset=latin,cyrillic-ext,cyrillic);
 @font-face {
   font-family: 'MuseoCyrl900';
   src: url("../fonts/MuseoCyrl/MuseoCyrl900.eot");
@@ -345,6 +346,29 @@ ul {
   right: -23px; }
   .team-carousel .slick-next:before {
     background-image: url("../img/Rectangle2.png"); }
+
+.news-page .pagination > li > a, .news-page .pagination > li > span {
+  padding: 10px 16px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin-left: -1px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #333538;
+  border: none;
+  margin-right: 5px; }
+.news-page .pagination > li > a:focus, .news-page .pagination > li > a:hover, .news-page .pagination > li > span:focus, .news-page .pagination > li > span:hover {
+  color: #FFF;
+  background-color: #EF233C; }
+.news-page .pagination > li:last-child > a, .news-page .pagination > li:last-child > span, .news-page .pagination > li:first-child > a, .news-page .pagination > li:first-child > span {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 10px 12px; }
+.news-page .pagination > .active > a, .news-page .pagination > .active > a:focus, .news-page .pagination > .active > a:hover, .news-page .pagination > .active > span, .news-page .pagination > .active > span:focus, .news-page .pagination > .active > span:hover {
+  color: #FFF;
+  background-color: #EF233C;
+  border: none; }
 
 .header__navigation--menu .navbar-nav > li > a {
   color: #fff;
@@ -1189,14 +1213,14 @@ ul {
     font-size: 18px;
     padding-bottom: 15px; }
 
-.team-carousel__item--social {
+.team-carousel__item--social, .news-page--social {
   display: block;
   margin-top: 25px; }
-  .team-carousel__item--social a {
+  .team-carousel__item--social a, .news-page--social a {
     font-size: 22px;
     padding: 0 15px;
     color: #EF233C; }
-    .team-carousel__item--social a:hover {
+    .team-carousel__item--social a:hover, .news-page--social a:hover {
       color: #cb0000; }
 
 .contacts__head {
@@ -1204,31 +1228,31 @@ ul {
   background-image: url("../img/DECORATION-LAYER.png");
   background-position: 50% 150%;
   background-repeat: no-repeat; }
-  .contacts__head--text {
+  .contacts__head--text, .news-page--head {
     position: absolute;
     width: 100%;
     text-align: center;
     bottom: 40px; }
-    .contacts__head--text h3 {
+    .contacts__head--text h3, .news-page--head h3 {
       color: #EDF2F4;
       font-family: "MuseoCyrl900";
       font-size: 53px;
       margin-bottom: 25px; }
-      .contacts__head--text h3 span {
+      .contacts__head--text h3 span, .news-page--head h3 span {
         padding-bottom: 20px;
         background-image: url("../img/SEPARATOR.png");
         background-repeat: no-repeat;
         background-position: 50% 100%;
         padding: 0 50px 20px; }
-    .contacts__head--text p {
+    .contacts__head--text p, .news-page--head p {
       font-size: 23px;
       color: #EDF2F4;
       font-family: "MuseoCyrl700"; }
-    .contacts__head--text h2 {
+    .contacts__head--text h2, .news-page--head h2 {
       font-size: 62px;
       font-family: "MuseoCyrl900";
       color: #EDF2F4; }
-      .contacts__head--text h2 span {
+      .contacts__head--text h2 span, .news-page--head h2 span {
         color: #B66565; }
 
 .contacts-map {
@@ -1310,6 +1334,110 @@ ul {
         font-size: 26px; }
         .contacts-map__forms--contactform .contacts--but:hover {
           background-color: #cb0000; }
+
+.news-page {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  padding: 230px 0 55px;
+  background-color: #232323; }
+  .news-page--head {
+    position: relative;
+    bottom: 0;
+    margin-bottom: 25px; }
+    .news-page--head h3 {
+      margin-bottom: 40px; }
+  .news-page--social {
+    margin: 15px 0; }
+    .news-page--social a {
+      color: #FFF; }
+      .news-page--social a:hover {
+        text-shadow: 0px 0px 10px white;
+        color: #FFF; }
+  .news-page__item {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 15px 0 25px; }
+    .news-page__item--img {
+      width: 100%;
+      display: block;
+      height: 370px;
+      margin: 15px 0;
+      overflow: hidden; }
+      .news-page__item--img img {
+        min-width: 100%;
+        height: auto;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); }
+    .news-page__item--description {
+      border-top: 6px solid #EF233C;
+      color: #EDF2F4;
+      margin: 15px 0;
+      position: relative;
+      height: 370px; }
+      .news-page__item--description h3 {
+        text-transform: uppercase;
+        font-size: 42px;
+        margin-bottom: 25px;
+        font-family: "Montserrat", sans-serif; }
+      .news-page__item--description p {
+        font-size: 18px;
+        font-family: "Open Sans", sans-serif;
+        margin: 20px 0; }
+      .news-page__item--description a.news--read {
+        position: absolute;
+        bottom: 0; }
+    .news-page__item--first {
+      display: block;
+      float: left;
+      width: 100%;
+      color: #EDF2F4; }
+      .news-page__item--first--img {
+        width: 100%;
+        display: block;
+        height: 370px;
+        overflow: hidden;
+        margin-bottom: 25px; }
+        .news-page__item--first--img img {
+          min-width: 100%;
+          height: auto;
+          position: relative;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%); }
+      .news-page__item--first h3 {
+        text-transform: uppercase;
+        font-size: 32px;
+        margin-bottom: 25px;
+        font-family: "Montserrat", sans-serif; }
+      .news-page__item--first p {
+        font-size: 18px;
+        font-family: "Open Sans", sans-serif; }
+
+small.news__author {
+  font-size: 12px;
+  color: #8D99AE; }
+  small.news__author a {
+    color: #fff;
+    text-decoration: underline;
+    padding-bottom: 5px; }
+  small.news__author span {
+    color: #fff; }
+
+a.news--read {
+  color: #FFF;
+  text-decoration: none;
+  display: block;
+  padding: 10px 25px;
+  background-color: #EF233C;
+  font-size: 18px;
+  float: left; }
+  a.news--read:hover {
+    background-color: #cb0000; }
 
 .footer {
   display: block;
@@ -1642,16 +1770,16 @@ ul {
   .team__bio {
     padding: 15px 5px; }
 
-  .team-carousel__item--social a {
+  .team-carousel__item--social a, .news-page--social a {
     padding: 0 10px; }
 
-  .contacts__head--text h3 {
+  .contacts__head--text h3, .news-page--head h3 {
     font-size: 40px; }
-    .contacts__head--text h3 span {
+    .contacts__head--text h3 span, .news-page--head h3 span {
       padding: 0 10px 20px; }
-  .contacts__head--text h2 {
+  .contacts__head--text h2, .news-page--head h2 {
     font-size: 32px; }
-  .contacts__head--text p {
+  .contacts__head--text p, .news-page--head p {
     font-size: 18px; }
 
   .contacts-map__forms--contactform input {

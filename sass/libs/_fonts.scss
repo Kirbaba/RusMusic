@@ -3,6 +3,10 @@ $m500i: 'MuseoCyrl500Italic';
 $m700: 'MuseoCyrl700';
 $cir: 'CirceBold';
 $cirEB: 'CirceExtraBold';
+$mont: 'Montserrat', sans-serif;
+$os: 'Open Sans', sans-serif;
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&subset=latin,cyrillic-ext,cyrillic);
 
 @font-face {
     font-family: 'MuseoCyrl900';
