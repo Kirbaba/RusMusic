@@ -44,8 +44,8 @@
 	<section class="registration-page onlinework--registr">
 		<div class="container">
 			<div class="row">
-				<h3>Регистрация</h3>
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 p0">
+				<h3>Начнем работу</h3>
+				<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
 					<input type="text" name="onlinework-name" class="registration-input--large" placeholder="Ваше имя:">
 				
 					<input type="email" name="onlinework-email" class="registration-input--large" placeholder="Адрес электронной почты:">
