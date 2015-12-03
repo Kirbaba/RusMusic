@@ -48,6 +48,63 @@
 		</div>
 	</section>
 
+	<section class="passed-events">
+		<div class="container">
+			<div class="row">
+				<h2>Пройденные мероприятия</h2>
+				<div class="passed-events--head"></div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 
 	<section class="partners">
