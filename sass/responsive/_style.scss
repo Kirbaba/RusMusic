@@ -187,6 +187,9 @@
     .news-page {
     	padding-top: 50px;
     }
+    .organizing__services__item {
+    	width: 100%;
+	}
 }
 
 @media only screen and (max-width: 770px) {
@@ -380,4 +383,25 @@
 	.registration-input--small {
 		width: 98%;
 	}
+
+	.organizing__head h1 {
+	    font-size: 45px;
+	}
+
+	.organizing__services h2 {
+		font-size: 35px;
+	}
+
+	.passed-events h2 {
+		font-size: 35px;
+	}
+
+	.passed-events--head {
+		width: 260px;
+	}
+
+	.organizing__services__item {
+		width: 92%;
+		margin: 0 4%;
+    }
 }

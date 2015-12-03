@@ -1,0 +1,129 @@
+.company-page {
+	&--head {
+		background-image: url('../img/company.jpg');
+	}
+	&__content {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		background-color: #DBDBDB;
+		padding: 30px 0;
+		&--topline {
+			display: block;
+			float: left;
+			width: 100%;
+			border-bottom: 6px solid #ef233c;
+			padding: 15px 0;
+			a {
+				display: block;
+				float: left;
+				margin-right: 20px;
+				color: $red;
+				font-family: $os;
+				font-size: 12px;
+				text-decoration: none;
+				-webkit-filter: invert(0.4);
+				   -moz-filter: invert(0.4);
+					-ms-filter: invert(0.4);
+					 -o-filter: invert(0.4);
+				        filter: invert(0.4);
+								   filter: gray; /* IE 6-9 */
+				i {
+					margin-right: 10px;
+					font-size: 16px;
+				}
+				&:checked, &:hover, &:active, &:focus {
+					-webkit-filter: invert(0);
+					   -moz-filter: invert(0);
+						-ms-filter: invert(0);
+						 -o-filter: invert(0);
+					        filter: invert(0);
+				}
+			}			
+		}
+		&--text {
+			display: block;
+			float: left;
+			width: 100%;
+			margin: 25px 0;
+			p {
+				color: #1C1C1C;
+				font-size: 18px;
+				padding: 15px 0;
+				font-family: $os;
+				font-weight: 500;
+			}
+		}	
+		&--linksline {
+			width: 100%;
+			margin: 15px 0;    
+			position: relative;
+		    display: block;
+		    float: left;
+		    padding: 0;
+			li {
+				display: block;
+				float: left;
+				margin-right: 70px;
+				&:last-of-type {
+					margin-right: 0;
+				}		  
+			  a {
+			  	font-size: 26px;
+				color: #666666;
+				font-weight: 900;	
+				font-family: $os;
+				text-decoration: none;
+				padding-bottom: 10px;
+				border-bottom: 6px solid transparent;	
+				&:hover {
+					color: #EF233C;
+					border-bottom: 6px solid #EF233C;
+					
+				}
+			  }
+			}
+		}	
+	}
+	&--quote {
+		display: block;
+		float: left;
+		width: 100%;
+		border: 6px solid #ef233c;
+		padding: 50px 0;
+		margin: 25px 0 75px;
+		h2 {
+			font-size: 53px;
+			font-family: $os;
+			font-style: italic;
+			font-weight: 900;
+			color: #ef233c;
+			i.fa.fa-quote-left {
+			    margin-left: -65px;
+			}
+		}
+		p {
+			margin: 25px 0;
+			color: #EF233C;
+			font-style: italic;
+			font-size: 31px;
+			font-family: $os;
+		}
+		
+	}
+
+	&--bottom--text {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		background-color: #6A6A6A;
+		padding: 50px 0;
+		p {
+			color: #EDF2F4;
+			font-family: $os;
+			font-size: 18px;
+		}
+	}
+}
