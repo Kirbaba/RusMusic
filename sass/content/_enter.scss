@@ -4,7 +4,7 @@
 	position: relative;
 	width: 100%;
 	background-color: #212121;
-	padding: 200px 0;
+	padding: 150px 0;
 	h3 {
 		font-family: $m900;
 		color: #ef233c;
@@ -83,6 +83,167 @@
 		margin: 25px 0;
 		&:hover, &:active, &:focus {
 			color: $red;
+		}
+	}
+}
+
+.registration-page {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	background-color: #ef233c;
+	padding: 125px 0;
+	h3 {
+		font-family: $m900;
+		color: #edf2f4;
+		font-size: 31px;
+		text-align: center;
+		margin-bottom: 60px;
+	}
+
+	input[type="radio"] {
+		    display:none;
+		}
+		input[type="radio"] + label {
+	    font-size:16px;
+	    font-family: $os;
+	    color: #edf2f4;
+		display: block;
+		float: left;
+		margin: 0 0 20px 0;
+	    font-weight: 500;
+		}
+		input[type="radio"] + label span {
+		    display: inline-block;
+		    width:26px;
+		    height:26px;
+		    margin:-1px 15px 0;
+		    vertical-align:middle;
+		    cursor:pointer;
+		    border: 3px solid #fff;
+		}
+
+		input[type="radio"] + label span {
+		     background-color: transparent;
+		}
+
+		input[type="radio"]:checked + label span{
+		     background-color: transparent;
+		     background-image: url("../img/Check-Icon.png");
+		     background-position: center;
+		     background-repeat: no-repeat;
+		     color: #fff;
+		}
+
+		input[type="radio"] + label span,
+		input[type="radio"]:checked + label span {
+		  -webkit-transition:background-color 0.4s linear;
+		  -o-transition:background-color 0.4s linear;
+		  -moz-transition:background-color 0.4s linear;
+		  transition:background-color 0.4s linear;
+		}
+
+		/* input[type="radio"]:checked + label {
+			color: #fff;
+		} */
+}
+
+.registration-input {
+	&--small {
+		width: 48%;
+		margin: 15px 1%;
+		display: block;
+		float: left;
+		position: relative;
+		font-size: 18px;
+		font-family: $os;
+		color: #fff;
+		border: 3px solid #fff;
+		outline: none;
+		padding: 20px;
+		background-color: transparent;
+	}
+	&--large {
+		width: 98%;
+		margin: 15px 1%;
+		display: block;
+		float: left;
+		position: relative;
+		font-size: 18px;
+		font-family: $os;
+		color: #fff;
+		border: 3px solid #fff;
+		outline: none;
+		padding: 20px;
+		background-color: transparent;
+	}
+	&--radio {
+		display: block;
+		float: left;
+		width: 98%;
+		margin: 15px 1%;		
+		 -webkit-user-select: none;
+		/* user-select -- это нестандартное свойство */
+		-moz-user-select: none;
+		/* поэтому нужны префиксы */
+		-ms-user-select: none;
+		p {
+			display: block;
+			float: left;
+			margin-right: 35px;
+			font-size:16px;
+			font-family: $os;
+			color: #edf2f4;
+		    font-weight: 500;
+		}
+	}
+	&--button {
+		display: block;
+		margin: 15px auto;
+		background-color: #474747;
+		color: #fff;
+		font-family: $os;
+		font-size: 18px;
+		font-weight: 700;
+		padding: 20px 25px;
+		border: none;
+		outline: none;
+		&:hover, &:active, &:focus {
+			background-color: lighten(#474747, 10%);
+		}
+	}
+}
+
+.registratin--social {
+	display: block;
+	float: left;
+	width: 100%;
+	position: relative;
+	padding: 30px 0;
+	background-color: #DBDBDB;
+	.enter-social {
+		display: block;
+		position: relative;
+		width: 100%;
+		text-align: center;
+		h4 {
+			font-size: 18px;
+			font-family: $os;
+			color: #ef233c;
+			margin: 0 0 25px 0;
+			display: block;
+		}
+		a {
+			display: inline-block;
+			margin: 0 5px;
+			i {
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				display: block;
+				width: 43px;
+				height: 43px;
+			}
 		}
 	}
 }

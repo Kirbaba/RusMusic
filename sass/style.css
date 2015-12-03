@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&subset=latin,cyrillic-ext,cyrillic);
 @font-face {
   font-family: 'MuseoCyrl900';
@@ -1528,7 +1529,7 @@ a.news--read {
   position: relative;
   width: 100%;
   background-color: #212121;
-  padding: 200px 0; }
+  padding: 150px 0; }
   .enter-page h3 {
     font-family: "MuseoCyrl900";
     color: #ef233c;
@@ -1598,6 +1599,141 @@ a.news--read {
     margin: 25px 0; }
     .enter-page .enter-newuser:hover, .enter-page .enter-newuser:active, .enter-page .enter-newuser:focus {
       color: #cb0000; }
+
+.registration-page {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  background-color: #ef233c;
+  padding: 125px 0;
+  /* input[type="radio"]:checked + label {
+  	color: #fff;
+  } */ }
+  .registration-page h3 {
+    font-family: "MuseoCyrl900";
+    color: #edf2f4;
+    font-size: 31px;
+    text-align: center;
+    margin-bottom: 60px; }
+  .registration-page input[type="radio"] {
+    display: none; }
+  .registration-page input[type="radio"] + label {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #edf2f4;
+    display: block;
+    float: left;
+    margin: 0 0 20px 0;
+    font-weight: 500; }
+  .registration-page input[type="radio"] + label span {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin: -1px 15px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 3px solid #fff; }
+  .registration-page input[type="radio"] + label span {
+    background-color: transparent; }
+  .registration-page input[type="radio"]:checked + label span {
+    background-color: transparent;
+    background-image: url("../img/Check-Icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; }
+  .registration-page input[type="radio"] + label span,
+  .registration-page input[type="radio"]:checked + label span {
+    -webkit-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
+    -moz-transition: background-color 0.4s linear;
+    transition: background-color 0.4s linear; }
+
+.registration-input--small {
+  width: 48%;
+  margin: 15px 1%;
+  display: block;
+  float: left;
+  position: relative;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  border: 3px solid #fff;
+  outline: none;
+  padding: 20px;
+  background-color: transparent; }
+.registration-input--large {
+  width: 98%;
+  margin: 15px 1%;
+  display: block;
+  float: left;
+  position: relative;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  border: 3px solid #fff;
+  outline: none;
+  padding: 20px;
+  background-color: transparent; }
+.registration-input--radio {
+  display: block;
+  float: left;
+  width: 98%;
+  margin: 15px 1%;
+  -webkit-user-select: none;
+  /* user-select -- ╤Н╤В╨╛ ╨╜╨╡╤Б╤В╨░╨╜╨┤╨░╤А╤В╨╜╨╛╨╡ ╤Б╨▓╨╛╨╣╤Б╤В╨▓╨╛ */
+  -moz-user-select: none;
+  /* ╨┐╨╛╤Н╤В╨╛╨╝╤Г ╨╜╤Г╨╢╨╜╤Л ╨┐╤А╨╡╤Д╨╕╨║╤Б╤Л */
+  -ms-user-select: none; }
+  .registration-input--radio p {
+    display: block;
+    float: left;
+    margin-right: 35px;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: #edf2f4;
+    font-weight: 500; }
+.registration-input--button {
+  display: block;
+  margin: 15px auto;
+  background-color: #474747;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px 25px;
+  border: none;
+  outline: none; }
+  .registration-input--button:hover, .registration-input--button:active, .registration-input--button:focus {
+    background-color: #616161; }
+
+.registratin--social {
+  display: block;
+  float: left;
+  width: 100%;
+  position: relative;
+  padding: 30px 0;
+  background-color: #DBDBDB; }
+  .registratin--social .enter-social {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center; }
+    .registratin--social .enter-social h4 {
+      font-size: 18px;
+      font-family: "Open Sans", sans-serif;
+      color: #ef233c;
+      margin: 0 0 25px 0;
+      display: block; }
+    .registratin--social .enter-social a {
+      display: inline-block;
+      margin: 0 5px; }
+      .registratin--social .enter-social a i {
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        display: block;
+        width: 43px;
+        height: 43px; }
 
 .footer {
   display: block;
@@ -1985,6 +2121,9 @@ a.news--read {
     margin: 0 3px; }
 
   .enter-page .enter-social h4 {
-    font-size: 16px; } }
+    font-size: 16px; }
+
+  .registration-input--small {
+    width: 98%; } }
 
 /*# sourceMappingURL=style.css.map */
