@@ -16,7 +16,8 @@
 			</div>
 			<div class="row">
 				<div class="team-carousel">
-					<div class="team-carousel__item">
+					<?= do_shortcode('[team]'); ?>
+					<!--<div class="team-carousel__item">
 						<div class="team-carousel__item--img">
 							<img src="<?php bloginfo('template_directory'); ?>/img/card1.jpg" alt="">							
 						</div>
@@ -63,7 +64,7 @@
 								<p>По связям с общественностью</p>
 							</div>
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>

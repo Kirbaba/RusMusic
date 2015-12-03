@@ -23,13 +23,13 @@
 					<div class="team-carousel__item--name">											
 						<div class="team-carousel__item--name--text">
 							<h3><?php the_title(); ?></h3>
-							<p>Prime Minister</p>
+							<p><?= get_post_meta(get_the_ID(), 'position', 1) ?></p>
 							<div class="team-carousel__item--social">
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
-								<a href="#"><i class="fa fa-pinterest"></i></a>
+								<a href="<?= get_post_meta(get_the_ID(), 'tw', 1) ?>"><i class="fa fa-twitter"></i></a>
+								<a href="<?= get_post_meta(get_the_ID(), 'fb', 1) ?>"><i class="fa fa-facebook"></i></a>
+								<a href="<?= get_post_meta(get_the_ID(), 'gp', 1) ?>"><i class="fa fa-google-plus"></i></a>
+								<a href="<?= get_post_meta(get_the_ID(), 'in', 1) ?>"><i class="fa fa-linkedin"></i></a>
+								<a href="<?= get_post_meta(get_the_ID(), 'pi', 1) ?>"><i class="fa fa-pinterest"></i></a>
 							</div>
 						</div>
 					</div>

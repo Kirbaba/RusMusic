@@ -441,6 +441,9 @@ function get_custom_single_template($single_template) {
             $single_template = TM_DIR . '/single-'.$term->slug.'.php';
         }
     }
+
+    
+
     return $single_template;
 }
 add_filter( "single_template", "get_custom_single_template" ) ;
@@ -456,3 +459,132 @@ function content($num) {
     $content = implode(" ",$content)."...";
     echo $content;
 }
+
+/*---------------------------------- OUR TEAM -------------------------------------*/
+
+add_action('init', 'myCustomInitTeam');
+function myCustomInitTeam()
+{
+    $labels = array(
+        'name' => 'Наша команда', // Основное название типа записи
+        'singular_name' => 'Команда', // отдельное название записи типа Book
+        'add_new' => 'Добавить участника',
+        'add_new_item' => 'Добавить нового участника',
+        'edit_item' => 'Редактировать участника',
+        'new_item' => 'Новый участник',
+        'view_item' => 'Посмотреть участника',
+        'search_items' => 'Найти участника',
+        'not_found' => 'Участников не найдено',
+        'not_found_in_trash' => 'В корзине участников не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Команда'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail','editor')
+    );
+    register_post_type('team', $args);
+}
+
+function extraFieldsSocialTwitter($post)
+{
+    ?>
+    <p>
+        <span>Twitter: </span>
+        <input type="text" name='extra[tw]' value="<?php echo get_post_meta($post->ID, "tw", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsSocialFacebook($post)
+{
+    ?>
+    <p>
+        <span>Facebook: </span>
+        <input type="text" name='extra[fb]' value="<?php echo get_post_meta($post->ID, "fb", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsSocialGplus($post)
+{
+    ?>
+    <p>
+        <span>Google+ : </span>
+        <input type="text" name='extra[gp]' value="<?php echo get_post_meta($post->ID, "gp", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsSocialLinkedin($post)
+{
+    ?>
+    <p>
+        <span>LinkedIn: </span>
+        <input type="text" name='extra[in]' value="<?php echo get_post_meta($post->ID, "in", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsSocialPinterest($post)
+{
+    ?>
+    <p>
+        <span>Pinterest: </span>
+        <input type="text" name='extra[pi]' value="<?php echo get_post_meta($post->ID, "pi", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsPosition($post)
+{
+    ?>
+    <p>
+        <span>Укажите должность участника: </span>
+        <input type="text" name='extra[position]' value="<?php echo get_post_meta($post->ID, "position", 1); ?>">
+    </p>
+    <?php
+}
+
+function myExtraFieldsTeam()
+{
+    add_meta_box('extra_position', 'Должность', 'extraFieldsPosition', 'team', 'normal', 'high');
+    add_meta_box('extra_tw', 'Twitter', 'extraFieldsSocialTwitter', 'team', 'normal', 'high');
+    add_meta_box('extra_fb', 'Facebook', 'extraFieldsSocialFacebook', 'team', 'normal', 'high');
+    add_meta_box('extra_gp', 'Google+', 'extraFieldsSocialGplus', 'team', 'normal', 'high');
+    add_meta_box('extra_in', 'LinkedIn', 'extraFieldsSocialLinkedin', 'team', 'normal', 'high');
+    add_meta_box('extra_pi', 'Pinterest', 'extraFieldsSocialPinterest', 'team', 'normal', 'high');
+
+}
+
+add_action('add_meta_boxes', 'myExtraFieldsTeam', 1);
+
+//вывод
+function getTeamShortcode(){
+    $args = array(
+        'post_type' => 'team',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/team.php', ['my_query' => $my_query]);
+
+}
+
+add_shortcode('team', 'getTeamShortcode');
+
+/*-------------------------------- END OUR TEAM ----------------------------------*/
