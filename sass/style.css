@@ -2268,7 +2268,12 @@ a.news--read {
     height: auto; }
 
   .news-page__item--description a.news--read {
-    position: relative; } }
+    position: relative; }
+
+  .company-page__content--linksline li {
+    margin-right: 38px; }
+    .company-page__content--linksline li a {
+      font-size: 21px; } }
 @media only screen and (max-width: 980px) {
   .hamburger-slim {
     display: block; }
@@ -2371,7 +2376,13 @@ a.news--read {
     padding-top: 50px; }
 
   .organizing__services__item {
-    width: 100%; } }
+    width: 100%; }
+
+  .company-page--quote h2 {
+    padding-left: 70px; }
+
+  .company-page__content--linksline li {
+    margin-right: 30px; } }
 @media only screen and (max-width: 770px) {
   .align-left {
     text-align: center; }
@@ -2549,6 +2560,22 @@ a.news--read {
 
   .organizing__services__item {
     width: 92%;
-    margin: 0 4%; } }
+    margin: 0 4%; }
+
+  .company-page__content--linksline li {
+    display: block;
+    width: 100%;
+    margin-right: 0; }
+
+  .company-page--quote {
+    padding: 35px 15px; }
+    .company-page--quote h2 {
+      padding-left: 0;
+      font-size: 32px; }
+    .company-page--quote p {
+      font-size: 18px; }
+
+  .company-page--quote h2 i.fa.fa-quote-left {
+    margin-left: 0; } }
 
 /*# sourceMappingURL=style.css.map */

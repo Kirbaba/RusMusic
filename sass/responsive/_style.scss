@@ -60,6 +60,12 @@
 	.news-page__item--description a.news--read {
 		position: relative;
 	}
+	.company-page__content--linksline li {
+		margin-right: 38px;
+		a {
+			font-size: 21px;
+		}
+	}
 }
 
 @media only screen and (max-width: 980px) {
@@ -189,6 +195,12 @@
     }
     .organizing__services__item {
     	width: 100%;
+	}
+	.company-page--quote h2 {
+		padding-left: 70px;
+	}
+	.company-page__content--linksline li {
+	    margin-right: 30px;
 	}
 }
 
@@ -404,4 +416,25 @@
 		width: 92%;
 		margin: 0 4%;
     }
+
+    .company-page__content--linksline li {
+	   display: block;
+	   width: 100%;
+	   margin-right: 0;
+	}
+
+	.company-page--quote {
+		padding: 35px 15px;
+		h2 {
+			padding-left: 0;
+			font-size: 32px;
+
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+	.company-page--quote h2 i.fa.fa-quote-left {
+	    margin-left: 0;
+	}
 }
