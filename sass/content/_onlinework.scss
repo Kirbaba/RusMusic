@@ -1,0 +1,20 @@
+.onlinework--registr {
+	padding: 50px 0;
+}
+
+.onlinework--head {
+	background-image: url('../img/online-work.jpg');
+}
+
+.onlinework--already-regist {
+	font-size: 13px;
+	display: block;
+	float: left;
+	width: 100%;
+	margin: 15px 1%;
+	color: #EDF2F4;
+	font-family: $os;
+	&:hover, &:active, &:focus {
+		color: #EDF2F4;
+	}
+}

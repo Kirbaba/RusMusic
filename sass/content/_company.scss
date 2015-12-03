@@ -8,13 +8,12 @@
 		position: relative;
 		width: 100%;
 		background-color: #DBDBDB;
-		padding: 30px 0;
+		padding: 30px 0 0;
 		&--topline {
 			display: block;
 			float: left;
-			width: 100%;
-			border-bottom: 6px solid #ef233c;
-			padding: 15px 0;
+			width: 100%;			
+			padding-bottom: 5px;
 			a {
 				display: block;
 				float: left;
@@ -46,7 +45,9 @@
 			display: block;
 			float: left;
 			width: 100%;
-			margin: 25px 0;
+		    margin: 10px 0 25px 0;
+			border-top: 6px solid #ef233c;
+			padding-top: 25px;
 			p {
 				color: #1C1C1C;
 				font-size: 18px;
@@ -124,6 +125,37 @@
 			color: #EDF2F4;
 			font-family: $os;
 			font-size: 18px;
+		}
+		h3 {
+			font-family: $m900;
+			font-size: 30px;
+			text-align: center;
+			padding-bottom: 10px;
+			border-bottom: 6px solid #ef233c;
+			margin-bottom: 15px;
+			color: #EDF2F4;
+		}
+		small {
+			display: block;
+			width: 100%;
+			margin: 25px 0 5px;
+			font-size: 18px;
+			font-family: $os;
+			color: #DBDBDB;
+		}
+		ol {
+			padding: 0;
+			margin: 15px 0;
+			display: block;
+			float: left;
+			position: relative;
+			list-style-type: none;
+			li {
+				font-family: $m900;
+				font-size: 19px;
+				margin: 15px 0;
+				color: #EDF2F4;
+			}
 		}
 	}
 }

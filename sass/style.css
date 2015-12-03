@@ -2042,13 +2042,12 @@ a.news--read {
   position: relative;
   width: 100%;
   background-color: #DBDBDB;
-  padding: 30px 0; }
+  padding: 30px 0 0; }
   .company-page__content--topline {
     display: block;
     float: left;
     width: 100%;
-    border-bottom: 6px solid #ef233c;
-    padding: 15px 0; }
+    padding-bottom: 5px; }
     .company-page__content--topline a {
       display: block;
       float: left;
@@ -2077,7 +2076,9 @@ a.news--read {
     display: block;
     float: left;
     width: 100%;
-    margin: 25px 0; }
+    margin: 10px 0 25px 0;
+    border-top: 6px solid #ef233c;
+    padding-top: 25px; }
     .company-page__content--text p {
       color: #1C1C1C;
       font-size: 18px;
@@ -2140,6 +2141,50 @@ a.news--read {
     color: #EDF2F4;
     font-family: "Open Sans", sans-serif;
     font-size: 18px; }
+  .company-page--bottom--text h3 {
+    font-family: "MuseoCyrl900";
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 6px solid #ef233c;
+    margin-bottom: 15px;
+    color: #EDF2F4; }
+  .company-page--bottom--text small {
+    display: block;
+    width: 100%;
+    margin: 25px 0 5px;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    color: #DBDBDB; }
+  .company-page--bottom--text ol {
+    padding: 0;
+    margin: 15px 0;
+    display: block;
+    float: left;
+    position: relative;
+    list-style-type: none; }
+    .company-page--bottom--text ol li {
+      font-family: "MuseoCyrl900";
+      font-size: 19px;
+      margin: 15px 0;
+      color: #EDF2F4; }
+
+.onlinework--registr {
+  padding: 50px 0; }
+
+.onlinework--head {
+  background-image: url("../img/online-work.jpg"); }
+
+.onlinework--already-regist {
+  font-size: 13px;
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 15px 1%;
+  color: #EDF2F4;
+  font-family: "Open Sans", sans-serif; }
+  .onlinework--already-regist:hover, .onlinework--already-regist:active, .onlinework--already-regist:focus {
+    color: #EDF2F4; }
 
 .footer {
   display: block;
