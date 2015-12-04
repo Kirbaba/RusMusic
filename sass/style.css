@@ -2186,6 +2186,72 @@ a.news--read {
   .onlinework--already-regist:hover, .onlinework--already-regist:active, .onlinework--already-regist:focus {
     color: #EDF2F4; }
 
+.producing--head {
+  background-image: url("../img/producing-bg.jpg"); }
+.producing__artists {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  background-image: url("../img/COLOR-EFFECT.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 85px 0; }
+  .producing__artists h2 {
+    font-family: "MuseoCyrl900";
+    font-size: 50px;
+    color: #EDF2F4;
+    text-align: center;
+    margin: 0; }
+  .producing__artists .slick-slide {
+    opacity: 0; }
+  .producing__artists .slick-active {
+    opacity: 1 !important; }
+.producing-carousel {
+  display: block;
+  width: 85%;
+  position: relative;
+  margin: 0 auto; }
+  .producing-carousel__item {
+    display: block;
+    margin: 0 auto;
+    max-width: 255px; }
+    .producing-carousel__item--wrap {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      margin-top: 70px; }
+    .producing-carousel__item .artist--link {
+      display: block;
+      width: 134px;
+      height: 134px;
+      margin: 15px 175px;
+      overflow: hidden; }
+      .producing-carousel__item .artist--link img {
+        min-width: 100%;
+        height: auto;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); }
+      .producing-carousel__item .artist--link img {
+        -webkit-transform: rotate(45deg) translate(50%, 50%);
+        -moz-transform: rotate(45deg) translate(50%, 50%);
+        -ms-transform: rotate(45deg) translate(50%, 50%);
+        -o-transform: rotate(45deg) translate(50%, 50%);
+        transform: rotate(45deg) translate(50%, 50%);
+        left: -80%;
+        top: -212%; }
+    .producing-carousel__item .slick-initialized .slick-slide {
+      display: block;
+      filter: alpha(opacity=40);
+      opacity: 0;
+      transition: all 0.3s ease-out; }
+
 .footer {
   display: block;
   float: left;

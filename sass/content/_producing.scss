@@ -1,0 +1,71 @@
+.producing {
+	&--head {
+		background-image: url('../img/producing-bg.jpg');
+	}	
+	&__artists {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		background-image: url('../img/COLOR-EFFECT.jpg');
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+		padding: 85px 0;
+		h2 {
+			font-family: $m900;
+			font-size: 50px;
+			color: #EDF2F4;
+			text-align: center;
+			margin: 0;
+		}
+		.slick-slide {
+			opacity: 0;			
+		}
+		.slick-active {
+			opacity: 1!important;
+		}
+	}
+	&-carousel {
+		display: block;
+		width: 85%;
+		position: relative;
+		margin: 0 auto;
+		&__item {
+			display: block;			
+			margin: 0 auto;
+			max-width: 255px;
+			&--wrap {
+				-webkit-transform: rotate(-45deg);
+				   -moz-transform: rotate(-45deg);
+				    -ms-transform: rotate(-45deg);
+				     -o-transform: rotate(-45deg);
+				        transform: rotate(-45deg);
+			        margin-top: 70px;
+			}
+			.artist--link {
+				display: block;
+				width: 134px;
+				height: 134px;	
+			    margin: 15px 175px;			
+				@include overflow-img;
+				img {
+					-webkit-transform: rotate(45deg) translate(50%,50%);
+					   -moz-transform: rotate(45deg) translate(50%,50%);
+					    -ms-transform: rotate(45deg) translate(50%,50%);
+					     -o-transform: rotate(45deg) translate(50%,50%);
+					        transform: rotate(45deg) translate(50%,50%);
+					left: -80%;
+					top: -212%;
+				}
+			}
+			.slick-initialized .slick-slide {
+				display: block;
+				filter: alpha(opacity=40);
+				opacity: 0; 
+				transition: all 0.3s ease-out;
+			}
+		}
+	}
+}

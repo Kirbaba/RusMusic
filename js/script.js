@@ -103,6 +103,46 @@ jQuery(function ($) {
         ]
     });
 
+    jQuery('.producing-carousel').slick({
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        speed: 300,
+        arrows: true,        
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        focusOnSelect: false,
+        centerMode: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 770,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
     jQuery('.team-carousel').slick({
         dots: false,
         infinite: true,
