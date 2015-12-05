@@ -86,6 +86,78 @@
 		</div>
 	</section>
 
+	<section class="producing__release">
+		<div class="container">
+			<div class="row">
+				<h2>Релизы</h2>
+				<div class="passed-events--head"></div>
+
+
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<img src="<?php bloginfo('template_directory'); ?>/img/lana_del_rey.jpg" alt="">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<img src="<?php bloginfo('template_directory'); ?>/img/madonna.jpg" alt="">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<img src="<?php bloginfo('template_directory'); ?>/img/rock_legends.jpg" alt="">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<img src="<?php bloginfo('template_directory'); ?>/img/timberlak.jpg" alt="">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<img src="<?php bloginfo('template_directory'); ?>/img/lana_del_rey.jpg" alt="">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<img src="<?php bloginfo('template_directory'); ?>/img/madonna.jpg" alt="">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<img src="<?php bloginfo('template_directory'); ?>/img/rock_legends.jpg" alt="">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<a href="#" class="passed-events__item">
+						<img src="<?php bloginfo('template_directory'); ?>/img/timberlak.jpg" alt="">
+						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
+						<span class="passed-events__item--shadow"></span>
+					</a>
+				</div>
+				<div class="producing__release--more">
+					<a href="#" class="producing__release--more--but">Еще релизы</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 	
 
 	<section class="partners">

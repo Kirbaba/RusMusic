@@ -68,4 +68,42 @@
 			}
 		}
 	}
+	&__release {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		padding: 50px 0;
+		background-color: #201D1D;
+		h2 {
+			font-family: $m900;
+			font-size: 50px;
+			color: #EDF2F4;
+			text-align: center;
+			margin: 0;
+		}
+		&--more {
+			display: block;
+			float: left;
+			width: 100%;
+			&--but {
+				display: block;
+				position: relative;
+				color: #EDF2F4;
+				margin: 25px auto; 
+				font-size: 21px;
+				width: 150px;
+				text-align: center;
+				text-decoration: none;
+				padding: 10px 15px;
+				background-color: #EF233C;
+				&:hover, &:active, &:focus {
+					background-color: $red;
+					text-decoration: none;
+					color: #EDF2F4;
+				}
+			}
+		}
+	}
+
 }
