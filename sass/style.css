@@ -2211,13 +2211,17 @@ a.news--read {
     opacity: 1 !important; }
 .producing-carousel {
   display: block;
-  width: 85%;
+  width: 90%;
+  height: 520px;
+  padding: 0 20%;
   position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+  overflow: hidden; }
   .producing-carousel__item {
     display: block;
-    margin: 0 auto;
-    max-width: 255px; }
+    margin: 0 40px;
+    width: 134px;
+    float: left; }
     .producing-carousel__item--wrap {
       -webkit-transform: rotate(-45deg);
       -moz-transform: rotate(-45deg);
@@ -2229,7 +2233,7 @@ a.news--read {
       display: block;
       width: 134px;
       height: 134px;
-      margin: 15px 175px;
+      margin: 15px auto;
       overflow: hidden; }
       .producing-carousel__item .artist--link img {
         min-width: 100%;
@@ -2328,7 +2332,7 @@ a.news--read {
       color: #FFF; }
       .footer__soc:hover i {
         background-color: #305891; }
-  .footer__tags {
+  .footer__tags a {
     display: block;
     float: left;
     padding: 10px 5px;
@@ -2338,7 +2342,7 @@ a.news--read {
     background-color: #656565;
     margin: 0 5px 5px 0;
     font-size: 10px; }
-    .footer__tags:hover {
+    .footer__tags a:hover {
       background-color: #4c4c4c;
       color: #FFF;
       text-decoration: none; }

@@ -29,13 +29,17 @@
 	}
 	&-carousel {
 		display: block;
-		width: 85%;
+		width: 90%;
+		height: 520px;
+		padding: 0 20%;
 		position: relative;
 		margin: 0 auto;
+		overflow: hidden;
 		&__item {
 			display: block;			
-			margin: 0 auto;
-			max-width: 255px;
+			margin: 0 40px;
+			width: 134px;
+			float: left;
 			&--wrap {
 				-webkit-transform: rotate(-45deg);
 				   -moz-transform: rotate(-45deg);
@@ -48,7 +52,7 @@
 				display: block;
 				width: 134px;
 				height: 134px;	
-			    margin: 15px 175px;			
+			    margin: 15px auto;			
 				@include overflow-img;
 				img {
 					-webkit-transform: rotate(45deg) translate(50%,50%);

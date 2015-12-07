@@ -45,11 +45,13 @@
 					<a href="#" class="footer__soc"><i class="fa fa-youtube"></i>youtube</a>
 					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
 						<div class="row">
-							<a href="#" class="footer__tags">Демо записи</a>
-							<a href="#" class="footer__tags">СТУДИЯ</a>
-							<a href="#" class="footer__tags">ХИТ</a>
-							<a href="#" class="footer__tags">ОБУЧЕНИЕ</a>
-							<a href="#" class="footer__tags">ПОРТФОЛИО</a>
+							<div class="footer__tags">
+								<a href="#">Демо записи</a>
+								<a href="#">СТУДИЯ</a>
+								<a href="#">ХИТ</a>
+								<a href="#">ОБУЧЕНИЕ</a>
+								<a href="#">ПОРТФОЛИО</a>
+							</div>
 						</div>
 					</div>
 				</div>
