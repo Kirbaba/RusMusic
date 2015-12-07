@@ -26,9 +26,9 @@
 				<div class="skew-wrap">
 					<div class="topline-soc--logobord"></div>
 					<div class="topline-soc--but">
-						<a href="#"><i class="fa fa-vk"></i></a>
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-odnoklassniki"></i></a>
+						<a href="<?php echo get_theme_mod('vk_textbox'); ?>"><i class="fa fa-vk"></i></a>
+						<a href="<?php echo get_theme_mod('fb_textbox'); ?>"><i class="fa fa-facebook"></i></a>
+						<a href="<?php echo get_theme_mod('ok_textbox'); ?>"><i class="fa fa-odnoklassniki"></i></a>
 					</div>
 				</div>
 			</div>
