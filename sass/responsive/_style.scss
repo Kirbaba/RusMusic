@@ -202,6 +202,10 @@
 	.company-page__content--linksline li {
 	    margin-right: 30px;
 	}
+
+	.producing--head h1 {
+		font-size: 65px;
+	}
 }
 
 @media only screen and (max-width: 770px) {
@@ -436,5 +440,8 @@
 	}
 	.company-page--quote h2 i.fa.fa-quote-left {
 	    margin-left: 0;
+	}
+	.producing--head h1 {
+		font-size: 32px;
 	}
 }

@@ -62,8 +62,9 @@
 					<a href="<?php echo get_theme_mod('vk_textbox'); ?>" class="footer__soc"><i class="fa fa-vk"></i>вконтакте</a>
 					<a href="<?php echo get_theme_mod('yt_textbox'); ?>" class="footer__soc"><i class="fa fa-youtube"></i>youtube</a>
 					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-						<div class="row">
-							<?php/*
+						<div class="footer__tags">
+
+							<?php
 							$menuParameters = array(
 								'theme_location'  => 'footer_menu_4',
 								'menu_class'      => 'menu',
@@ -78,15 +79,8 @@
 							);
 
 							echo strip_tags(wp_nav_menu( $menuParameters ), '<a>');
-							*/?>
+							?>
 						</div>
-
-						<div class="row">
-							<a href="#" class="footer__tags">Демо записи</a>
-							<a href="#" class="footer__tags">СТУДИЯ</a>
-							<a href="#" class="footer__tags">ХИТ</a>
-							<a href="#" class="footer__tags">ОБУЧЕНИЕ</a>
-							<a href="#" class="footer__tags">ПОРТФОЛИО</a>
 						</div>
 					</div>
 				</div>

@@ -52,19 +52,21 @@
 		}
 	}
 	&__tags {
-		display: block;
-		float: left;
-		padding: 10px 5px;
-		text-transform: uppercase;
-		text-decoration: none;
-		color: #FFF;
-		background-color: #656565;
-		margin: 0 5px 5px 0;
-		font-size: 10px;
-		&:hover {
-			background-color: darken(#656565, 10%);
-			color: #FFF;
+		a {			
+			display: block;
+			float: left;
+			padding: 10px 5px;
+			text-transform: uppercase;
 			text-decoration: none;
+			color: #FFF;
+			background-color: #656565;
+			margin: 0 5px 5px 0;
+			font-size: 10px;
+			&:hover {
+				background-color: darken(#656565, 10%);
+				color: #FFF;
+				text-decoration: none;
+			}
 		}
 	}
 }
