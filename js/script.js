@@ -294,6 +294,7 @@ jQuery(window).scroll(function() {
     });
 })(jQuery);
 
+
 jQuery(document).ready(function($){
     $('.producing-carousel').rhombus({
         nextText: '',
@@ -301,4 +302,58 @@ jQuery(document).ready(function($){
         duration: 500,
         loop: true
     });
+});
+
+jQuery(function($) {
+
+    $(document).on('click','.contacts--but', function(){
+        var mail = $('input[name="contact-email"]').val();
+        var name = $('input[name="contact-name"]').val();
+        var site = $('input[name="contact-site"]').val();
+        var message = $('textarea[name="contact-message"]').val();
+
+        jQuery.ajax({
+            url: ajaxurl, //url, к которому обращаемся
+            type: "POST",
+            data: "action=sendFeedback&name=" + name + "&mail=" + mail + "&message=" + message, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+                //модалка если понадобится
+                if(data == "1"){
+                    //$('#thankModal').modal('show');
+                }else{
+                    //$('#thankModal').modal('show');
+                }
+
+                $('input[name="contact-name"]').val("");
+                $('input[name="contact-email"]').val("");
+                $('input[name="contact-site"]').val("");
+                $('input[name="contact-message"]').text("");
+            }
+        });
+        return false;
+    });
+
+});
+
+//переключение между услугами
+jQuery(function($) {
+
+    $(document).on('click','.organizing__services__item', function(){
+        var id = $(this).attr('data-id');
+
+        jQuery.ajax({
+            url: ajaxurl, //url, к которому обращаемся
+            type: "POST",
+            data: "action=currentService&id=" + id, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+                var post = JSON.parse(data);
+               //console.log(post);
+                $('.current__services--title').text(post.post_title);
+                $('.current__services--description').text(post.post_content);
+            }
+        });
+        return false;
+    });
+
+
 });

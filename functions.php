@@ -110,7 +110,14 @@ if ( function_exists( 'add_theme_support' ) )
 /*-------------------------- МЕНЮ НАВИГАЦИИ ---------------------------------------*/
 
 function theme_register_nav_menu() {
-    register_nav_menu( 'primary', 'Главное меню' );
+    register_nav_menus( array(
+        'primary' => 'Главное',
+        'footer_menu_1' => 'Меню в подвале 1',
+        'footer_menu_2' => 'Меню в подвале 2',
+        'footer_menu_3' => 'Меню в подвале 3',
+        'footer_menu_4' => 'Меню в подвале 4',
+    ) );
+    //register_nav_menu( 'primary', 'Главное меню' );
 }
 add_action( 'after_setup_theme', 'theme_register_nav_menu' );
 
@@ -167,6 +174,92 @@ add_action('customize_register', function($customizer){
             'type' => 'text',
         )
     );
+
+
+    /*Меню настройки контактов*/
+    $customizer->add_section(
+        'social_section',
+        array(
+            'title' => 'Социальные сети',
+            'description' => 'Соц. сети',
+            'priority' => 35,
+        )
+    );
+
+    $customizer->add_setting(
+        'fb_textbox',
+        array('default' => 'fb.com')
+    );
+    $customizer->add_setting(
+        'tw_textbox',
+        array('default' => 'twitter.com')
+    );
+    $customizer->add_setting(
+        'inst_textbox',
+        array('default' => 'instagram.com')
+    );
+    $customizer->add_setting(
+        'vk_textbox',
+        array('default' => 'vk.com')
+    );
+    $customizer->add_setting(
+        'ok_textbox',
+        array('default' => 'ok.ru')
+    );
+    $customizer->add_setting(
+        'yt_textbox',
+        array('default' => 'youtube.com')
+    );
+
+    $customizer->add_control(
+        'fb_textbox',
+        array(
+            'label' => 'Facebook',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'tw_textbox',
+        array(
+            'label' => 'Twitter',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'inst_textbox',
+        array(
+            'label' => 'Instagram',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'vk_textbox',
+        array(
+            'label' => 'VK',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'yt_textbox',
+        array(
+            'label' => 'Youtube',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'ok_textbox',
+        array(
+            'label' => 'Odnoklassniki',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+
 });
 
 /*------------------------- КОНЕЦ НАСТРОЕК ТЕМЫ ------------------------------------*/
@@ -443,8 +536,6 @@ function get_custom_single_template($single_template) {
         }
     }
 
-    
-
     return $single_template;
 }
 add_filter( "single_template", "get_custom_single_template" ) ;
@@ -589,3 +680,301 @@ function getTeamShortcode(){
 add_shortcode('team', 'getTeamShortcode');
 
 /*-------------------------------- END OUR TEAM ----------------------------------*/
+
+/*---------------------------------- PARTNERS ------------------------------------*/
+
+add_action('init', 'myCustomInitPartners');
+function myCustomInitPartners()
+{
+    $labels = array(
+        'name' => 'Партнеры', // Основное название типа записи
+        'singular_name' => 'Партнеры', // отдельное название записи типа Book
+        'add_new' => 'Добавить партнера',
+        'add_new_item' => 'Добавить нового партнера',
+        'edit_item' => 'Редактировать партнера',
+        'new_item' => 'Новый партнер',
+        'view_item' => 'Посмотреть партнера',
+        'search_items' => 'Найти партнера',
+        'not_found' => 'Партнеров не найдено',
+        'not_found_in_trash' => 'В корзине партнеров не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Партнеры'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail')
+    );
+    register_post_type('partners', $args);
+}
+
+//вывод
+function getPartnersShortcode(){
+    $args = array(
+        'post_type' => 'partners',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/partners.php', ['my_query' => $my_query]);
+
+}
+
+add_shortcode('partners', 'getPartnersShortcode');
+
+/*-------------------------------- END PARTNERS ----------------------------------*/
+
+
+/*---------------------------------- OUR TEAM -------------------------------------*/
+
+add_action('init', 'myCustomInitArtists');
+function myCustomInitArtists()
+{
+    $labels = array(
+        'name' => 'Наши артисты', // Основное название типа записи
+        'singular_name' => 'Артисты', // отдельное название записи типа Book
+        'add_new' => 'Добавить артиста',
+        'add_new_item' => 'Добавить нового артиста',
+        'edit_item' => 'Редактировать артиста',
+        'new_item' => 'Новый артист',
+        'view_item' => 'Посмотреть артиста',
+        'search_items' => 'Найти артиста',
+        'not_found' => 'Артистов не найдено',
+        'not_found_in_trash' => 'В корзине артистов не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Артисты'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail','editor')
+    );
+    register_post_type('artists', $args);
+}
+
+function extraFieldsArtistsSocialTwitter($post)
+{
+    ?>
+    <p>
+        <span>Twitter: </span>
+        <input type="text" name='extra[tw]' value="<?php echo get_post_meta($post->ID, "tw", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsArtistsSocialFacebook($post)
+{
+    ?>
+    <p>
+        <span>Facebook: </span>
+        <input type="text" name='extra[fb]' value="<?php echo get_post_meta($post->ID, "fb", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsArtistsSocialGplus($post)
+{
+    ?>
+    <p>
+        <span>Google+ : </span>
+        <input type="text" name='extra[gp]' value="<?php echo get_post_meta($post->ID, "gp", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsArtistsSocialLinkedin($post)
+{
+    ?>
+    <p>
+        <span>LinkedIn: </span>
+        <input type="text" name='extra[in]' value="<?php echo get_post_meta($post->ID, "in", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsArtistsSocialPinterest($post)
+{
+    ?>
+    <p>
+        <span>Pinterest: </span>
+        <input type="text" name='extra[pi]' value="<?php echo get_post_meta($post->ID, "pi", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsArtistsPosition($post)
+{
+    ?>
+    <p>
+        <span>Укажите должность участника: </span>
+        <input type="text" name='extra[position]' value="<?php echo get_post_meta($post->ID, "position", 1); ?>">
+    </p>
+    <?php
+}
+
+function myExtraFieldsArtists()
+{
+    add_meta_box('extra_position', 'Должность', 'extraFieldsArtistsPosition', 'artists', 'normal', 'high');
+    add_meta_box('extra_tw', 'Twitter', 'extraFieldsArtistsSocialTwitter', 'artists', 'normal', 'high');
+    add_meta_box('extra_fb', 'Facebook', 'extraFieldsArtistsSocialFacebook', 'artists', 'normal', 'high');
+    add_meta_box('extra_gp', 'Google+', 'extraFieldsArtistsSocialGplus', 'artists', 'normal', 'high');
+    add_meta_box('extra_in', 'LinkedIn', 'extraFieldsArtistsSocialLinkedin', 'artists', 'normal', 'high');
+    add_meta_box('extra_pi', 'Pinterest', 'extraFieldsArtistsSocialPinterest', 'artists', 'normal', 'high');
+
+}
+
+add_action('add_meta_boxes', 'myExtraFieldsArtists', 1);
+
+//вывод на главной
+function getArtistsShortcode(){
+    $args = array(
+        'post_type' => 'artists',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/artists.php', ['my_query' => $my_query]);
+
+}
+
+add_shortcode('artists', 'getArtistsShortcode');
+
+/*-------------------------------- END OUR TEAM ----------------------------------*/
+
+/*------------------------------------ CONTACTS ----------------------------------*/
+
+// AJAX ACTION
+add_action('wp_ajax_sendFeedback', 'sendFeedback');
+add_action('wp_ajax_nopriv_sendFeedback', 'sendFeedback');
+
+
+function sendFeedback(){
+    $adminMail = get_option('admin_email');
+    $mail =  $_POST['mail'];
+    $name = $_POST['name'];
+    $site = $_POST['site'];
+    $message = $_POST['message'];
+
+    if(!empty($mail) && !empty($message)){
+        $str = "С вашего сайта оставили заявку на обратную связь:<br>";
+        $str .= 'Имя: '.$name.' <br>';
+        $str .= 'Email: '.$mail.' <br>';
+        $str .= 'Сайт: '.$site.' <br>';
+        $str .= 'Текст сообщения : '.$message.' <br>';
+
+        mail($adminMail, "Письмо с сайта", $str, "Content-type: text/html; charset=UTF-8\r\n");
+
+        echo 1;
+    }else{
+        echo 0;
+    }
+
+    die();
+}
+
+/*-------------------------------- END CONTACTS ----------------------------------*/
+
+/*----------------------------- CONCERT ORGANIZING -------------------------------*/
+
+
+// AJAX ACTION
+add_action('wp_ajax_currentService', 'getCurrentService');
+add_action('wp_ajax_nopriv_currentService', 'getCurrentService');
+
+add_action('init', 'myCustomInitOrganizing');
+function myCustomInitOrganizing()
+{
+    $labels = array(
+        'name' => 'Организация концертов', // Основное название типа записи
+        'singular_name' => 'Услуги', // отдельное название записи типа Book
+        'add_new' => 'Добавить услугу',
+        'add_new_item' => 'Добавить новую услугу',
+        'edit_item' => 'Редактировать услугу',
+        'new_item' => 'Новая услуга',
+        'view_item' => 'Посмотреть услугу',
+        'search_items' => 'Найти услугу',
+        'not_found' => 'Услуг не найдено',
+        'not_found_in_trash' => 'В корзине услуг не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Услуги'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail','editor')
+    );
+    register_post_type('organizing', $args);
+}
+
+//вывод на главной
+function getOrganizingShortcode(){
+    $firstArgs = array(
+        'post_type' => 'organizing',
+        'post_status' => 'publish',
+        'posts_per_page' => 1);
+
+
+    $args = array(
+        'post_type' => 'organizing',
+        'post_status' => 'publish',
+        'posts_per_page' => 4);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $first_query = null;
+    $first_query = new WP_Query($firstArgs);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/organizing.php', ['my_query' => $my_query, 'first_query' => $first_query]);
+
+}
+
+add_shortcode('organizing', 'getOrganizingShortcode');
+
+function getCurrentService(){
+    $id = $_POST['id'];
+
+    $currentPost = get_post($id);
+
+    echo json_encode($currentPost);
+    die();
+}
+
+/*------------------------- END CONCERT ORGANIZING -------------------------------*/
