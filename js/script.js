@@ -293,3 +293,12 @@ jQuery(window).scroll(function() {
         });
     });
 })(jQuery);
+
+jQuery(document).ready(function($){
+    $('.producing-carousel').rhombus({
+        nextText: '',
+        prevText: '',
+        duration: 500,
+        loop: true
+    });
+});

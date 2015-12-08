@@ -66,6 +66,10 @@
 			font-size: 21px;
 		}
 	}
+
+	.producing-carousel {
+		width: 85%;
+	}
 }
 
 @media only screen and (max-width: 980px) {
@@ -205,6 +209,9 @@
 
 	.producing--head h1 {
 		font-size: 65px;
+	}
+	.producing-carousel {
+		padding: 0 30%;
 	}
 }
 
@@ -443,5 +450,46 @@
 	}
 	.producing--head h1 {
 		font-size: 32px;
+	}
+
+	.producing-carousel {
+    	padding: 0 25%;
+    	width: 90%;
+	    height: 340px;
+	  
+	    .rhombusNext {
+	    	right: 3%; 
+	    	 margin-top: -30px;
+	    }
+	    .rhombusPrev {    
+	    	left: 3%;
+	    	 margin-top: -30px;
+	    }
+	} 
+	.producing__artists {
+		padding: 85px 0 5px;
+	}
+	.producing-carousel__item .artist--link {
+		width: 90px;
+		height: 90px;
+		img {
+		    -webkit-transform: rotate(45deg) translate(50%, 50%);
+		    -moz-transform: rotate(45deg) translate(50%, 50%);
+		    -ms-transform: rotate(45deg) translate(50%, 50%);
+		    -o-transform: rotate(45deg) translate(50%, 50%);
+		    transform: rotate(45deg) translate(0%, 0%);
+		    left: -50%;
+		    max-width: 200%;
+		    min-width: 100%;
+		    top: -35%;
+		    /* height: 100%; */
+		}
+	}
+	
+}
+
+@media only screen and (max-width: 320px) { 
+	.producing-carousel {
+    	padding: 0 13%;
 	}
 }

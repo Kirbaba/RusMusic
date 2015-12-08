@@ -29,59 +29,185 @@
 				<div class="passed-events--head"></div>
 
 				<div class="producing-carousel">
-					<div class="producing-carousel__item">
-						<div class="producing-carousel__item--wrap">
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="producing-carousel__item">
-						<div class="producing-carousel__item--wrap">
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="producing-carousel__item">
-						<div class="producing-carousel__item--wrap">
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="producing-carousel__item">
-						<div class="producing-carousel__item--wrap">
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-							<a href="#" class="artist--link">
-								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
-							</a>
-						</div>
+				<div class="producing-carousel__item">
+					<div class="producing-carousel__item--wrap">
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lana_del_rey.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
 					</div>
 				</div>
+				<div class="producing-carousel__item">
+					<div class="producing-carousel__item--wrap">
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+					</div>
+				</div>
+				<div class="producing-carousel__item">
+					<div class="producing-carousel__item--wrap">
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+					</div>
+				</div>
+				<div class="producing-carousel__item">
+					<div class="producing-carousel__item--wrap">
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+					</div>
+				</div>
+				<div class="producing-carousel__item">
+					<div class="producing-carousel__item--wrap">
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+								<span class="artist--link--open"><i class="fa fa-search"></i></span>
+							<span class="artist--link--shadow"></span>
+							<span class="artist--link--name ">Ани Лорак</span>
+						</a>
+					</div>
+				</div>
+				<div class="producing-carousel__item">
+					<div class="producing-carousel__item--wrap">
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+						</a>
+						<a href="#" class="artist--link">
+							<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+
+	<!-- 			<div class="producing-carousel">
+					<div class="producing-carousel__item">
+						<div class="producing-carousel__item--wrap">
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="producing-carousel__item">
+						<div class="producing-carousel__item--wrap">
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="producing-carousel__item">
+						<div class="producing-carousel__item--wrap">
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="producing-carousel__item">
+						<div class="producing-carousel__item--wrap">
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+							<a href="#" class="artist--link">
+								<img src="<?php bloginfo('template_directory'); ?>/img/lorac.jpg" alt="">
+							</a>
+						</div>
+					</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
