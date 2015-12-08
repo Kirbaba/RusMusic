@@ -7,7 +7,8 @@
 		</div>		
 	</section>
 
-	<section class="organizing__services">
+	<?= do_shortcode('[organizing]'); ?>
+	<!--<section class="organizing__services">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-6 col-xs-12">
@@ -46,7 +47,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>-->
 
 	<section class="passed-events">
 		<div class="container">

@@ -866,3 +866,114 @@ add_shortcode('artists', 'getArtistsShortcode');
 
 /*-------------------------------- END OUR TEAM ----------------------------------*/
 
+/*------------------------------------ CONTACTS ----------------------------------*/
+
+// AJAX ACTION
+add_action('wp_ajax_sendFeedback', 'sendFeedback');
+add_action('wp_ajax_nopriv_sendFeedback', 'sendFeedback');
+
+
+function sendFeedback(){
+    $adminMail = get_option('admin_email');
+    $mail =  $_POST['mail'];
+    $name = $_POST['name'];
+    $site = $_POST['site'];
+    $message = $_POST['message'];
+
+    if(!empty($mail) && !empty($message)){
+        $str = "С вашего сайта оставили заявку на обратную связь:<br>";
+        $str .= 'Имя: '.$name.' <br>';
+        $str .= 'Email: '.$mail.' <br>';
+        $str .= 'Сайт: '.$site.' <br>';
+        $str .= 'Текст сообщения : '.$message.' <br>';
+
+        mail($adminMail, "Письмо с сайта", $str, "Content-type: text/html; charset=UTF-8\r\n");
+
+        echo 1;
+    }else{
+        echo 0;
+    }
+
+    die();
+}
+
+/*-------------------------------- END CONTACTS ----------------------------------*/
+
+/*----------------------------- CONCERT ORGANIZING -------------------------------*/
+
+
+// AJAX ACTION
+add_action('wp_ajax_currentService', 'getCurrentService');
+add_action('wp_ajax_nopriv_currentService', 'getCurrentService');
+
+add_action('init', 'myCustomInitOrganizing');
+function myCustomInitOrganizing()
+{
+    $labels = array(
+        'name' => 'Организация концертов', // Основное название типа записи
+        'singular_name' => 'Услуги', // отдельное название записи типа Book
+        'add_new' => 'Добавить услугу',
+        'add_new_item' => 'Добавить новую услугу',
+        'edit_item' => 'Редактировать услугу',
+        'new_item' => 'Новая услуга',
+        'view_item' => 'Посмотреть услугу',
+        'search_items' => 'Найти услугу',
+        'not_found' => 'Услуг не найдено',
+        'not_found_in_trash' => 'В корзине услуг не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Услуги'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail','editor')
+    );
+    register_post_type('organizing', $args);
+}
+
+//вывод на главной
+function getOrganizingShortcode(){
+    $firstArgs = array(
+        'post_type' => 'organizing',
+        'post_status' => 'publish',
+        'posts_per_page' => 1);
+
+
+    $args = array(
+        'post_type' => 'organizing',
+        'post_status' => 'publish',
+        'posts_per_page' => 4);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $first_query = null;
+    $first_query = new WP_Query($firstArgs);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/organizing.php', ['my_query' => $my_query, 'first_query' => $first_query]);
+
+}
+
+add_shortcode('organizing', 'getOrganizingShortcode');
+
+function getCurrentService(){
+    $id = $_POST['id'];
+
+    $currentPost = get_post($id);
+
+    echo json_encode($currentPost);
+    die();
+}
+
+/*------------------------- END CONCERT ORGANIZING -------------------------------*/
