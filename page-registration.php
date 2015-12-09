@@ -27,12 +27,13 @@
 			<div class="row">
 				<div class="enter-social">
 					<h4>Войти используя социальные сети</h4>
-					<a href="#"><i class="but-gplus"></i></a>
+					<?php echo get_ulogin_panel(); ?>
+					<!--<a href="#"><i class="but-gplus"></i></a>
 					<a href="#"><i class="but-face"></i></a>
 					<a href="#"><i class="but-odnokl"></i></a>
 					<a href="#"><i class="but-vk"></i></a>
 					<a href="#"><i class="but-mailru"></i></a>
-					<a href="#"><i class="but-yandex"></i></a>
+					<a href="#"><i class="but-yandex"></i></a>-->
 				</div>
 			</div>
 		</div>
