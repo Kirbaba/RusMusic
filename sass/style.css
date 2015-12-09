@@ -150,7 +150,7 @@ ul {
   width: 50px;
   display: none;
   float: right;
-  top: 10px;
+  top: 5px;
   right: 15px;
   z-index: 99; }
   .hamburger-slim:before, .hamburger-slim:after {
@@ -483,6 +483,9 @@ ul {
         text-decoration: underline;
         background-color: transparent; }
 
+.navbar-brand > img {
+  display: none; }
+
 .topline-soc {
   display: block;
   float: left;
@@ -643,6 +646,15 @@ ul {
       font-size: 20px;
       color: #FFF;
       margin-left: 50px; }
+  .header--slogan {
+    position: absolute;
+    bottom: -25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: "CirceBold";
+    color: #CDCFB9;
+    margin: 0;
+    left: 10px; }
 
 .header--onScroll {
   top: 0;
@@ -2507,11 +2519,15 @@ a.news--read {
       font-size: 25px; }
 
   .header__navigation--menu {
-    padding: 5px 0; }
+    padding: 7px 0; }
 
   .header__navigation--menu .navbar-nav > li > a {
     font-size: 12px;
     padding: 10px 5px; }
+
+  .header--slogan {
+    top: 70px;
+    font-size: 9px; }
 
   .navbar-nav {
     margin: 7px 0; }
@@ -2567,6 +2583,12 @@ a.news--read {
   .navbar-collapse {
     overflow-x: visible !important; }
 
+  .header__navigation {
+    display: block;
+    float: left;
+    width: 100%;
+    margin-left: 2%; }
+
   .navbar-collapse.in {
     overflow-y: auto !important; }
 
@@ -2574,7 +2596,7 @@ a.news--read {
     display: block !important; }
 
   .header__navigation--menu {
-    padding: 5px 0;
+    padding: 8px 0;
     display: block;
     float: left;
     width: 95%; }
@@ -2685,6 +2707,9 @@ a.news--read {
   .header__navigation--menu {
     margin-left: 17px;
     width: calc(100% - 37px); }
+
+  .header__navigation--menu {
+    padding: 5px 0; }
 
   .col5 {
     width: 50%; }
@@ -2894,9 +2919,33 @@ a.news--read {
       max-width: 200%;
       min-width: 100%;
       top: -35%;
-      /* height: 100%; */ } }
+      /* height: 100%; */ }
+
+  .navbar-brand {
+    float: left;
+    height: auto;
+    padding: 0;
+    font-size: 18px;
+    line-height: 20px;
+    width: 85%;
+    margin: -5px; }
+    .navbar-brand > img {
+      display: block;
+      width: 50%;
+      transform: skewX(15deg); }
+
+  .header--slogan {
+    left: 20px;
+    top: inherit;
+    bottom: -20px; } }
 @media only screen and (max-width: 320px) {
   .producing-carousel {
-    padding: 0 13%; } }
+    padding: 0 13%; }
+
+  .navbar-brand > img {
+    width: 75%; }
+
+  .header--slogan {
+    left: 35px; } }
 
 /*# sourceMappingURL=style.css.map */

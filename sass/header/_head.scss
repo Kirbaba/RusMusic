@@ -143,6 +143,16 @@
 			margin-left: 50px;			
 		}
 	}	
+	&--slogan {
+		position: absolute;
+		bottom: -25px;
+		font-size: 12px;
+		text-transform: uppercase;
+		font-family: $cir;
+		color: #CDCFB9;
+		margin: 0;
+		left: 10px;
+	}
 }
 
 .header--onScroll {	

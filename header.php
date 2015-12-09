@@ -39,18 +39,18 @@
 			<div class="row">
 				<div class="skew-wrap">		
 					<div class="header__navigation">
-						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p0">
+						<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 p0">
 							<a href="/" class="header__navigation--logo">
 								<span><b>R</b></span>
 								<h3>RUSMUSIC</h3>
 							</a>
 						</div>
-						<div class="col-lg-9 col-md-9 col-sm-6 col-xs-12 p0">
+						<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 p0">
 							<div class="header__navigation--menu">								
 								<div class="navbar-header">
 									<a href="#nowhere" class="hamburger-slim" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></a>
 									<div class="navbar-brand">
-										
+										<img src="<?php bloginfo('template_directory'); ?>/img/logo-img.png" alt="">
 									</div>     		      
 								</div>
 								
@@ -77,8 +77,9 @@
 								</div><!-- /.navbar-collapse -->
 							</div>
 						</div>
-					</div>
+					</div>					
 				</div>
+				<h5 class="header--slogan">продюсерский центр и студия звукозаписи</h5>
 			</div>	
 		</div>	
 	</header>
