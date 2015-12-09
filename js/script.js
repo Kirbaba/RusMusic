@@ -358,3 +358,45 @@ jQuery(function($) {
 
 
 });
+
+//регистрация
+jQuery(function($) {
+
+    $(document).on('click','.registration-input--button', function(){
+        var username = $('input[name="registration-username"]').val();
+        var lastname = $('input[name="registration-lastname"]').val();
+        var email = $('input[name="registration-email"]').val();
+        var gender = $('input[name="registration-gender"]').val();
+        var password_first = $('input[name="registration-password"]').val();
+        var password_check = $('input[name="registration-password-check"]').val();
+
+        if(password_first == password_check){
+            var password = password_first;
+        }
+
+        if(username != '' && email != '' && password != ''){
+            jQuery.ajax({
+                url: ajaxurl, //url, к которому обращаемся
+                type: "POST",
+                data: "action=createUser&username=" + username + "&lastname=" + lastname +"&email=" + email + "&gender=" + gender +"&password=" + password, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+                success: function (data) {
+                    alert('Спасибо за регистрацию');
+                   // console.log(data);
+                    //модалка если понадобится
+                    if(data == "1"){
+                        //$('#thankModal').modal('show');
+                    }else{
+                        //$('#thankModal').modal('show');
+                    }
+
+                    $('input[name="registration-username"]').val("");
+                    $('input[name="registration-lastname"]').val("");
+                    $('input[name="registration-email"]').val("");
+                    $('input[name="registration-password"]').val("");
+                    $('input[name="registration-password-check"]').val("");
+                }
+            });
+        }
+        return false;
+    });
+});

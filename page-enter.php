@@ -4,10 +4,13 @@
 			<div class="row">
 				<h3>Войти</h3>
 				<div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6  col-xs-12">
-					<input type="text" name="enter-login" class="enter--input" placeholder="Логин">
-					<input type="text" name="enter-password" class="enter--input" placeholder="Пароль">
-					<a href="#" class="enter-forget--pass">Забыл свой пароль</a>
-					<input type="button"  name="enter-continue" class="enter--continue" value="Продолжить">
+					<form name="loginform" id="loginform" action="" method="post">
+						<input type="text" id="user_login" name="log" class="enter--input" placeholder="Логин">
+						<input type="text" id="user_pass" name="pwd" class="enter--input" placeholder="Пароль">
+						<a href="#" class="enter-forget--pass">Забыл свой пароль</a>
+						<input id="wp-submit" type="submit"  name="wp-submit" class="enter--continue" value="Продолжить">
+						<input type="hidden" name="action" value="my_login_action" />
+					</form>
 				</div>
 				<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
 					<div class="row">

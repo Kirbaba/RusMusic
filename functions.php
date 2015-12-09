@@ -48,6 +48,14 @@ add_action('admin_enqueue_scripts', 'add_admin_script');
 add_action( 'wp_enqueue_scripts', 'add_style' );
 add_action( 'wp_enqueue_scripts', 'add_script' );
 
+add_action('after_setup_theme', 'remove_admin_bar');
+
+function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}
+
 function prn($content) {
     echo '<pre style="background: lightgray; border: 1px solid black; padding: 2px">';
     print_r ( $content );
@@ -917,7 +925,6 @@ function sendFeedback(){
 
 /*----------------------------- CONCERT ORGANIZING -------------------------------*/
 
-
 // AJAX ACTION
 add_action('wp_ajax_currentService', 'getCurrentService');
 add_action('wp_ajax_nopriv_currentService', 'getCurrentService');
@@ -993,3 +1000,52 @@ function getCurrentService(){
 }
 
 /*------------------------- END CONCERT ORGANIZING -------------------------------*/
+
+/*-------------------------- REGISTRATION/LOGIN ----------------------------------*/
+// AJAX ACTION
+add_action('wp_ajax_createUser', 'createUser');
+add_action('wp_ajax_nopriv_createUser', 'createUser');
+
+function createUser(){
+    $username = $_POST['username'];
+    $userlastname = $_POST['lastname'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $gender = $_POST['gender'];
+    //создаем пользователя
+    wp_create_user( $username, $password, $email );
+    //добавляем ему поле "пол"
+    $user_id = username_exists( $username );
+    add_user_meta( $user_id, 'gender', $gender );
+    update_user_meta( $user_id, 'first_name', $username );
+    update_user_meta( $user_id, 'last_name', $userlastname );
+    //prn(get_user_meta($user_id));
+    die();
+}
+
+add_action('init', function(){
+
+    // not the login request?
+    if(!isset($_POST['action']) || $_POST['action'] !== 'my_login_action')
+        return;
+
+    $creds = array();
+    $creds['user_login'] = $_POST['log'];
+    $creds['user_password'] = $_POST['pwd'];
+    $creds['remember'] = true;
+
+    $user = wp_signon( $creds, false );
+
+    if ( is_wp_error($user) )
+        echo $user->get_error_message();
+
+
+    // redirect back to the requested page if login was successful
+    header('Location: ' . $_SERVER['REQUEST_URI']);
+    exit;
+});
+
+if( isset( $_GET['logout'] ) )
+    wp_logout();
+
+/*------------------------- END REGISTRATION/LOGIN -------------------------------*/

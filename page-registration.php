@@ -4,16 +4,16 @@
 			<div class="row">
 				<h3>Регистрация</h3>
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 p0">
-					<input type="text" class="registration-input--small" placeholder="Ваше имя:">
-					<input type="text" class="registration-input--small" placeholder="Ваша фамилия:">
-					<input type="text" class="registration-input--large" placeholder="Адрес электронной почты:">
-					<input type="text" class="registration-input--large" placeholder="Мой пароль:">
-					<input type="text" class="registration-input--large" placeholder="Подтверждение пароля:">
+					<input type="text" class="registration-input--small" name="registration-username" placeholder="Ваше имя:">
+					<input type="text" class="registration-input--small" name="registration-lastname" placeholder="Ваша фамилия:">
+					<input type="text" class="registration-input--large" name="registration-email" placeholder="Адрес электронной почты:">
+					<input type="password" class="registration-input--large" name="registration-password" placeholder="Мой пароль:">
+					<input type="password" class="registration-input--large" name="registration-password-check" placeholder="Подтверждение пароля:">
 					<div class="registration-input--radio">
 						<p>Пол</p>
-						<input type="radio" id="radio01" name="radio" />
+						<input type="radio" id="radio01" name="registration-gender" value="male" />
 	  					<label for="radio01">Муж<span></span></label>
-	  					<input type="radio" id="radio02" name="radio" />
+	  					<input type="radio" id="radio02" name="registration-gender" value="female" />
 	  					<label for="radio02">Жен<span></span></label>
   					</div>
   					<input type="button"  name="registration-input--button" class="registration-input--button" value="Зарегистрироваться">

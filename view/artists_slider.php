@@ -9,14 +9,12 @@
 
         <?php } ?>
 
-
                     <a href="<?= get_permalink(get_the_ID()); ?>" class="artist--link">
                         <?php  echo get_the_post_thumbnail(get_the_ID(),'full'); ?>
                         <span class="artist--link--open"><i class="fa fa-search"></i></span>
                         <span class="artist--link--shadow"></span>
                         <span class="artist--link--name "><?= get_the_title(get_the_ID()); ?></span>
                     </a>
-
 
         <?php $i++; if($i == 3){ ?>
                 </div>
