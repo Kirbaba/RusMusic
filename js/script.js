@@ -304,6 +304,7 @@ jQuery(document).ready(function($){
     });
 });
 
+//обратная связь
 jQuery(function($) {
 
     $(document).on('click','.contacts--but', function(){

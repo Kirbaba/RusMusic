@@ -738,7 +738,7 @@ add_shortcode('partners', 'getPartnersShortcode');
 /*-------------------------------- END PARTNERS ----------------------------------*/
 
 
-/*---------------------------------- OUR TEAM -------------------------------------*/
+/*---------------------------------- ARTISTS -------------------------------------*/
 
 add_action('init', 'myCustomInitArtists');
 function myCustomInitArtists()
@@ -863,9 +863,24 @@ function getArtistsShortcode(){
 
 }
 
+function getArtistsSliderShortcode(){
+    $args = array(
+        'post_type' => 'artists',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/artists_slider.php', ['my_query' => $my_query]);
+
+}
+
+add_shortcode('artistsSlider', 'getArtistsSliderShortcode');
 add_shortcode('artists', 'getArtistsShortcode');
 
-/*-------------------------------- END OUR TEAM ----------------------------------*/
+/*--------------------------------- END ARTISTS ----------------------------------*/
 
 /*------------------------------------ CONTACTS ----------------------------------*/
 
