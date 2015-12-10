@@ -1049,3 +1049,46 @@ if( isset( $_GET['logout'] ) )
     wp_logout();
 
 /*------------------------- END REGISTRATION/LOGIN -------------------------------*/
+
+/*-------------------------------- INSTAGRAM -------------------------------------*/
+
+function instagram(){
+    $data = [];
+
+    //user id and taccess token
+    $token = '1933975520.17e5b12.a06c8f70f585489c96ba30223906519c';
+    $user_id = '1933975520';
+
+    $url_media = "https://api.instagram.com/v1/users/".$user_id."/media/recent/?access_token=".$token;
+    $context = stream_context_create(array(
+        'http' => array(
+            'ignore_errors'=>true,
+            'method'=>'GET'
+            // for more options check http://www.php.net/manual/en/context.http.php
+        )
+    ));
+    $media_request = json_decode(file_get_contents($url_media, false, $context));
+
+    $data['profile_photo'] = $media_request->data[0]->user->profile_picture;
+    foreach($media_request->data as $item){
+        $data['media'][] = array('thumb' => $item->images->thumbnail->url,'pic'=> $item->images->standard_resolution->url);
+    }
+    $data['media_count'] = count($media_request->data);
+
+    $url_follows = "https://api.instagram.com/v1/users/".$user_id."?access_token=".$token;
+    $follows_request = json_decode(file_get_contents($url_follows, false, $context));
+
+    $data['username'] = $follows_request->data->username;
+    $data['folowers'] = $follows_request->data->counts->follows;
+    $data['folowed_by'] = $follows_request->data->counts->followed_by;
+
+   // prn($data);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/instagram.php', ['data' => $data]);
+}
+
+add_shortcode('instagram', 'instagram');
+
+/*------------------------------- END INSTAGRAM ----------------------------------*/
+
