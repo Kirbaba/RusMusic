@@ -16,7 +16,7 @@
 	  					<input type="radio" id="radio02" name="registration-gender" value="female" />
 	  					<label for="radio02">Жен<span></span></label>
   					</div>
-  					<input type="button"  name="registration-input--button" class="registration-input--button" value="Зарегистрироваться">
+  					<input type="button"  name="registration-input--button" class="registration-input--button registerUser" value="Зарегистрироваться">
 				</div>
 			</div>			
 		</div>

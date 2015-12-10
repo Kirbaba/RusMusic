@@ -46,15 +46,19 @@
 		<div class="container-fluid">		
 			<div class="row">			
 				<article class="company-page--bottom--text">
-					
-						<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">								
-							<p>Sed turpis tellus, euismod vitae purus sit amet, varius elementum augue. 
-								Donec sed nunc accumsan, ultrices felis sit amet, lobortis nisl. 
-								Nulla bibendum ut erat eu commodo. Vivamus nulla quam, finibus vitae consectetur pellentesque, 
-								euismod vitae massa. Sed vitae bibendum lacus, vitae sagittis est. 
-								Pellentesque lacinia urna vitae mi porta scelerisque. 
-								In hac habitasse platea dictumst. Etiam at odio vehicula turpis bibendu. </p>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
+								<p>Sed turpis tellus, euismod vitae purus sit amet, varius elementum augue.
+									Donec sed nunc accumsan, ultrices felis sit amet, lobortis nisl.
+									Nulla bibendum ut erat eu commodo. Vivamus nulla quam, finibus vitae consectetur pellentesque,
+									euismod vitae massa. Sed vitae bibendum lacus, vitae sagittis est.
+									Pellentesque lacinia urna vitae mi porta scelerisque.
+									In hac habitasse platea dictumst. Etiam at odio vehicula turpis bibendu. </p>
+							</div>
 						</div>
+					</div>
+
 			
 				</article>
 			</div>
