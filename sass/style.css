@@ -1052,7 +1052,8 @@ ul {
         text-decoration: none; }
         .social-network-wrapper .insta--title a img {
           margin: 10px auto 5px;
-          display: block; }
+          display: block;
+          max-width: 100%; }
         .social-network-wrapper .insta--title a span {
           color: #FFF;
           font-size: 10px;
@@ -2144,7 +2145,7 @@ a.news--read {
       font-weight: 500; }
   .company-page__content--linksline {
     width: 100%;
-    margin: 15px 0;
+    margin: 15px 0 50px;
     position: relative;
     display: block;
     float: left;
