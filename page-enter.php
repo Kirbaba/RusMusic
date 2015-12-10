@@ -33,7 +33,7 @@
 			</div>
 	<?php }else{ ?>
 		<h3>Вы уже авторизированы!</h3>
-		<a href="/?logout=true" class="enter-newuser">Выйти</a>
+		<a href="?logout=true" class="enter-newuser">Выйти</a>
 	<?php } ?>
 		</div>
 	</section>
