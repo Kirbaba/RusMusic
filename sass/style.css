@@ -653,8 +653,7 @@ ul {
     text-transform: uppercase;
     font-family: "CirceBold";
     color: #CDCFB9;
-    margin: 0;
-    left: 10px; }
+    margin: 0; }
 
 .header--onScroll {
   top: 0;
@@ -2157,7 +2156,7 @@ a.news--read {
       .company-page__content--linksline li:last-of-type {
         margin-right: 0; }
       .company-page__content--linksline li a {
-        font-size: 26px;
+        font-size: 25px;
         color: #666666;
         font-weight: 900;
         font-family: "Open Sans", sans-serif;
