@@ -721,12 +721,30 @@ function myCustomInitPartners()
         'has_archive' => true,
         'hierarchical' => false,
         'menu_position' => null,
-        'supports' => array('title','thumbnail')
+        'supports' => array('title','thumbnail','editor')
     );
     register_post_type('partners', $args);
 }
 
-//вывод
+function extraFieldsPartnerLink($post)
+{
+    ?>
+    <p>
+        <span>Укажите ссылку: </span>
+        <input type="text" name='extra[link]' value="<?php echo get_post_meta($post->ID, "link", 1); ?>">
+    </p>
+    <?php
+}
+
+function myExtraFieldsPartners()
+{
+    add_meta_box('extra_link', 'Ссылка', 'extraFieldsPartnerLink', 'partners', 'normal', 'high');
+}
+
+add_action('add_meta_boxes', 'myExtraFieldsPartners', 1);
+
+
+//вывод на главной
 function getPartnersShortcode(){
     $args = array(
         'post_type' => 'partners',
@@ -741,7 +759,22 @@ function getPartnersShortcode(){
 
 }
 
+function getPartnersPageShortcode(){
+    $args = array(
+        'post_type' => 'partners',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/partners_page.php', ['my_query' => $my_query]);
+
+}
+
 add_shortcode('partners', 'getPartnersShortcode');
+add_shortcode('partnersPage', 'getPartnersPageShortcode');
 
 /*-------------------------------- END PARTNERS ----------------------------------*/
 

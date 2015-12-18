@@ -10,7 +10,8 @@
 	<section class="page-partners__wrapper">
 		<div class="container">
 			<div class="row">
-				<div class="page-partners__item col-sm-6 col-xs-12">
+				<?= do_shortcode('[partnersPage]'); ?>
+				<!--<div class="page-partners__item col-sm-6 col-xs-12">
 					<div class="page-partners__item--img">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_03.png" alt="">
 					</div>
@@ -19,7 +20,7 @@
 						<a href="#">www.atlant.ru</a>
 					</div>
 				</div>
-				<div class="page-partners__item col-sm-6 col-xs-12">					
+				<div class="page-partners__item col-sm-6 col-xs-12">
 					<div class="page-partners__item--img">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_05.png" alt="">
 					</div>
@@ -28,7 +29,7 @@
 						<a href="#">www.atlant.ru</a>
 					</div>
 				</div>
-				<div class="page-partners__item col-sm-6 col-xs-12">					
+				<div class="page-partners__item col-sm-6 col-xs-12">
 					<div class="page-partners__item--img">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_07.png" alt="">
 					</div>
@@ -65,7 +66,7 @@
 						<a href="#">www.atlant.ru</a>
 					</div>
 				</div>
-				<div class="page-partners__item col-sm-6 col-xs-12">					
+				<div class="page-partners__item col-sm-6 col-xs-12">
 					<div class="page-partners__item--img">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_05.png" alt="">
 					</div>
@@ -74,7 +75,7 @@
 						<a href="#">www.atlant.ru</a>
 					</div>
 				</div>
-				<div class="page-partners__item col-sm-6 col-xs-12">					
+				<div class="page-partners__item col-sm-6 col-xs-12">
 					<div class="page-partners__item--img">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_07.png" alt="">
 					</div>
@@ -101,8 +102,8 @@
 					<div class="page-partners__item--link">
 						<a href="#">www.atlant.ru</a>
 					</div>
-				</div>
-				
+				</div>-->
+
 			</div>
 		</div>
 	</section>
