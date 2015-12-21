@@ -69,6 +69,7 @@ jQuery(function ($) {
         dots: false,
         infinite: true,
         autoplay: true,
+        adaptiveHeight: true,
         speed: 300,
         arrows: true,        
         slidesToShow: 3,
