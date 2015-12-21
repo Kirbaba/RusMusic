@@ -17,7 +17,12 @@
 			<div class="row">
 				<div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
 					<aside class="becomeastar__menu">
-						<ul>
+						<?php wp_nav_menu( array(
+						'theme_location'    => 'becomeastar',
+						'depth'             => 1,
+						'menu_class'        => ''
+						)); ?>
+						<!--<ul>
 							<li><a href="#">Сценический образ</a></li>
 							<li><a href="#">Музыкальное направление</a></li>
 							<li><a href="#">Имидж</a></li>
@@ -35,7 +40,7 @@
 							<li><a href="#">Помощь в подписании контрактов
 с цифровыми дистрибьютерскими
 компаниями</a></li>
-						</ul>
+						</ul>-->
 					</aside>
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
@@ -64,13 +69,13 @@
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 p0">					
 					<input type="text" class="registration-input--large" name="becomeastar-name" placeholder="Ваше имя">
 					<input type="text" class="registration-input--large" name="becomeastar-email" placeholder="Адрес электронной почты:">
-					<input type="password" class="registration-input--large" name="becomeastar" placeholder="Город">
-					<input type="password" class="registration-input--large" name="becomeastar-facebook" placeholder="Facebook">
-					<input type="password" class="registration-input--large" name="becomeastar-instagram" placeholder="Instagram">
-					<input type="password" class="registration-input--large" name="becomeastar-site" placeholder="Сайт">
-					<input type="password" class="registration-input--large" name="becomeastar-songs-place" placeholder="Где можно послушать Ваши песни">
+					<input type="text" class="registration-input--large" name="becomeastar-city" placeholder="Город">
+					<input type="text" class="registration-input--large" name="becomeastar-facebook" placeholder="Facebook">
+					<input type="text" class="registration-input--large" name="becomeastar-instagram" placeholder="Instagram">
+					<input type="text" class="registration-input--large" name="becomeastar-site" placeholder="Сайт">
+					<input type="text" class="registration-input--large" name="becomeastar-songs-place" placeholder="Где можно послушать Ваши песни">
 					<div class="becomeastar__questionnaire--but">
-  						<input type="button" name="becomeastar-input--button" class="registration-input--button registerUser" value="Отправить">
+  						<input type="button" name="becomeastar-input--button" class="registration-input--button" value="Отправить">
   					</div>
 				</div>
 				

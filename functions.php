@@ -121,7 +121,7 @@ function theme_register_nav_menu() {
     register_nav_menus( array(
         'primary' => 'Главное',
         'sitemap' => 'Карта сайта',
-        'becomestar' => 'Страница "Стань звездой"',
+        'becomeastar' => 'Страница "Стань звездой"',
         'footer_menu_1' => 'Меню в подвале 1',
         'footer_menu_2' => 'Меню в подвале 2',
         'footer_menu_3' => 'Меню в подвале 3',
@@ -1092,7 +1092,7 @@ function instagram(){
 
     //user id and taccess token
     $token = '1933975520.17e5b12.a06c8f70f585489c96ba30223906519c';
-    $user_id = '1933975520';
+    $user_id = '1822923780';
 
     $url_media = "https://api.instagram.com/v1/users/".$user_id."/media/recent/?access_token=".$token;
     $context = stream_context_create(array(
@@ -1210,3 +1210,43 @@ function getAlbumsShortcode(){
 add_shortcode('albums', 'getAlbumsShortcode');
 
 /*---------------------------------- END ALBUMS ----------------------------------*/
+
+/*------------------------------- BECOME A STAR ----------------------------------*/
+
+// AJAX ACTION
+add_action('wp_ajax_becomeastar', 'sendBecomeAStar');
+add_action('wp_ajax_nopriv_becomeastar', 'sendBecomeAStar');
+
+
+function sendBecomeAStar(){
+    $adminMail = get_option('admin_email');
+    $mail =  $_POST['mail'];
+    $name = $_POST['name'];
+    $city = $_POST['city'];
+    $facebook = $_POST['facebook'];
+    $instagram = $_POST['instagram'];
+    $site = $_POST['site'];
+    $link = $_POST['link'];
+
+
+    if(!empty($mail) && !empty($message)){
+        $str = "С вашего сайта прислали анкету:<br>";
+        $str .= 'Имя: '.$name.' <br>';
+        $str .= 'Email: '.$mail.' <br>';
+        $str .= 'Город: '.$city.' <br>';
+        $str .= 'Facebook: '.$facebook.' <br>';
+        $str .= 'Instagram: '.$instagram.' <br>';
+        $str .= 'Сайт: '.$site.' <br>';
+        $str .= 'Где можно услышать песни : '.$link.' <br>';
+
+        mail($adminMail, "Анкета 'Стань звездой'", $str, "Content-type: text/html; charset=UTF-8\r\n");
+
+        echo 1;
+    }else{
+        echo 0;
+    }
+
+    die();
+}
+
+/*--------------------------- END BECOME A STAR ----------------------------------*/

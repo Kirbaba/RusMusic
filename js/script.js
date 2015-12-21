@@ -442,3 +442,42 @@ jQuery(function($) {
         //return false;
     });
 });
+
+//стань звездой
+jQuery(function($) {
+
+    $(document).on('click','input[name="becomeastar-input--button"]', function(){
+        alert("pognali");
+        var name = $('input[name="becomeastar-name"]').val();
+        var email = $('input[name="becomeastar-email"]').val();
+        var city = $('input[name="becomeastar-city"]').val();
+        var fb = $('input[name="becomeastar-facebook"]').val();
+        var inst = $('input[name="becomeastar-instagram"]').val();
+        var site = $('input[name="becomeastar-site"]').val();
+        var link = $('input[name="becomeastar-songs-place"]').val();
+        
+        jQuery.ajax({
+            url: ajaxurl, //url, к которому обращаемся
+            type: "POST",
+            data: "action=becomeastar&name=" + name + "&mail=" + email + "&city=" + city + "&facebook=" + fb + "&instagram=" + inst + "&site="+site+"&link="+link, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+                //модалка если понадобится
+                if(data == "1"){
+                    //$('#thankModal').modal('show');
+                }else{
+                    //$('#thankModal').modal('show');
+                }
+
+                $('input[name="becomeastar-name"]').val("");
+                $('input[name="becomeastar-email"]').val("");
+                $('input[name="becomeastar-city"]').val("");
+                $('input[name="becomeastar-facebook"]').text("");
+                $('input[name="becomeastar-instagram"]').text("");
+                $('input[name="becomeastar-site"]').text("");
+                $('input[name="becomeastar-songs-place"]').text("");
+            }
+        });
+        return false;
+    });
+
+});
