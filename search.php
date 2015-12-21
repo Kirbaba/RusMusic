@@ -7,7 +7,7 @@ Template Name: search
 <section class="page-title-head company-page--head">
     <div class="container-fluid">
         <div class="row">
-            <h1><?php echo 'Результат поиска: ' . '<span>' . get_search_query() . '</span>'; ?></h1>
+            <h1>Поиск</h1>
         </div>
     </div>
 </section>
@@ -15,6 +15,7 @@ Template Name: search
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
+                <h1><?php echo 'Результат поиска: ' . '<span>' . get_search_query() . '</span>'; ?></h1>
                 <div class="company-page__content--topline"></div>
                 <div class="company-page__content--text">
                     <?php
