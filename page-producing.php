@@ -219,8 +219,9 @@
 				<h2>Релизы</h2>
 				<div class="passed-events--head"></div>
 
+				<?= do_shortcode('[albums]'); ?>
 
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+				<!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 					<a href="#" class="passed-events__item">
 						<img src="<?php bloginfo('template_directory'); ?>/img/lana_del_rey.jpg" alt="">
 						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
@@ -276,7 +277,8 @@
 						<span class="passed-events__item--open"><i class="fa fa-search"></i></span>
 						<span class="passed-events__item--shadow"></span>
 					</a>
-				</div>
+				</div>-->
+
 				<div class="producing__release--more">
 					<a href="#" class="producing__release--more--but">Еще релизы</a>
 				</div>

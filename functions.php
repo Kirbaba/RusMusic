@@ -121,6 +121,7 @@ function theme_register_nav_menu() {
     register_nav_menus( array(
         'primary' => 'Главное',
         'sitemap' => 'Карта сайта',
+        'becomestar' => 'Страница "Стань звездой"',
         'footer_menu_1' => 'Меню в подвале 1',
         'footer_menu_2' => 'Меню в подвале 2',
         'footer_menu_3' => 'Меню в подвале 3',
@@ -1126,3 +1127,86 @@ add_shortcode('instagram', 'instagram');
 
 /*------------------------------- END INSTAGRAM ----------------------------------*/
 
+/*----------------------------------- ALBUMS -------------------------------------*/
+
+add_action('init', 'myCustomInitAlbums');
+function myCustomInitAlbums()
+{
+    $labels = array(
+        'name' => 'Альбомы', // Основное название типа записи
+        'singular_name' => 'Альбомы', // отдельное название записи типа Book
+        'add_new' => 'Добавить альбом',
+        'add_new_item' => 'Добавить новый альбом',
+        'edit_item' => 'Редактировать альбом',
+        'new_item' => 'Новый альбом',
+        'view_item' => 'Посмотреть альбом',
+        'search_items' => 'Найти альбом',
+        'not_found' => 'Альбомов не найдено',
+        'not_found_in_trash' => 'В корзине альбомов не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Альбомы'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail','editor')
+    );
+    register_post_type('albums', $args);
+}
+
+function extraFieldsAlbumsYear($post)
+{
+    ?>
+    <p>
+        <span>Год выпуска: </span>
+        <input type="text" name='extra[year]' value="<?php echo get_post_meta($post->ID, "year", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsAlbumsLabel($post)
+{
+    ?>
+    <p>
+        <span>Лэйбл: </span>
+        <input type="text" name='extra[label]' value="<?php echo get_post_meta($post->ID, "label", 1); ?>">
+    </p>
+    <?php
+}
+
+function myExtraFieldsAlbums()
+{
+    add_meta_box('extra_year', 'Год', 'extraFieldsAlbumsYear', 'albums', 'normal', 'high');
+    add_meta_box('extra_label', 'Лэйбл', 'extraFieldsAlbumsLabel', 'albums', 'normal', 'high');
+}
+
+add_action('add_meta_boxes', 'myExtraFieldsAlbums', 1);
+
+//вывод плитками
+function getAlbumsShortcode(){
+    $args = array(
+        'post_type' => 'albums',
+        'post_status' => 'publish',
+        'posts_per_page' => 8);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/albums.php', ['my_query' => $my_query]);
+
+}
+
+add_shortcode('albums', 'getAlbumsShortcode');
+
+/*---------------------------------- END ALBUMS ----------------------------------*/
