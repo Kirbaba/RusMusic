@@ -28,7 +28,7 @@
 		<div class="container">
 			<div class="row">
 				<h3>Отправить песню на худсовет</h3>
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 p0">					
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">					
 					<input type="text" class="registration-input--large" name="demos-name" placeholder="Ваше имя">
 					<input type="email" class="registration-input--large" name="demos-email" placeholder="Адрес электронной почты:">
 					<a href="#" class="onlinework--already-regist">Вы уже зарегистрированы Abbey Road Online Mastering?</a>

@@ -3150,7 +3150,10 @@ a.news--read {
     max-height: 100%; }
 
   .navbar-brand > img {
-    width: 50%; } }
+    width: 50%; }
+
+  .online-store--but {
+    margin-right: 5px; } }
 @media only screen and (max-width: 320px) {
   .producing-carousel {
     padding: 0 13%; }
