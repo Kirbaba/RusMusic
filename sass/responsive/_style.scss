@@ -75,6 +75,12 @@
 	.producing-carousel {
 		width: 85%;
 	}
+	
+	.becomeastar__triangle {
+		display: none;
+	}
+	
+
 }
 
 @media only screen and (max-width: 980px) {
@@ -225,6 +231,25 @@
 	.producing-carousel {
 		padding: 0 30%;
 	}
+
+	.becomeastar__textbox {		
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+	.becomeastar__menu {
+	    padding: 25px 5px;
+	    ul {
+	    	li {
+	    		a {
+	    			font-size: 14px;
+	    		}
+	    	}
+	    }
+	}
+	.becomeastar__textbox p {
+		font-size: 14px;
+	}
 }
 
 @media only screen and (max-width: 770px) {
@@ -280,6 +305,18 @@
 	}
 	.header__navigation--menu {
 		padding: 5px 0;
+	}
+	.becomeastar__head--text {
+		h2 {
+			font-size: 32px;
+			margin-bottom: 10px;
+		}
+		p {
+			font-size: 16px;
+		}
+	}
+	.becomeastar__textbox {
+		margin-top: 0;
 	}
 }
 
