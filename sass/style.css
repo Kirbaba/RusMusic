@@ -1658,7 +1658,7 @@ a.news--read {
     .enter-page .enter-newuser:hover, .enter-page .enter-newuser:active, .enter-page .enter-newuser:focus {
       color: #cb0000; }
 
-.registration-page {
+.registration-page, .becomeastar__questionnaire {
   display: block;
   float: left;
   position: relative;
@@ -1668,15 +1668,15 @@ a.news--read {
   /* input[type="radio"]:checked + label {
   	color: #fff;
   } */ }
-  .registration-page h3 {
+  .registration-page h3, .becomeastar__questionnaire h3 {
     font-family: "MuseoCyrl900";
     color: #edf2f4;
     font-size: 31px;
     text-align: center;
     margin-bottom: 60px; }
-  .registration-page input[type="radio"] {
+  .registration-page input[type="radio"], .becomeastar__questionnaire input[type="radio"] {
     display: none; }
-  .registration-page input[type="radio"] + label {
+  .registration-page input[type="radio"] + label, .becomeastar__questionnaire input[type="radio"] + label {
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
     color: #edf2f4;
@@ -1684,7 +1684,7 @@ a.news--read {
     float: left;
     margin: 0 0 20px 0;
     font-weight: 500; }
-  .registration-page input[type="radio"] + label span {
+  .registration-page input[type="radio"] + label span, .becomeastar__questionnaire input[type="radio"] + label span {
     display: inline-block;
     width: 26px;
     height: 26px;
@@ -1692,16 +1692,17 @@ a.news--read {
     vertical-align: middle;
     cursor: pointer;
     border: 3px solid #fff; }
-  .registration-page input[type="radio"] + label span {
+  .registration-page input[type="radio"] + label span, .becomeastar__questionnaire input[type="radio"] + label span {
     background-color: transparent; }
-  .registration-page input[type="radio"]:checked + label span {
+  .registration-page input[type="radio"]:checked + label span, .becomeastar__questionnaire input[type="radio"]:checked + label span {
     background-color: transparent;
     background-image: url("../img/Check-Icon.png");
     background-position: center;
     background-repeat: no-repeat;
     color: #fff; }
-  .registration-page input[type="radio"] + label span,
-  .registration-page input[type="radio"]:checked + label span {
+  .registration-page input[type="radio"] + label span, .becomeastar__questionnaire input[type="radio"] + label span,
+  .registration-page input[type="radio"]:checked + label span,
+  .becomeastar__questionnaire input[type="radio"]:checked + label span {
     -webkit-transition: background-color 0.4s linear;
     -o-transition: background-color 0.4s linear;
     -moz-transition: background-color 0.4s linear;
@@ -2490,6 +2491,86 @@ a.news--read {
     .page-partners__item--link a {
       color: #CB0000;
       font-size: 16px; }
+
+.becomeastar__head {
+  background-image: url("../img/becomeastar.jpg");
+  height: 730px; }
+  .becomeastar__head--text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 200px; }
+    .becomeastar__head--text h2 {
+      font-size: 52px;
+      margin-bottom: 100px;
+      font-family: "MuseoCyrl900";
+      color: #EDF2F4; }
+      .becomeastar__head--text h2 span {
+        color: #B66565; }
+    .becomeastar__head--text p {
+      font-size: 23px;
+      color: #EDF2F4;
+      font-family: "MuseoCyrl700"; }
+.becomeastar__triangle {
+  background-image: url("../img/Rectangle.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  position: absolute;
+  width: 100%;
+  top: 118px;
+  bottom: 0; }
+.becomeastar__menu {
+  display: block;
+  padding: 25px 30px;
+  background-color: #EF233C;
+  margin-top: -150px; }
+  .becomeastar__menu ul {
+    padding: 0; }
+    .becomeastar__menu ul li {
+      width: 100%;
+      display: block;
+      text-align: center; }
+      .becomeastar__menu ul li a {
+        font-size: 22px;
+        padding: 10px 0;
+        display: block;
+        color: #EDF2F4;
+        font-family: "MuseoCyrl900"; }
+.becomeastar__textbox {
+  display: block;
+  padding: 25px 30px;
+  background-color: #DBDBDB;
+  margin-top: -150px;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2; }
+  .becomeastar__textbox p {
+    color: #1C1C1C;
+    font-size: 18px;
+    padding: 0 0 25px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400; }
+.becomeastar__content {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  background-color: #DBDBDB;
+  padding: 0 0 50px; }
+.becomeastar__questionnaire {
+  background-color: #474747;
+  padding: 50px 0; }
+  .becomeastar__questionnaire h3 {
+    margin-bottom: 25px; }
+  .becomeastar__questionnaire .registration-input--button {
+    background-color: #EF233C; }
+    .becomeastar__questionnaire .registration-input--button:hover {
+      background-color: #cb0000; }
+  .becomeastar__questionnaire--but {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 10px 0 0; }
 
 .footer {
   display: block;
