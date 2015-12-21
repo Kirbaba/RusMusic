@@ -74,8 +74,10 @@
 									<?php } ?>
 									</div>
 									<div class="header__search">
-										<input type="text" name="search--input" class="header__search--input">
-										<a href="#" class="header__search--butt"><i class="fa fa-search"></i></a>
+										<form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url(); ?>">
+											<input type="text" value="" name="s" id="s" class="header__search--input">
+											<a type="submit" id="searchsubmit" class="header__search--butt"><i class="fa fa-search"></i></a>
+										</form>
 									</div>	
 
 								</div><!-- /.navbar-collapse -->

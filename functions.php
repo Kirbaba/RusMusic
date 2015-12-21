@@ -120,6 +120,7 @@ if ( function_exists( 'add_theme_support' ) )
 function theme_register_nav_menu() {
     register_nav_menus( array(
         'primary' => 'Главное',
+        'sitemap' => 'Карта сайта',
         'footer_menu_1' => 'Меню в подвале 1',
         'footer_menu_2' => 'Меню в подвале 2',
         'footer_menu_3' => 'Меню в подвале 3',

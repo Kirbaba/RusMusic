@@ -57,9 +57,7 @@
 									In hac habitasse platea dictumst. Etiam at odio vehicula turpis bibendu. </p>
 							</div>
 						</div>
-					</div>
-
-			
+					</div
 				</article>
 			</div>
 		</div>
