@@ -441,6 +441,19 @@ ul {
   .producing-carousel .rhombusNext:before {
     background-image: url("../img/Rectangle2.png"); }
 
+.online-store--but {
+  display: block;
+  float: left;
+  position: relative;
+  margin-right: 40px;
+  -webkit-filter: grayscale(20%);
+  filter: grayscale(20%); }
+  .online-store--but img {
+    height: 47px; }
+  .online-store--but:hover {
+    -webkit-filter: grayscale(0%) saturate(8);
+    filter: grayscale(0%) saturate(8); }
+
 .header__navigation--menu .navbar-nav > li > a {
   color: #fff;
   text-transform: uppercase;
@@ -1752,7 +1765,7 @@ a.news--read {
     font-family: "Open Sans", sans-serif;
     color: #edf2f4;
     font-weight: 500; }
-.registration-input--button {
+.registration-input--button, .demos--but {
   display: block;
   margin: 15px auto;
   background-color: #474747;
@@ -1763,7 +1776,7 @@ a.news--read {
   padding: 20px 25px;
   border: none;
   outline: none; }
-  .registration-input--button:hover, .registration-input--button:active, .registration-input--button:focus {
+  .registration-input--button:hover, .demos--but:hover, .registration-input--button:active, .demos--but:active, .registration-input--button:focus, .demos--but:focus {
     background-color: #616161; }
 
 .registratin--social {
@@ -2562,15 +2575,25 @@ a.news--read {
   padding: 50px 0; }
   .becomeastar__questionnaire h3 {
     margin-bottom: 25px; }
-  .becomeastar__questionnaire .registration-input--button {
+  .becomeastar__questionnaire .registration-input--button, .becomeastar__questionnaire .demos--but {
     background-color: #EF233C; }
-    .becomeastar__questionnaire .registration-input--button:hover {
+    .becomeastar__questionnaire .registration-input--button:hover, .becomeastar__questionnaire .demos--but:hover {
       background-color: #cb0000; }
   .becomeastar__questionnaire--but {
     display: block;
     float: left;
     width: 100%;
     margin: 10px 0 0; }
+
+.demos--but {
+  display: block;
+  float: left;
+  padding: 24px 35px;
+  margin-left: 10px;
+  text-decoration: none; }
+  .demos--but:hover, .demos--but:active, .demos--but:focus {
+    color: #FFF;
+    text-decoration: none; }
 
 .footer {
   display: block;

@@ -360,3 +360,19 @@
     }
   }
 }
+
+.online-store--but {
+  display: block;
+  float: left;
+  position: relative;
+  margin-right: 40px;
+  -webkit-filter: grayscale(20%);
+  filter: grayscale(20%);
+  img {
+    height: 47px;
+  }
+  &:hover {
+    -webkit-filter: grayscale(0%) saturate(8);
+    filter: grayscale(0%) saturate(8);
+  }
+}

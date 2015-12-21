@@ -63,12 +63,12 @@
 				<h3>Заполнить анкету о себе</h3>
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 p0">					
 					<input type="text" class="registration-input--large" name="becomeastar-name" placeholder="Ваше имя">
-					<input type="text" class="registration-input--large" name="becomeastar-email" placeholder="Адрес электронной почты:">
-					<input type="password" class="registration-input--large" name="becomeastar" placeholder="Город">
-					<input type="password" class="registration-input--large" name="becomeastar-facebook" placeholder="Facebook">
-					<input type="password" class="registration-input--large" name="becomeastar-instagram" placeholder="Instagram">
-					<input type="password" class="registration-input--large" name="becomeastar-site" placeholder="Сайт">
-					<input type="password" class="registration-input--large" name="becomeastar-songs-place" placeholder="Где можно послушать Ваши песни">
+					<input type="email" class="registration-input--large" name="becomeastar-email" placeholder="Адрес электронной почты:">
+					<input type="text" class="registration-input--large" name="becomeastar-city" placeholder="Город">
+					<input type="text" class="registration-input--large" name="becomeastar-facebook" placeholder="Facebook">
+					<input type="text" class="registration-input--large" name="becomeastar-instagram" placeholder="Instagram">
+					<input type="text" class="registration-input--large" name="becomeastar-site" placeholder="Сайт">
+					<input type="text" class="registration-input--large" name="becomeastar-songs-place" placeholder="Где можно послушать Ваши песни">
 					<div class="becomeastar__questionnaire--but">
   						<input type="button" name="becomeastar-input--button" class="registration-input--button registerUser" value="Отправить">
   					</div>
