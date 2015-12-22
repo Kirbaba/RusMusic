@@ -2524,7 +2524,7 @@ a.news--read {
       font-size: 23px;
       color: #EDF2F4;
       font-family: "MuseoCyrl700"; }
-.becomeastar__triangle {
+.becomeastar__triangle, .training__triangle {
   background-image: url("../img/Rectangle.png");
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -2563,7 +2563,7 @@ a.news--read {
     padding: 0 0 25px;
     font-family: "Open Sans", sans-serif;
     font-weight: 400; }
-.becomeastar__content {
+.becomeastar__content, .training__content {
   display: block;
   float: left;
   position: relative;
@@ -2594,6 +2594,120 @@ a.news--read {
   .demos--but:hover, .demos--but:active, .demos--but:focus {
     color: #FFF;
     text-decoration: none; }
+
+.training__head {
+  background-image: url("../img/training.jpg");
+  height: 730px; }
+  .training__head--text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 200px; }
+    .training__head--text h2 {
+      font-size: 52px;
+      margin-bottom: 50px;
+      font-family: "MuseoCyrl900";
+      color: #EDF2F4; }
+      .training__head--text h2 span {
+        color: #B66565; }
+    .training__head--text p {
+      font-size: 23px;
+      color: #EDF2F4;
+      font-family: "MuseoCyrl700"; }
+.training__triangle {
+  background-image: url("../img/Rectangle-1.png"); }
+.training__content__wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-top: -150px; }
+.training__content__item {
+  margin-bottom: 25px;
+  height: 495px;
+  width: 100%;
+  display: block;
+  position: relative; }
+  .training__content__item--img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+    .training__content__item--img img {
+      min-width: 100%;
+      height: auto;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+    .training__content__item--img img {
+      min-height: 100%; }
+  .training__content__item--title {
+    position: absolute;
+    z-index: 2;
+    top: 25px;
+    left: 30px;
+    right: 50px;
+    color: #EDF2F4; }
+    .training__content__item--title h4 {
+      font-family: "MuseoCyrl900";
+      font-size: 30px; }
+  .training__content__item--description {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(45, 39, 39, 0.84);
+    height: 285px;
+    padding: 25px 25px 90px; }
+    .training__content__item--description p {
+      color: #EDF2F4;
+      font-size: 14px;
+      font-size: "Open Sans", sans-serif; }
+  .training__content__item--buttons {
+    display: block;
+    position: absolute;
+    height: 61px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3; }
+    .training__content__item--buttons--more {
+      display: block;
+      float: left;
+      position: relative;
+      width: 50%;
+      height: 61px;
+      line-height: 61px;
+      text-align: center;
+      color: #EDF2F4;
+      font-size: 20px;
+      font-family: "MuseoCyrl900";
+      text-decoration: none;
+      background-color: #5C5959; }
+      .training__content__item--buttons--more:hover, .training__content__item--buttons--more:active, .training__content__item--buttons--more:focus {
+        background-color: #353333;
+        color: #EDF2F4;
+        text-decoration: none; }
+    .training__content__item--buttons--sign {
+      display: block;
+      float: left;
+      position: relative;
+      width: 50%;
+      height: 61px;
+      line-height: 61px;
+      text-align: center;
+      color: #EDF2F4;
+      font-size: 20px;
+      font-family: "MuseoCyrl900";
+      background-color: #EF233C;
+      text-decoration: none; }
+      .training__content__item--buttons--sign:hover, .training__content__item--buttons--sign:active, .training__content__item--buttons--sign:focus {
+        background-color: #b80d22;
+        color: #EDF2F4;
+        text-decoration: none; }
 
 .footer {
   display: block;
@@ -2736,7 +2850,7 @@ a.news--read {
   .producing-carousel {
     width: 85%; }
 
-  .becomeastar__triangle {
+  .becomeastar__triangle, .training__triangle {
     display: none; } }
 @media only screen and (max-width: 980px) {
   .hamburger-slim {
