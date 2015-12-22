@@ -250,6 +250,10 @@
 	.becomeastar__textbox p {
 		font-size: 14px;
 	}
+
+	.singuptraining__form--choice {
+		padding: 0 15px;
+	}
 }
 
 @media only screen and (max-width: 770px) {
@@ -317,6 +321,27 @@
 	}
 	.becomeastar__textbox {
 		margin-top: 0;
+	}
+	.singuptraining__form--choice--price {
+    	width: 80%;
+    	text-align: right;
+    }
+    .singuptraining__form--choice--name {
+    	width: 100%;
+    }
+	.singuptraining__form--choice--del  {
+		width: 20%;
+		.singupinput--cross {
+			float: right;
+		}
+	}
+	.singuptraining__head--text p {
+	    font-size: 14px;
+	    margin-bottom: 15px;
+	}
+
+	.singuptraining__head--text h2 {
+		font-size: 40px;
 	}
 }
 

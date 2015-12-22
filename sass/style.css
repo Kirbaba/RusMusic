@@ -2765,6 +2765,93 @@ a.news--read {
     color: #1C1C1C;
     font-family: "Open Sans", sans-serif;
     margin-bottom: 25px; }
+.single-training--button {
+  text-align: center;
+  font-family: "MuseoCyrl900";
+  width: 168px;
+  height: 61px;
+  background-color: #ef233b;
+  line-height: 61px;
+  display: block;
+  margin: 25px auto;
+  font-size: 20px;
+  color: #EDF2F4;
+  text-decoration: none; }
+  .single-training--button:hover {
+    background-color: #cb0000;
+    color: #EDF2F4;
+    text-decoration: none; }
+
+.singuptraining__head {
+  background-color: #2D2828; }
+  .singuptraining__head--text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 25px; }
+    .singuptraining__head--text h2 {
+      font-size: 52px;
+      margin-bottom: 50px;
+      font-family: "MuseoCyrl900";
+      color: #EDF2F4; }
+      .singuptraining__head--text h2 span {
+        color: #B66565; }
+    .singuptraining__head--text p {
+      font-size: 23px;
+      color: #EDF2F4;
+      font-family: "MuseoCyrl700";
+      margin-bottom: 50px; }
+.singuptraining__form {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  background-color: #464343;
+  padding: 25px 0; }
+  .singuptraining__form--select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../img/chevron-up.png");
+    background-repeat: no-repeat;
+    background-position: 98% 50%; }
+    .singuptraining__form--select option {
+      background-color: #464343;
+      outline: none;
+      border-color: #fff; }
+  .singuptraining__form p {
+    font-size: 17px;
+    color: #EDF2F4;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400; }
+    .singuptraining__form p b {
+      font-weight: 700; }
+  .singuptraining__form--choice {
+    display: block;
+    float: left;
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px; }
+    .singuptraining__form--choice--name {
+      display: block;
+      float: left;
+      width: 80%; }
+    .singuptraining__form--choice--price {
+      width: 15%;
+      float: left;
+      display: block; }
+    .singuptraining__form--choice--del {
+      display: block;
+      float: left;
+      width: 5%; }
+      .singuptraining__form--choice--del .singupinput--cross {
+        display: block;
+        width: 12px;
+        height: 12px;
+        margin: 7px 5px;
+        background-image: url("../img/cross.png");
+        background-repeat: no-repeat;
+        background-position: 50%; }
 
 .footer {
   display: block;
@@ -3042,7 +3129,10 @@ a.news--read {
       font-size: 14px; }
 
   .becomeastar__textbox p {
-    font-size: 14px; } }
+    font-size: 14px; }
+
+  .singuptraining__form--choice {
+    padding: 0 15px; } }
 @media only screen and (max-width: 770px) {
   .align-left {
     text-align: center; }
@@ -3093,7 +3183,26 @@ a.news--read {
     font-size: 16px; }
 
   .becomeastar__textbox {
-    margin-top: 0; } }
+    margin-top: 0; }
+
+  .singuptraining__form--choice--price {
+    width: 80%;
+    text-align: right; }
+
+  .singuptraining__form--choice--name {
+    width: 100%; }
+
+  .singuptraining__form--choice--del {
+    width: 20%; }
+    .singuptraining__form--choice--del .singupinput--cross {
+      float: right; }
+
+  .singuptraining__head--text p {
+    font-size: 14px;
+    margin-bottom: 15px; }
+
+  .singuptraining__head--text h2 {
+    font-size: 40px; } }
 @media only screen and (max-width: 500px) {
   .header__navigation--menu {
     margin-left: 17px;
