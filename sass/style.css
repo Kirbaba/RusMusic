@@ -2709,6 +2709,63 @@ a.news--read {
         color: #EDF2F4;
         text-decoration: none; }
 
+.single-training__head {
+  background-image: url("../img/singletraining.jpg"); }
+  .single-training__head--text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 100px; }
+    .single-training__head--text h2 {
+      font-size: 52px;
+      font-family: "MuseoCyrl900";
+      color: #EDF2F4; }
+      .single-training__head--text h2 span {
+        color: #B66565; }
+.single-training--info {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 30px 0 0;
+  background-color: #2D2828; }
+  .single-training--info p {
+    color: #EDF2F4;
+    font-size: 18px;
+    font-family: "MuseoCyrl700";
+    margin-bottom: 25px; }
+  .single-training--info--but {
+    text-align: center;
+    font-family: "MuseoCyrl900";
+    width: 168px;
+    height: 61px;
+    background-color: #ef233b;
+    line-height: 61px;
+    float: right;
+    margin: 35px 0;
+    font-size: 20px;
+    color: #EDF2F4;
+    text-decoration: none; }
+    .single-training--info--but:hover {
+      background-color: #cb0000;
+      color: #EDF2F4;
+      text-decoration: none; }
+.single-training__content {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  padding: 25px 0;
+  background-color: #DBDBDB; }
+  .single-training__content iframe {
+    margin: 25px auto;
+    display: block;
+    max-width: 100%; }
+  .single-training__content p {
+    font-size: 18px;
+    color: #1C1C1C;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 25px; }
+
 .footer {
   display: block;
   float: left;
@@ -3267,7 +3324,10 @@ a.news--read {
     width: 50%; }
 
   .online-store--but {
-    margin-right: 5px; } }
+    margin-right: 5px; }
+
+  .single-training__head--text h2 {
+    font-size: 40px; } }
 @media only screen and (max-width: 320px) {
   .producing-carousel {
     padding: 0 13%; }
