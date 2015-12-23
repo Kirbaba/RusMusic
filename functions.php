@@ -29,6 +29,8 @@ function add_script(){
     wp_enqueue_script( 'fotorama-js', get_template_directory_uri() . '/js/fotorama.js', array(), '1');
     wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js', array(), '1');
 
+    $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
+    wp_localize_script( 'jquery', 'path', $translation_array );
     wp_localize_script( 'my-script', 'img',
     array(
         'url' => get_template_directory_uri().'/img/',
@@ -1260,71 +1262,106 @@ add_action('wp_ajax_nopriv_demosend', 'sendDemo');
 
 function sendDemo(){
 
-    $adminMail = get_option('admin_email');
-
-    $to_email       = $adminMail; //Recipient email, Replace with own email here
-
-    //Sanitize input data using PHP filter_var().
-    $user_name      = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
-    $user_email     = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-    $city   = filter_var($_POST["city"], FILTER_SANITIZE_NUMBER_INT);
-    $link        = filter_var($_POST["link"], FILTER_SANITIZE_STRING);
-
-    //email body
-    $message_body = "\nИмя : ".$user_name."\nEmail : ".$user_email."\nГород : ".$city."\n Ссылка на песни : ".$link ;
-
-    ### Attachment Preparation ###
-    $file_attached = false;
-    if(isset($_FILES['file_attach'])) //check uploaded file
+    if($_POST)
     {
-        //get file details we need
-        $file_tmp_name    = $_FILES['file_attach']['tmp_name'];
-        $file_name        = $_FILES['file_attach']['name'];
-        $file_size        = $_FILES['file_attach']['size'];
-        $file_type        = $_FILES['file_attach']['type'];
-        $file_error       = $_FILES['file_attach']['error'];
+        $to_email       = get_option('admin_email');; //Recipient email, Replace with own email here
+        $from_email     = "noreply@wp.loc"; //From email address (eg: no-reply@YOUR-DOMAIN.com)
 
-        //read from the uploaded file & base64_encode content for the mail
-        $handle = fopen($file_tmp_name, "r");
-        $content = fread($handle, $file_size);
-        fclose($handle);
-        $encoded_content = chunk_split(base64_encode($content));
-        //now we know we have the file for attachment, set $file_attached to true
-        $file_attached = true;
+        //check if its an ajax request, exit if not
+        if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
+            $output = json_encode(array( //create JSON data
+                'type'=>'error',
+                'text' => 'Sorry Request must be Ajax POST'
+            ));
+            die($output); //exit script outputting json data
+        }
 
+        //Sanitize input data using PHP filter_var().
+        $user_name      = filter_var($_POST["user_name"], FILTER_SANITIZE_STRING);
+        $user_email     = filter_var($_POST["user_email"], FILTER_SANITIZE_EMAIL);
+        $city   = filter_var($_POST["city"], FILTER_SANITIZE_STRING);
+        $link        = filter_var($_POST["link"], FILTER_SANITIZE_STRING);
+
+        //email body
+        $message_body = "Имя : ".$user_name."\nПочта : ".$user_email."\nГород : ".$city."\nСсылка на песню : ".$link ;
+
+        ### Attachment Preparation ###
+        $file_attached = false;
+        if(isset($_FILES['file_attach'])) //check uploaded file
+        {
+            //get file details we need
+            $file_tmp_name    = $_FILES['file_attach']['tmp_name'];
+            $file_name        = $_FILES['file_attach']['name'];
+            $file_size        = $_FILES['file_attach']['size'];
+            $file_type        = $_FILES['file_attach']['type'];
+            $file_error       = $_FILES['file_attach']['error'];
+
+            //exit script and output error if we encounter any
+            if($file_error>0)
+            {
+                $mymsg = array(
+                    1=>"The uploaded file exceeds the upload_max_filesize directive in php.ini",
+                    2=>"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form",
+                    3=>"The uploaded file was only partially uploaded",
+                    4=>"No file was uploaded",
+                    6=>"Missing a temporary folder" );
+
+                $output = json_encode(array('type'=>'error', 'text' => $mymsg[$file_error]));
+                die($output);
+            }
+
+            //read from the uploaded file & base64_encode content for the mail
+            $handle = fopen($file_tmp_name, "r");
+            $content = fread($handle, $file_size);
+            fclose($handle);
+            $encoded_content = chunk_split(base64_encode($content));
+            //now we know we have the file for attachment, set $file_attached to true
+            $file_attached = true;
+
+        }
+
+        if($file_attached) //continue if we have the file
+        {
+            $boundary = md5("sanwebe");
+            //header
+            $headers = "MIME-Version: 1.0\r\n";
+            $headers .= "From:".$from_email."\r\n";
+            $headers .= "Reply-To: ".$user_email."" . "\r\n";
+            $headers .= "Content-Type: multipart/mixed; boundary = $boundary\r\n\r\n";
+
+            //plain text
+            $body = "--$boundary\r\n";
+            $body .= "Content-Type: text/plain; charset=UTF-8\r\n";
+            $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
+            $body .= chunk_split(base64_encode($message_body));
+
+            //attachment
+            $body .= "--$boundary\r\n";
+            $body .= "Content-Type: $file_type; name=\"$file_name\"\r\n";
+            $body .= "Content-Disposition: attachment; filename=\"$file_name\"\r\n";
+            $body .= "Content-Transfer-Encoding: base64\r\n";
+            $body .= "X-Attachment-Id: ".rand(1000,99999)."\r\n\r\n";
+            $body .= $encoded_content;
+        }else{
+            //proceed with PHP email.
+            $headers = "From:".$from_email."\r\n".
+                'Reply-To: '.$user_email.'' . "\n" .
+                'X-Mailer: PHP/' . phpversion();
+            $body = $message_body;
+        }
+
+        $send_mail = mail($to_email, "Демо запись (rusmusic.pro)", $body, $headers);
+
+        if(!$send_mail)
+        {
+            //If mail couldn't be sent output error. Check your PHP email configuration (if it ever happens)
+            $output = json_encode(array('type'=>'error', 'text' => 'Произошла ошибка!'));
+            die($output);
+        }else{
+            $output = json_encode(array('type'=>'message', 'text' => 'Спасибо за ваше письмо!'));
+            die($output);
+        }
     }
-
-    if($file_attached) //continue if we have the file
-    {
-        $boundary = md5("sanwebe");
-        //header
-        $headers = "MIME-Version: 1.0\r\n";
-        $headers .= "Reply-To: ".$user_email."" . "\r\n";
-        $headers .= "Content-Type: multipart/mixed; boundary = $boundary\r\n\r\n";
-
-        //plain text
-        $body = "--$boundary\r\n";
-        $body .= "Content-Type: text/plain; charset=ISO-8859-1\r\n";
-        $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
-        $body .= chunk_split(base64_encode($message_body));
-
-        //attachment
-        $body .= "--$boundary\r\n";
-        $body .="Content-Type: $file_type; name=\"$file_name\"\r\n";
-        $body .="Content-Disposition: attachment; filename=\"$file_name\"\r\n";
-        $body .="Content-Transfer-Encoding: base64\r\n";
-        $body .="X-Attachment-Id: ".rand(1000,99999)."\r\n\r\n";
-        $body .= $encoded_content;
-    }else{
-        //proceed with PHP email.
-        $headers = 'Reply-To: '.$user_email.'' . "\n" .
-            'X-Mailer: PHP/' . phpversion();
-        $body = $message_body;
-    }
-
-    mail($to_email, $body, $headers);
-
-    wp_die();
 }
 
 /*---------------------------------- END DEMO -------------------------------------*/

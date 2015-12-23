@@ -490,6 +490,11 @@ jQuery(function($) {
 
     $(document).on('click','.demoSend', function(){
 
+        var templateUrl = path.templateUrl;
+        // console.log(templateUrl);
+        $('.demoSend').before('<div class="preLoader"><img src="'+templateUrl+'/img/ajax-loader.gif"></div>');
+
+
         var name = $('input[name="demos-name"]').val();
         var email = $('input[name="demos-email"]').val();
         var city = $('input[name="demos-city"]').val();
@@ -513,6 +518,8 @@ jQuery(function($) {
             data: m_data, //данные, которые передаем. Обязательно для action указываем имя нашего хука
             success: function (data) {
                 //load json data from server and output message
+                $('.preLoader').html(data.text);
+
             }
         });
         return false;
