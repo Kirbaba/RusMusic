@@ -1,18 +1,21 @@
-<? get_header()?>
+<?php get_header()?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<section class="page-title-head singuptraining__head">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="training__triangle"></div>
 				<header class="singuptraining__head--text">						
-					<h2>Запись на обучение</h2>
-					<p>В нашей школе есть возможность записываться на обучение в онлайн-режиме.
+					<h2><?= the_title(); ?></h2>
+					<p><?= the_content(); ?></p>
+					<!--<p>В нашей школе есть возможность записываться на обучение в онлайн-режиме.
 					А также оплачивать один или несколько курсов в кредит без процентов!</p>
-					<p>Представьтесь</p>
+					<p>Представьтесь</p>-->
 				</header>
 			</div>
 		</div>		
 	</section>
-
+<?php endwhile; ?>
+<?php  endif; wp_reset_query();?>
 	<section class="singuptraining__form">
 		<div class="container">
 			<div class="row">
@@ -48,15 +51,16 @@
 							</div>
 						</div>
 					</div>
-					<select class="registration-input--large singuptraining__form--select" name="singuptraining-course">
+				    <?= do_shortcode('[courselist]'); ?>
+					<!--<select class="registration-input--large singuptraining__form--select" name="singuptraining-course">
 						<option disabled selected>Выберите курс</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
-					</select>
+					</select>-->
 					
 					<div class="becomeastar__questionnaire--but">
-  						<a href="#" class="single-training--button">Записаться</a>
+  						<a class="single-training--button sendCourse">Записаться</a>
   					</div>
 				</div>
 			</div>
@@ -71,6 +75,6 @@
 			</div>
 		</div>
 	</section>
-	
+
 
 <? get_footer()?>

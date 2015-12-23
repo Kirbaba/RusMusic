@@ -1,23 +1,25 @@
 <? get_header()?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<section class="page-title-head training__head">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="training__triangle"></div>
 				<header class="becomeastar__head--text">						
-					<h2>Обучение</h2>
-					<p>Мы даём людям знания в рамках музыкальной системы образования. <br>
-Пройдя курсы элементарной теории музыки, Вы можете выбрать для себя <br>
-направление, в котором хотите получать знания и развиваться.</p>
+					<h2><?= the_title(); ?></h2>
+					<p><?= the_content(); ?></p>
 				</header>
 			</div>
 		</div>		
 	</section>
-
+<?php endwhile; ?>
+<?php  endif;?>
 	<section class="training__content">
 		<div class="container">
 			<div class="row">
 				<div class="training__content__wrapper">
-					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+					<?= do_shortcode('[coursegrid]'); ?>
+
+					<!--<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 						<div class="training__content__item">
 							<div class="training__content__item--img">
 								<img src="<?php bloginfo('template_directory'); ?>/img/training_1.jpg" alt="">
@@ -140,7 +142,7 @@
 								<a href="#" class="training__content__item--buttons--sign">Записаться</a>
 							</div>
 						</div>
-					</div>
+					</div>-->
 
 				</div>
 			</div>

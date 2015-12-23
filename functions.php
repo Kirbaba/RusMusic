@@ -1259,7 +1259,6 @@ function sendBecomeAStar(){
 add_action('wp_ajax_demosend', 'sendDemo');
 add_action('wp_ajax_nopriv_demosend', 'sendDemo');
 
-
 function sendDemo(){
 
     if($_POST)
@@ -1364,4 +1363,121 @@ function sendDemo(){
     }
 }
 
-/*---------------------------------- END DEMO -------------------------------------*/
+/*---------------------------------- END DEMO ------------------------------------*/
+
+/*---------------------------------- TRAINING ------------------------------------*/
+
+add_action('init', 'myCustomInitTraining');
+function myCustomInitTraining()
+{
+    $labels = array(
+        'name' => 'Курсы обучения', // Основное название типа записи
+        'singular_name' => 'Курс', // отдельное название записи типа Book
+        'add_new' => 'Добавить курс',
+        'add_new_item' => 'Добавить новый курс',
+        'edit_item' => 'Редактировать курс',
+        'new_item' => 'Новый курс',
+        'view_item' => 'Посмотреть курс',
+        'search_items' => 'Найти курс',
+        'not_found' => 'Курсов не найдено',
+        'not_found_in_trash' => 'В корзине курсов не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Курсы'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail','editor')
+    );
+    register_post_type('course', $args);
+}
+
+/*Блок с тектовым редактором для второй половины поста*/
+function extraFieldsTrainingDescription($post)
+{
+    ?>
+    <div class="meta_box_content"><textarea name="extra[description]" cols="40" rows="20"><?php echo get_post_meta($post->ID, "description", 1); ?></textarea></div>
+    <?php
+}
+
+function admin_add_wysiwyg_custom_field_textarea()
+{ ?>
+    <script type="text/javascript">/* <![CDATA[ */
+        jQuery(function($){
+            var i=1;
+            $('.meta_box_content textarea').each(function(e)
+            {
+                var id = $(this).attr('id');
+                if (!id)
+                {
+                    id = 'customEditor-' + i++;
+                    $(this).attr('id',id);
+                }
+                tinyMCE.execCommand("mceAddEditor", false, id);
+                tinyMCE.execCommand('mceAddControl', false, id);
+            });
+        });
+        /* ]]> */</script>
+<?php }
+add_action( 'admin_print_footer_scripts', 'admin_add_wysiwyg_custom_field_textarea', 99 );
+
+function extraFieldsTrainingPrice($post)
+{
+    ?>
+    <p>
+        <span>Цена курса (только цифры): </span>
+        <input type="text" name='extra[price]' value="<?php echo get_post_meta($post->ID, "price", 1); ?>">
+    </p>
+    <?php
+}
+
+function myExtraFieldsTraining()
+{
+    add_meta_box('extra_description', 'Описание', 'extraFieldsTrainingDescription', 'course', 'normal', 'high');
+    add_meta_box('extra_price', 'Стоимость', 'extraFieldsTrainingPrice', 'course', 'normal', 'high');
+}
+
+add_action('add_meta_boxes', 'myExtraFieldsTraining', 1);
+
+function getCoursesList(){
+    $args = array(
+        'post_type' => 'course',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/course_select.php', ['my_query' => $my_query]);
+}
+add_shortcode('courselist', 'getCoursesList');
+
+//вывод на главной
+function getTrainingShortcode(){
+    $args = array(
+        'post_type' => 'course',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/course_grid.php', ['my_query' => $my_query]);
+
+}
+
+add_shortcode('coursegrid', 'getTrainingShortcode');
+
+/*-------------------------------- END TRAINING -----------------------------------*/
