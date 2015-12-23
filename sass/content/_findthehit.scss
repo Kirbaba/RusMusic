@@ -1,0 +1,158 @@
+.findthehit {
+	&--pagedescription  {
+		position: absolute;
+		width: 100%;
+		background-color: #EF233C;
+		text-align: center;
+		color: #FFF;
+		padding: 15px 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		p {
+			font-family: $m700;
+			font-size: 16px;
+		}
+	}
+	&__container {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		padding: 25px 0;
+		background-color: #DBDBDB;
+	}
+	&--titleline {
+		display: block;
+		float: left;
+		width: 100%;
+		margin: 15px 0;
+		h4 {
+			text-align: left;
+			font-size: 16px;
+			font-family: $os;
+			font-weight: 700;
+			color: #CB0000;			
+		}
+		h4.findthehit--date {
+			text-align: center;
+		}
+	}
+	&--itemline {
+		display: block;
+		width: 100%;
+		position: relative;
+		margin: 15px 0;
+		p {
+			text-align: left;
+			color: #595959;
+			font-family: $os;
+			font-size: 17px;
+		}
+		a {
+			text-align: left;
+			color: #595959;
+			font-family: $os;
+			font-size: 17px;
+		}
+		p.findthehit--date {
+			text-align: center;
+			font-size: 14px;
+		}
+		a.findthehit--controls {
+			display: block;
+			float: left;
+			position: relative;
+			width: 45px;
+			height: 26px;
+			background-color: #CBC0BC;
+			color: #401C1B;
+			text-align: center;
+			&:hover {
+				background-color: darken(#CBC0BC, 15%);
+				
+			}
+		}
+		a.findthehit--controls--vol {
+			z-index: 2;
+			-webkit-border-radius: 3px 0 0 3px;
+			        border-radius: 3px 0 0 3px;
+			&:before {
+				content: "";
+				z-index: 1;
+				position: absolute;
+				right: -8px;
+				border-top: 13px solid transparent;
+				border-left: 8px solid #CBC0BC;
+				border-bottom: 13px solid transparent;
+			}
+			&:after {
+				content: "";
+				z-index: 0;
+				position: absolute;
+				right: -9px;
+				border-top: 13px solid transparent;
+				border-left: 8px solid #DBDBDB;
+				border-bottom: 13px solid transparent;
+			}
+			&:hover {
+				&:before {
+					border-left: 8px solid darken(#CBC0BC, 15%);
+				}
+			}
+		}
+		a.findthehit--controls--play {
+			z-index: 1;
+			width: 54px;
+			-webkit-border-radius: 0 3px 3px 0;
+			        border-radius: 0 3px 3px 0;
+		}
+		a.findthehit--reservation {
+			display: block;
+			float: left;
+			position: relative;
+			height: 26px;
+			width: 100%;
+			background-color: #ABABAB;
+			margin: 5px auto;
+			text-decoration: none;
+			text-align: center;
+			color: #FFF;
+			font-size: 14px;
+			line-height: 26px;
+			font-family: $m900;
+			&--active {
+				background-color: #ef233c;
+				&:hover {
+					background-color: darken(#ef233c, 10%);
+				}
+			}
+		}
+		a.findthehit--order {
+			display: block;
+			float: left;
+			position: relative;
+			height: 26px;
+			width: 100%;
+			background-color: #ABABAB;
+			margin: 5px auto;
+			text-decoration: none;
+			text-align: center;
+			color: #FFF;
+			font-size: 14px;
+			font-family: $m900;
+			line-height: 26px;
+			&--active {
+				background-color: #860111;
+				&:hover {
+					background-color: darken(#860111, 10%);
+				}
+			}
+		}
+	}
+	&__player {
+		display: flex;
+    	justify-content: center;
+    	margin: 5px 0;
+	}
+}

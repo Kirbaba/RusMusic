@@ -1183,6 +1183,14 @@ ul {
     position: absolute;
     bottom: 75px;
     width: 100%; }
+  .page-title-head h2.onlytitle--text {
+    font-family: "MuseoCyrl900";
+    font-size: 53px;
+    color: #EDF2F4;
+    text-align: center;
+    position: absolute;
+    bottom: 40%;
+    width: 100%; }
 
 .team__head {
   background-image: url("../img/team-headbg.jpg"); }
@@ -2853,6 +2861,136 @@ a.news--read {
         background-repeat: no-repeat;
         background-position: 50%; }
 
+.findthehit--pagedescription {
+  position: absolute;
+  width: 100%;
+  background-color: #EF233C;
+  text-align: center;
+  color: #FFF;
+  padding: 15px 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .findthehit--pagedescription p {
+    font-family: "MuseoCyrl700";
+    font-size: 16px; }
+.findthehit__container {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  padding: 25px 0;
+  background-color: #DBDBDB; }
+.findthehit--titleline {
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 15px 0; }
+  .findthehit--titleline h4 {
+    text-align: left;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #CB0000; }
+  .findthehit--titleline h4.findthehit--date {
+    text-align: center; }
+.findthehit--itemline {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin: 15px 0; }
+  .findthehit--itemline p {
+    text-align: left;
+    color: #595959;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px; }
+  .findthehit--itemline a {
+    text-align: left;
+    color: #595959;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px; }
+  .findthehit--itemline p.findthehit--date {
+    text-align: center;
+    font-size: 14px; }
+  .findthehit--itemline a.findthehit--controls {
+    display: block;
+    float: left;
+    position: relative;
+    width: 45px;
+    height: 26px;
+    background-color: #CBC0BC;
+    color: #401C1B;
+    text-align: center; }
+    .findthehit--itemline a.findthehit--controls:hover {
+      background-color: #aa9891; }
+  .findthehit--itemline a.findthehit--controls--vol {
+    z-index: 2;
+    -webkit-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px; }
+    .findthehit--itemline a.findthehit--controls--vol:before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      right: -8px;
+      border-top: 13px solid transparent;
+      border-left: 8px solid #CBC0BC;
+      border-bottom: 13px solid transparent; }
+    .findthehit--itemline a.findthehit--controls--vol:after {
+      content: "";
+      z-index: 0;
+      position: absolute;
+      right: -9px;
+      border-top: 13px solid transparent;
+      border-left: 8px solid #DBDBDB;
+      border-bottom: 13px solid transparent; }
+    .findthehit--itemline a.findthehit--controls--vol:hover:before {
+      border-left: 8px solid #aa9891; }
+  .findthehit--itemline a.findthehit--controls--play {
+    z-index: 1;
+    width: 54px;
+    -webkit-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0; }
+  .findthehit--itemline a.findthehit--reservation {
+    display: block;
+    float: left;
+    position: relative;
+    height: 26px;
+    width: 100%;
+    background-color: #ABABAB;
+    margin: 5px auto;
+    text-decoration: none;
+    text-align: center;
+    color: #FFF;
+    font-size: 14px;
+    line-height: 26px;
+    font-family: "MuseoCyrl900"; }
+    .findthehit--itemline a.findthehit--reservation--active {
+      background-color: #ef233c; }
+      .findthehit--itemline a.findthehit--reservation--active:hover {
+        background-color: #d00f27; }
+  .findthehit--itemline a.findthehit--order {
+    display: block;
+    float: left;
+    position: relative;
+    height: 26px;
+    width: 100%;
+    background-color: #ABABAB;
+    margin: 5px auto;
+    text-decoration: none;
+    text-align: center;
+    color: #FFF;
+    font-size: 14px;
+    font-family: "MuseoCyrl900";
+    line-height: 26px; }
+    .findthehit--itemline a.findthehit--order--active {
+      background-color: #860111; }
+      .findthehit--itemline a.findthehit--order--active:hover {
+        background-color: #53010b; }
+.findthehit__player {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0; }
+
 .footer {
   display: block;
   float: left;
@@ -3152,7 +3290,10 @@ a.news--read {
       bottom: 25px; }
 
   .page-partners__item {
-    width: 33.33333%; } }
+    width: 33.33333%; }
+
+  .findthehit--titleline h4 {
+    font-size: 12px; } }
 @media only screen and (max-width: 737px) {
   .navbar-brand {
     float: left;
@@ -3202,7 +3343,27 @@ a.news--read {
     margin-bottom: 15px; }
 
   .singuptraining__head--text h2 {
-    font-size: 40px; } }
+    font-size: 40px; }
+
+  .findthehit--titleline {
+    display: none; }
+
+  .findthehit--itemline {
+    text-align: center; }
+    .findthehit--itemline a.findthehit--reservation {
+      float: none;
+      width: 80%;
+      margin: 15px auto; }
+    .findthehit--itemline a.findthehit--order {
+      float: none;
+      width: 80%;
+      margin: 15px auto; }
+    .findthehit--itemline p {
+      text-align: center; }
+    .findthehit--itemline a {
+      text-align: center; }
+    .findthehit--itemline .findthehit__player {
+      margin: 15px 0; } }
 @media only screen and (max-width: 500px) {
   .header__navigation--menu {
     margin-left: 17px;
@@ -3445,6 +3606,12 @@ a.news--read {
     width: 75%; }
 
   .header--slogan {
-    left: 35px; } }
+    left: 35px; }
+
+  .findthehit--pagedescription p {
+    font-size: 12px; }
+
+  .page-title-head h2.onlytitle--text {
+    font-size: 40px; } }
 
 /*# sourceMappingURL=style.css.map */
