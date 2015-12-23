@@ -20,15 +20,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">					
-					<input type="text" class="registration-input--large" name="singuptraining-name" placeholder="Ваше имя">
+					<input type="text" class="registration-input--large" name="singuptraining-name" placeholder="Имя и Фамилия">
 					<input type="text" class="registration-input--large" name="singuptraining-email" placeholder="Адрес электронной почты:">
 					
 					<input type="tel" class="registration-input--large" name="singuptraining-phone" placeholder="Мобильный телефон">
 					<div class="col-lg-3 col-md-3 col-sm-12">
 						<p>Выберите курс </p>
 					</div>
-					<div class="col-lg-9 col-md-9 col-sm-12 p0">
-						<div class="singuptraining__form--choice">
+					<div class="col-lg-9 col-md-9 col-sm-12 p0 chosenCourses">
+						<?= do_shortcode('[selectCourse id="'.$_GET['id'].'"]'); ?>
+						<!--<div class="singuptraining__form--choice">
 							<div class="singuptraining__form--choice--name">
 								<p><b>Курс "Создание электронной музыки"</b></p>
 							</div>
@@ -49,7 +50,7 @@
 							<div class="singuptraining__form--choice--del">
 								<a href="#"><i class="singupinput--cross"></i></a>
 							</div>
-						</div>
+						</div>-->
 					</div>
 				    <?= do_shortcode('[courselist]'); ?>
 					<!--<select class="registration-input--large singuptraining__form--select" name="singuptraining-course">
@@ -58,7 +59,9 @@
 						<option value="2">2</option>
 						<option value="3">3</option>
 					</select>-->
-					
+					<div class="col-lg-12">
+						<h1>ИТОГО: <span class="totalCourses"></span> р.</h1>
+					</div>
 					<div class="becomeastar__questionnaire--but">
   						<a class="single-training--button sendCourse">Записаться</a>
   					</div>

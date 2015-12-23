@@ -1449,6 +1449,7 @@ function myExtraFieldsTraining()
 
 add_action('add_meta_boxes', 'myExtraFieldsTraining', 1);
 
+//select list
 function getCoursesList(){
     $args = array(
         'post_type' => 'course',
@@ -1461,6 +1462,7 @@ function getCoursesList(){
     $parser = new Parser();
     $parser->render(TM_DIR . '/view/course_select.php', ['my_query' => $my_query]);
 }
+
 add_shortcode('courselist', 'getCoursesList');
 
 //вывод на главной
@@ -1479,5 +1481,54 @@ function getTrainingShortcode(){
 }
 
 add_shortcode('coursegrid', 'getTrainingShortcode');
+
+// AJAX ACTION
+add_action('wp_ajax_addcourse', 'selectCourse');
+add_action('wp_ajax_nopriv_addcourse', 'selectCourse');
+
+function selectCourse($id){
+    if(isset($_POST['id'])){
+        $id['id'] = $_POST['id'];
+    }
+
+    if(isset($id['id']) && $id['id'] != ''){
+        $chosen = get_post($id['id']);
+        $parser = new Parser();
+        $parser->render(TM_DIR . '/view/course_choose.php', ['chosen' => $chosen]);
+        if(isset($_POST['id'])){
+            wp_die();
+        }
+    }
+}
+
+add_shortcode('selectCourse', 'selectCourse');
+
+// AJAX ACTION
+add_action('wp_ajax_sendcourses', 'sendCourses');
+add_action('wp_ajax_nopriv_sendcourses', 'sendCourses');
+
+function sendCourses(){
+
+    $adminMail = get_option('admin_email');
+    $name = $_POST['name'];
+    $mail = $_POST['mail'];
+    $phone = $_POST['phone'];
+    $courses = $_POST['courses'];
+    $total = $_POST['total'];
+
+
+    if(!empty($mail) && !empty($courses)){
+        $str = "С вашего сайта прислали заявку:<br>";
+        $str .= 'Имя: '.$name.' <br>';
+        $str .= 'Email: '.$mail.' <br>';
+        $str .= 'Телефон: '.$phone.' <br>';
+        $str .= 'Выбранные курсы: '.$courses.' <br>';
+        $str .= 'Общая стоимость : '.$total.' р.<br>';
+
+        mail($adminMail, "Запись на обучение (rusmusic.pro)", $str, "Content-type: text/html; charset=UTF-8\r\n");
+    }
+
+    die();
+}
 
 /*-------------------------------- END TRAINING -----------------------------------*/

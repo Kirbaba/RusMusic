@@ -527,3 +527,79 @@ jQuery(function($) {
 
 });
 
+//запись на курсы
+jQuery(function($) {
+
+    $(document).on('change','.singuptraining__form--select', function(){
+        var selected = $(this).val();
+
+        if(!$('a[data-id="'+selected+'"').length){
+            jQuery.ajax({
+                url: ajaxurl, //url, к которому обращаемся
+                type: "POST",
+                data: "action=addcourse&id=" + selected, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+                success: function (data) {
+                    //модалка если понадобится
+                    $('.chosenCourses').append(data);
+                    var total = 0;
+                    $.each($('.delFromChoose'), function(){
+                        var price = $(this).attr('data-price');
+                        price = price.replace(/\s+/g, '');
+                        total += parseInt(price);
+                        //console.log(price);
+                    });
+                    $('.totalCourses').text(total);
+                }
+            });
+        }
+        return false;
+    });
+
+    $(document).on('click', '.delFromChoose', function(){
+        var id = $(this).attr('data-id');
+        var block = $(this).parent().parent();
+        block.remove();
+
+        var total = 0;
+        $.each($('.delFromChoose'), function(){
+            var price = $(this).attr('data-price');
+            price = price.replace(/\s+/g, '');
+            total += parseInt(price);
+            //console.log(price);
+        });
+        $('.totalCourses').text(total);
+        return false;
+    });
+
+    $(document).on('click','.sendCourse',function(){
+        var name = $('input[name="singuptraining-name"]').val();
+        var mail = $('input[name="singuptraining-email"]').val();
+        var phone = $('input[name="singuptraining-phone"]').val();
+
+        var total = 0;
+        $.each($('.delFromChoose'), function(){
+            var price = $(this).attr('data-price');
+            price = price.replace(/\s+/g, '');
+            total += parseInt(price);
+            //console.log(price);
+        });
+        $('.totalCourses').text(total);
+
+        var courses = [];
+        $.each($('.singuptraining__form--choice--name'), function(){
+            courses.push($(this).text());
+        });
+
+
+        jQuery.ajax({
+            url: ajaxurl, //url, к которому обращаемся
+            type: "POST",
+            data: "action=sendcourses&name=" + name + "&mail=" + mail + "&courses=" + courses + "&total=" + total + "&phone="+phone, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+               $('.becomeastar__questionnaire--but').before("<h4>Спасибо! С Вами скоро свяжутся</h4>");
+            }
+        });
+        return false;
+    });
+});
+
