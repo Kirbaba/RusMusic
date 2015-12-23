@@ -61,7 +61,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="becomeastar__questionnaire">
 		<div class="container">
 			<div class="row">

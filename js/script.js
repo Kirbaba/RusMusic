@@ -481,3 +481,42 @@ jQuery(function($) {
     });
 
 });
+
+//Отправка демки
+jQuery(function($) {
+    $('.demos--but').click(function(){
+        $("input[name='demos-username']").click();
+    });
+
+    $(document).on('click','.demoSend', function(){
+
+        var name = $('input[name="demos-name"]').val();
+        var email = $('input[name="demos-email"]').val();
+        var city = $('input[name="demos-city"]').val();
+        var link = $('input[name="demos-songs-link"]').val();
+
+//data to be sent to server
+        var m_data = new FormData();
+        m_data.append( 'action', 'demosend');
+        m_data.append( 'user_name', name);
+        m_data.append( 'user_email', email);
+        m_data.append( 'city', city);
+        m_data.append( 'link', link);
+        m_data.append( 'file_attach', $('input[name="demos-username"]')[0].files[0]);
+
+        jQuery.ajax({
+            url: ajaxurl, //url, к которому обращаемся
+            contentType: false,
+            processData: false,
+            type: "POST",
+            dataType:'json',
+            data: m_data, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+                //load json data from server and output message
+            }
+        });
+        return false;
+    });
+
+});
+
