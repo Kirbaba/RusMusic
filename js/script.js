@@ -295,7 +295,6 @@ jQuery(window).scroll(function() {
     });
 })(jQuery);
 
-
 jQuery(document).ready(function($){
     $('.producing-carousel').rhombus({
         nextText: '',
@@ -603,3 +602,33 @@ jQuery(function($) {
     });
 });
 
+//найди свой хит
+jQuery(function($) {
+
+    $(document).on('click', '.findthehit--controls--play', function(){
+        var id = $(this).attr('data-id');
+        window.player = document.getElementById('music-'+id);
+
+        if(player.paused){
+            player.play();
+            this.innerHTML = '<i class="fa fa-pause"></i>';
+        } else {
+            player.pause();
+            this.innerHTML = '<i class="fa fa-play"></i>';
+        }
+        return false;
+    });
+    $(document).on('click', '.findthehit--controls--vol', function(){
+        var id = $(this).attr('data-id');
+        window.player = document.getElementById('music-'+id);
+
+        if(player.muted){
+            player.muted = false;
+            this.innerHTML = '<i class="fa fa-volume-up"></i>';
+        } else {
+            player.muted = true;
+            this.innerHTML = '<i class="fa fa-volume-off"></i>';
+        }
+        return false
+    });
+});

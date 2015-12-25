@@ -33,7 +33,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="findthehit--itemline">
+                <?= do_shortcode('[findthehit]'); ?>
+				<!--<div class="findthehit--itemline">
 			
 					<div class="col-lg-2 col-md-2 col-sm-2">
 						<p class="findthehit--date">21.12.2014</p>
@@ -82,7 +83,7 @@
 						<a href="#" class="findthehit--order findthehit--order--active">Заказать</a>
 					</div>
 				
-				</div>
+				</div>-->
 				
 			</div>
 		</div>

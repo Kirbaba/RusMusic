@@ -1532,3 +1532,63 @@ function sendCourses(){
 }
 
 /*-------------------------------- END TRAINING -----------------------------------*/
+
+/*------------------------------- FIND YOUR HIT -----------------------------------*/
+
+function admin_menu()
+{
+    add_menu_page('Музыка', 'Найди свой хит', 'manage_options', 'music', 'musicAdmin');
+}
+
+add_action('admin_menu', 'admin_menu');
+
+//получение всех данных по названию таблицы
+function getDataFromDb($tableName)
+{
+    global $wpdb;
+    $data = $wpdb->get_results("SELECT * FROM `$tableName`", ARRAY_A);
+    return $data;
+}
+
+//admin page for bankets
+function musicAdmin(){
+    global $wpdb;
+    $music = getDataFromDb('music');
+    //prn($music);
+    if($_POST){
+        // Проверяем загружен ли файл
+        if(is_uploaded_file($_FILES["filename"]["tmp_name"]))
+        {
+            $uploadDir = TM_DIR."/music/";
+            $name = $_POST['name'];
+            $author = $_POST['author'];
+            $date = time();
+            // Если файл загружен успешно, перемещаем его
+            // из временной директории в конечную
+            move_uploaded_file($_FILES["filename"]["tmp_name"], $uploadDir.$_FILES["filename"]["name"]);
+
+            $wpdb->insert('music',array(
+                'name' => $name,
+                'author' => $author,
+                'dt_add' => $date,
+                'path' => "/music/".$_FILES["filename"]["name"]
+            ));
+        } else {
+            echo("Ошибка загрузки файла");
+        }
+    }
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . "/view/admin/music.php", array('music' => $music), true);
+}
+
+//вывод на главной
+function findTheHit(){
+    $music = getDataFromDb('music');
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/findhits.php', ['music' => $music]);
+}
+
+add_shortcode('findthehit', 'findTheHit');
+/*--------------------------- END FIND YOUR HIT -----------------------------------*/
