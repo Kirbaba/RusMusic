@@ -1,22 +1,23 @@
 <? get_header()?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<section class="page-title-head onlinework--head">
 		<div class="container-fluid">
 			<div class="row">
-				<h2 class="onlytitle--text">Найди свой хит</h2>
+				<h2 class="onlytitle--text"><?= the_title(); ?></h2>
 			</div>
 			<div class="findthehit--pagedescription">
 				<div class="container">					
 					<div class="row">
 						<p>
-							Здесь Вы можете купить песни под ключ (с готовой аранжировкой). Возможно изменение тональности в готовых песнях. <br>
-							Чтобы узнать стоимость песен, напиши сюда. Узнавай первым о появлении новых песен - подпишись
+							<?= the_content(); ?>
 						</p>
 					</div>
 				</div>				
 			</div>
 		</div>		
 	</section>
-
+<?php endwhile; ?>
+<?php  endif;?>
 	<section class="findthehit__container">
 		<div class="container">
 			<div class="row">

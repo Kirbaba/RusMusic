@@ -782,7 +782,6 @@ add_shortcode('partnersPage', 'getPartnersPageShortcode');
 
 /*-------------------------------- END PARTNERS ----------------------------------*/
 
-
 /*---------------------------------- ARTISTS -------------------------------------*/
 
 add_action('init', 'myCustomInitArtists');
@@ -1592,3 +1591,211 @@ function findTheHit(){
 
 add_shortcode('findthehit', 'findTheHit');
 /*--------------------------- END FIND YOUR HIT -----------------------------------*/
+
+/*------------------------------- EARN MONEY --------------------------------------*/
+
+add_action('init', 'myCustomInitEarnMoney');
+function myCustomInitEarnMoney()
+{
+    $labels = array(
+        'name' => 'Заработай на музыке', // Основное название типа записи
+        'singular_name' => 'Услуги', // отдельное название записи типа Book
+        'add_new' => 'Добавить услугу',
+        'add_new_item' => 'Добавить новую услугу',
+        'edit_item' => 'Редактировать услугу',
+        'new_item' => 'Новая услуга',
+        'view_item' => 'Посмотреть услугу',
+        'search_items' => 'Найти услугу',
+        'not_found' => 'Услуг не найдено',
+        'not_found_in_trash' => 'В корзине услуг не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Услуги "Заработай на музые"'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail','editor')
+    );
+    register_post_type('earnmoney', $args);
+}
+
+//вывод на главной
+function getEarnMoneyShortcode(){
+    $firstArgs = array(
+        'post_type' => 'earnmoney',
+        'post_status' => 'publish',
+        'posts_per_page' => 1);
+
+    $args = array(
+        'post_type' => 'earnmoney',
+        'post_status' => 'publish',
+        'posts_per_page' => 4);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $first_query = null;
+    $first_query = new WP_Query($firstArgs);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/earnmoney.php', ['my_query' => $my_query, 'first_query' => $first_query]);
+
+}
+
+add_shortcode('earnmoney', 'getEarnMoneyShortcode');
+
+/*----------------------------- END EARN MONEY ------------------------------------*/
+
+/*---------------------------------- AUTHORS -------------------------------------*/
+
+add_action('init', 'myCustomInitAuthors');
+function myCustomInitAuthors()
+{
+    $labels = array(
+        'name' => 'Наши авторы', // Основное название типа записи
+        'singular_name' => 'Авторы', // отдельное название записи типа Book
+        'add_new' => 'Добавить автора',
+        'add_new_item' => 'Добавить нового автора',
+        'edit_item' => 'Редактировать автора',
+        'new_item' => 'Новый автор',
+        'view_item' => 'Посмотреть автора',
+        'search_items' => 'Найти автора',
+        'not_found' => 'Авторов не найдено',
+        'not_found_in_trash' => 'В корзине авторов не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Авторы'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title','thumbnail','editor')
+    );
+    register_post_type('authors', $args);
+}
+
+function extraFieldsAuthorsSocialTwitter($post)
+{
+    ?>
+    <p>
+        <span>Twitter: </span>
+        <input type="text" name='extra[tw]' value="<?php echo get_post_meta($post->ID, "tw", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsAuthorsSocialFacebook($post)
+{
+    ?>
+    <p>
+        <span>Facebook: </span>
+        <input type="text" name='extra[fb]' value="<?php echo get_post_meta($post->ID, "fb", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsAuthorsSocialGplus($post)
+{
+    ?>
+    <p>
+        <span>Google+ : </span>
+        <input type="text" name='extra[gp]' value="<?php echo get_post_meta($post->ID, "gp", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsAuthorsSocialLinkedin($post)
+{
+    ?>
+    <p>
+        <span>LinkedIn: </span>
+        <input type="text" name='extra[in]' value="<?php echo get_post_meta($post->ID, "in", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsAuthorsSocialPinterest($post)
+{
+    ?>
+    <p>
+        <span>Pinterest: </span>
+        <input type="text" name='extra[pi]' value="<?php echo get_post_meta($post->ID, "pi", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsAuthorsPosition($post)
+{
+    ?>
+    <p>
+        <span>Укажите должность автора: </span>
+        <input type="text" name='extra[position]' value="<?php echo get_post_meta($post->ID, "position", 1); ?>">
+    </p>
+    <?php
+}
+
+function myExtraFieldsAuthors()
+{
+    add_meta_box('extra_position', 'Должность', 'extraFieldsAuthorsPosition', 'authors', 'normal', 'high');
+    add_meta_box('extra_tw', 'Twitter', 'extraFieldsAuthorsSocialTwitter', 'authors', 'normal', 'high');
+    add_meta_box('extra_fb', 'Facebook', 'extraFieldsAuthorsSocialFacebook', 'authors', 'normal', 'high');
+    add_meta_box('extra_gp', 'Google+', 'extraFieldsAuthorsSocialGplus', 'authors', 'normal', 'high');
+    add_meta_box('extra_in', 'LinkedIn', 'extraFieldsAuthorsSocialLinkedin', 'authors', 'normal', 'high');
+    add_meta_box('extra_pi', 'Pinterest', 'extraFieldsAuthorsSocialPinterest', 'authors', 'normal', 'high');
+
+}
+
+add_action('add_meta_boxes', 'myExtraFieldsAuthors', 1);
+
+//вывод на главной
+function getAuthorsShortcode(){
+    $args = array(
+        'post_type' => 'authors',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/authors.php', ['my_query' => $my_query]);
+
+}
+
+function getAuthorsSliderShortcode(){
+    $args = array(
+        'post_type' => 'authors',
+        'post_status' => 'publish',
+        'posts_per_page' => -1);
+
+    $my_query = null;
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/authors_slider.php', ['my_query' => $my_query]);
+
+}
+
+add_shortcode('authorsSlider', 'getAuthorsSliderShortcode');
+add_shortcode('authors', 'getAuthorsShortcode');
+
+/*--------------------------------- END AUTHORS ----------------------------------*/

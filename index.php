@@ -241,7 +241,7 @@
 			<div class="row">
 				<div class="stars-slider__wrapper">
 					<div class="stars-slick">
-						<?= do_shortcode('[artists]'); ?>
+						<?= do_shortcode('[authors]'); ?>
 						<!--<a href="#" class="stars-slider__item">
 							<img src="<?php bloginfo('template_directory'); ?>/img/a-dessa.jpg" alt="">
 							<span class="stars-slider__item--text">
