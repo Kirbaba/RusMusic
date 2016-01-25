@@ -2991,6 +2991,87 @@ a.news--read {
   justify-content: center;
   margin: 5px 0; }
 
+.cabinet__head {
+  height: 170px;
+  background-color: #282828; }
+.cabinet--signout {
+  float: right;
+  position: relative;
+  top: 138px;
+  bottom: 15px;
+  right: 0;
+  font-family: "CirceBold";
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #B0BEC5;
+  text-decoration: none; }
+  .cabinet--signout i {
+    font-size: 18px;
+    margin-left: 5px;
+    vertical-align: middle; }
+  .cabinet--signout:hover, .cabinet--signout:active, .cabinet--signout:focus {
+    color: #FF4E41;
+    text-decoration: none; }
+.cabinet__content {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #DBDBDB; }
+.cabinet__sidebar {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #333; }
+  .cabinet__sidebar--head {
+    display: block;
+    float: left;
+    position: relative;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 25px; }
+    .cabinet__sidebar--head:before, .cabinet__sidebar--head:after {
+      display: table;
+      content: " "; }
+    .cabinet__sidebar--head:after {
+      clear: both; }
+  .cabinet__sidebar--avatar {
+    width: 57px;
+    height: 57px;
+    display: block;
+    float: left;
+    -webkit-border-radius: 29px;
+    -moz-border-radius: 29px;
+    -ms-border-radius: 29px;
+    border-radius: 29px;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: #fff;
+    overflow: hidden; }
+    .cabinet__sidebar--avatar img {
+      min-width: 100%;
+      height: auto;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+    .cabinet__sidebar--avatar img {
+      max-width: 150%; }
+  .cabinet__sidebar--name {
+    display: block;
+    float: left; }
+    .cabinet__sidebar--name h4 {
+      color: #fff;
+      font-size: 21px; }
+    .cabinet__sidebar--name p {
+      color: #9B9B9B;
+      font-size: 13px; }
+
 .footer {
   display: block;
   float: left;
