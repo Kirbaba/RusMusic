@@ -139,6 +139,17 @@
 										<a href="#" class="cabinet__board__item--comment--reply">ОТПРАВИТЬ</a>
 									</div>
 								</article>
+								<article class="cabinet__board__item from-admin">
+									<div class="cabinet__board__item--head">
+										<small>СЕГОДНЯ, 12:30</small>
+										<small>ОТВЕТ ОТ nikiforof01</small>
+									</div>
+									<div class="cabinet__board__item--comment from-user">
+										<p>До мастеринга внимательно прослушайте материал. 
+										Во многих музыкальных жанрах вокал является наиболее важным. 
+										В других стилях это ритм, в некоторых - дистошн и так далее.  </p>										
+									</div>
+								</article>
 							</div>
 						</div>
 					</div>

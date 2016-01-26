@@ -409,6 +409,24 @@
 				background-color: #CB0000;
 			}	
 		}
+		.from-user {
+			.cabinet__board__item--comment {
+				background-image: none;
+			}
+			p {
+				font-style: italic;
+				color: #7B7B7B;
+			}
+			&:before {
+				content: "";
+				width: 4px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #c08e8e;
+			}
+		}
 		.dropping {
 			&:before {
 				content: "";

@@ -3398,6 +3398,19 @@ a.news--read {
     top: 0;
     left: 0;
     background-color: #CB0000; }
+  .cabinet__board .from-user .cabinet__board__item--comment {
+    background-image: none; }
+  .cabinet__board .from-user p {
+    font-style: italic;
+    color: #7B7B7B; }
+  .cabinet__board .from-user:before {
+    content: "";
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #c08e8e; }
   .cabinet__board .dropping:before {
     content: "";
     width: 4px;
