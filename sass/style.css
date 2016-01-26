@@ -454,6 +454,24 @@ ul {
     -webkit-filter: grayscale(0%) saturate(8);
     filter: grayscale(0%) saturate(8); }
 
+.counter, .counter--active, .counter--passive {
+  display: inline-block;
+  position: relative;
+  float: right;
+  width: 34px;
+  height: 18px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  border-radius: 9px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 18px; }
+  .counter--active {
+    background-color: #cb0000; }
+  .counter--passive {
+    background-color: #272727; }
+
 .header__navigation--menu .navbar-nav > li > a {
   color: #fff;
   text-transform: uppercase;
@@ -3025,7 +3043,7 @@ a.news--read {
   position: relative;
   width: 100%;
   padding: 15px 0;
-  background-color: #333; }
+  background-color: #282828; }
   .cabinet__sidebar--head {
     display: block;
     float: left;
@@ -3034,7 +3052,7 @@ a.news--read {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0 25px; }
+    padding: 0 25px 15px; }
     .cabinet__sidebar--head:before, .cabinet__sidebar--head:after {
       display: table;
       content: " "; }
@@ -3045,6 +3063,7 @@ a.news--read {
     height: 57px;
     display: block;
     float: left;
+    margin-top: 15px;
     -webkit-border-radius: 29px;
     -moz-border-radius: 29px;
     -ms-border-radius: 29px;
@@ -3064,13 +3083,96 @@ a.news--read {
       max-width: 150%; }
   .cabinet__sidebar--name {
     display: block;
-    float: left; }
+    float: left;
+    width: 70%;
+    margin-left: 5%; }
     .cabinet__sidebar--name h4 {
       color: #fff;
-      font-size: 21px; }
+      font-size: 21px;
+      margin: 5px 0px; }
     .cabinet__sidebar--name p {
       color: #9B9B9B;
-      font-size: 13px; }
+      font-size: 13px;
+      padding: 0; }
+  .cabinet__sidebar--menu {
+    display: block;
+    float: left;
+    position: relative;
+    background-color: #333;
+    padding: 0;
+    width: 100%; }
+    .cabinet__sidebar--menu li {
+      position: relative; }
+      .cabinet__sidebar--menu li a {
+        display: block;
+        position: relative;
+        color: #b0bec5;
+        font-size: 15px;
+        padding: 15px 35px;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        text-decoration: none; }
+        .cabinet__sidebar--menu li a i {
+          margin-right: 15px; }
+        .cabinet__sidebar--menu li a:hover, .cabinet__sidebar--menu li a:active, .cabinet__sidebar--menu li a:focus, .cabinet__sidebar--menu li a:checked {
+          background-color: #484848; }
+        .cabinet__sidebar--menu li a:before {
+          content: none;
+          width: 4px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #cb0000; }
+        .cabinet__sidebar--menu li a:focus:before, .cabinet__sidebar--menu li a:checked:before {
+          content: ""; }
+    .cabinet__sidebar--menu ul {
+      display: none;
+      padding: 0;
+      width: 100%; }
+      .cabinet__sidebar--menu ul li {
+        position: relative; }
+        .cabinet__sidebar--menu ul li a {
+          display: block;
+          position: relative;
+          color: #b0bec5;
+          font-size: 15px;
+          padding: 15px 35px;
+          width: 100%;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          text-decoration: none; }
+          .cabinet__sidebar--menu ul li a:hover, .cabinet__sidebar--menu ul li a:active, .cabinet__sidebar--menu ul li a:focus, .cabinet__sidebar--menu ul li a:checked {
+            background-color: #484848; }
+          .cabinet__sidebar--menu ul li a:before {
+            content: ""; }
+  .cabinet__sidebar--searchhit {
+    display: block;
+    float: left;
+    width: 100%; }
+    .cabinet__sidebar--searchhit a {
+      display: block;
+      width: 80%;
+      margin: 50px auto;
+      border: 10px solid #cb0000;
+      text-align: center;
+      font-family: "CirceBold";
+      font-size: 18px;
+      height: 67px;
+      line-height: 47px;
+      color: #CDCFB9;
+      text-decoration: none;
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s linear;
+      -ms-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
+      .cabinet__sidebar--searchhit a:hover, .cabinet__sidebar--searchhit a:active, .cabinet__sidebar--searchhit a:focus {
+        background-color: #cb0000;
+        text-decoration: none; }
 
 .footer {
   display: block;

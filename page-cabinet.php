@@ -22,7 +22,31 @@
 						<div class="cabinet__sidebar--name">
 							<p>nikiforof01</p>
 							<h4>Владимир Никифоров</h4>
+						<!-- -----------------STARS------------------- -->
+							<div class="cabinet__sidebar--name--stars">
+								
+							</div>
+						<!-- -----------------STARS------------------- -->
 						</div>
+					</div>
+					<ul class="cabinet__sidebar--menu">
+						<li>
+							<a href="#"><i class="fa fa-home"></i>Личный кабинет</a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-commenting-o"></i>Сообщения<span class="counter--active">32</span></a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-flask"></i>Проекты<span class="counter">12</span></a>
+							<ul class="cabinet__sidebar--menu--bottom">
+								<li><a href="#">На рассмотрении <span class="counter">1</span></a></li>
+								<li><a href="#">В работе<span class="counter--passive">23</span></a></li>
+								<li><a href="#">Сделано<span class="counter--active">5</span></a></li>
+							</ul>
+						</li>
+					</ul>
+					<div class="cabinet__sidebar--searchhit">
+						<a href="#">НАЙДИ СВОЙ ХИТ</a>
 					</div>
 				</aside>
 			</div>

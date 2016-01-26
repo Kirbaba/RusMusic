@@ -376,3 +376,24 @@
     filter: grayscale(0%) saturate(8);
   }
 }
+
+.counter {
+  display: inline-block;
+  position: relative;
+  float: right;
+  width: 34px;
+  height: 18px;
+  @include border-radius(9px);
+  font-size: 11px;
+  text-align: center;
+  line-height: 18px;
+  &--active {
+    @extend .counter;
+    background-color: #cb0000;
+  }
+  &--passive {
+    @extend .counter;
+    background-color: #272727;
+  }
+
+}

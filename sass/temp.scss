@@ -38,14 +38,14 @@
 		position: relative;
 		width: 100%;
 		padding: 15px 0;
-		background-color: #282828;
+		background-color: #333;
 		&--head {
 			display: block;
 			float: left;
 			position: relative;
 			width: 100%;
 			@include inside-pad;
-			padding: 0 25px 15px;
+			padding: 0 25px;
 			
 		}
 		&--avatar {
@@ -53,7 +53,6 @@
 			height: 57px;
 			display: block;
 			float: left;
-			margin-top: 15px;
 			@include border-radius(29px);
 			@include background-clip(padding-box);
 			background-color: #fff;
@@ -83,14 +82,10 @@
 			float: left;
 			position: relative;
 			background-color: #333;
-			padding: 0;
-			width: 100%;
 			li {
-				position: relative;
 				a {
 					display: block;
-					position: relative;
-					color: #b0bec5;
+					color: #FFF;
 					font-size: 15px;
 					padding: 15px 35px;
 					width: 100%;
@@ -98,78 +93,9 @@
 					   -moz-box-sizing: border-box;
 					        box-sizing: border-box;
 					text-decoration: none;
-					i {
-						margin-right: 15px;
-					}
 					&:hover, &:active, &:focus, &:checked {
 						background-color: #484848;
-					}					
-					&:before {
-						content: none;
-						width: 4px;
-						height: 100%;
-						position: absolute;
-						top: 0;
-						left: 0;
-						background-color: $red;
 					}
-					&:focus,&:checked {
-						&:before {
-							content: "";
-						}
-					}
-				}	
-				
-			}
-			ul {
-				display: none;
-				padding: 0;
-				width: 100%;
-				li {
-					position: relative;
-					a {
-						display: block;
-						position: relative;
-						color: #b0bec5;
-						font-size: 15px;
-						padding: 15px 35px;
-						width: 100%;
-						-webkit-box-sizing: border-box;
-						   -moz-box-sizing: border-box;
-						        box-sizing: border-box;
-						text-decoration: none;					
-						&:hover, &:active, &:focus, &:checked {
-							background-color: #484848;
-						}	
-						&:before {
-							content: "";
-						}					
-					}
-
-					
-				}
-			}
-		}
-		&--searchhit {
-			display: block;
-			float: left;
-			width: 100%;
-			a {
-				display: block;	
-				width: 80%;
-				margin: 50px auto;
-				border: 10px solid $red;
-				text-align: center;
-				font-family: $cir;
-				font-size: 18px;
-				height: 67px;
-				line-height: 47px;
-				color: #CDCFB9;
-				text-decoration: none;
-				@include transition(.3s);
-				&:hover, &:active, &:focus {
-					background-color: $red;
-					text-decoration: none;
 				}
 			}
 		}

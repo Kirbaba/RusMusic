@@ -632,3 +632,16 @@ jQuery(function($) {
         return false
     });
 });
+
+
+jQuery( document ).ready(function() {
+    (function($) {
+      var fold = $('.cabinet__sidebar--menu--bottom').prev();
+        
+      
+        fold.on('click', function() {
+            var $this = $(this);
+            $this.next().toggle('300');
+        });
+    })(jQuery);
+});
