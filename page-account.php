@@ -1,8 +1,14 @@
 <? get_header()?>
-<section class="page-title-head cabinet__head">
+<?php if(is_user_logged_in()){
+	global $current_user;
+	get_currentuserinfo();
+
+	?>
+
+	<section class="page-title-head cabinet__head">
 	<div class="container">
 		<div class="row">
-			<a href="" class="cabinet--signout">
+			<a href="/?logout=true" class="cabinet--signout">
 				ВЫЙТИ ИЗ ЛИЧНОГО КАБИНЕТА
 				<i class="fa fa-sign-out"></i>
 			</a>
@@ -10,18 +16,19 @@
 	</div>		
 </section>
 
-<section class="cabinet__content">
+	<section class="cabinet__content">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<aside class="cabinet__sidebar">
 					<div class="cabinet__sidebar--head">
 						<div class="cabinet__sidebar--avatar">
+
 							<img src="<?php bloginfo('template_directory'); ?>/img/Layer-1.jpg" alt="">
 						</div>
 						<div class="cabinet__sidebar--name">
-							<p>nikiforof01</p>
-							<h4>Владимир Никифоров</h4>
+							<p><?= $current_user->nickname; ?></p>
+							<h4><?= $current_user->user_firstname; ?> <?= $current_user->user_lastname; ?></h4>
 						<!-- -----------------STARS------------------- -->
 							<div class="cabinet__sidebar--name--stars">
 								
@@ -31,7 +38,7 @@
 					</div>
 					<ul class="cabinet__sidebar--menu">
 						<li>
-							<a href="#"><i class="fa fa-home"></i>Личный кабинет</a>
+							<a href="/account"><i class="fa fa-home"></i>Личный кабинет</a>
 						</li>
 						<li>
 							<a href="#"><i class="fa fa-commenting-o"></i>Сообщения<span class="counter--active">32</span></a>
@@ -72,6 +79,7 @@
 					</div>
 					<div class="col-xs-12">
 						<div class="cabinet__board">
+							<?php echo do_shortcode('[feed user_id= '.$current_user->ID.' ]'); ?>
 							<article class="cabinet__board__item dropping">
 								<div class="cabinet__board__item--head">
 									<small>СЕГОДНЯ, 12:30</small>
@@ -166,7 +174,7 @@
 	</div>
 </section>
 
-<section class="stars-slider">
+	<section class="stars-slider">
 	<div class="container">
 		<div class="row">
 			<div class="stars-slider__wrapper">
@@ -177,7 +185,8 @@
 		</div>
 	</div>
 </section>
-<section class="partners">
+
+	<section class="partners">
 	<div class="container">
 		<div class="row">				
 			<h4>НАШИ ПАРТНЕРЫ</h4>
@@ -185,4 +194,6 @@
 		</div>
 	</div>
 </section>
+
+<?php } ?>
 <? get_footer()?>

@@ -1869,4 +1869,48 @@ function addFeed($event_id,$event_type,$user_id,$time){
             array('%d','%s','%d','%d'));
     }
 
+function getFeed($atts){
+    global $wpdb;
+
+    $args = shortcode_atts( array(
+        'user_id' => '',
+    ), $atts );
+
+    $events = $wpdb->get_results("SELECT * FROM `feed` WHERE `user_id` = '{$args['user_id']}' ORDER BY `id` DESC", ARRAY_A);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/view/account/visited.php', ['events' => $events]);
+}
+
+add_shortcode('feed', 'getFeed');
+
+function new_time($a) { // преобразовываем время в нормальный вид
+    date_default_timezone_set('Europe/Moscow');
+    $ndate = date('d.m.Y', $a);
+    $ndate_time = date('H:i', $a);
+    $ndate_exp = explode('.', $ndate);
+    $nmonth = array(
+        1 => 'янв',
+        2 => 'фев',
+        3 => 'мар',
+        4 => 'апр',
+        5 => 'мая',
+        6 => 'июн',
+        7 => 'июл',
+        8 => 'авг',
+        9 => 'сен',
+        10 => 'окт',
+        11 => 'ноя',
+        12 => 'дек'
+    );
+
+    foreach ($nmonth as $key => $value) {
+        if($key == intval($ndate_exp[1])) $nmonth_name = $value;
+    }
+
+    if($ndate == date('d.m.Y')) return 'сегодня в '.$ndate_time;
+    elseif($ndate == date('d.m.Y', strtotime('-1 day'))) return 'вчера в '.$ndate_time;
+    else return $ndate_exp[0].' '.$nmonth_name.' '.$ndate_exp[2].' в '.$ndate_time;
+}
+
 /*------------------------------- END VISITED PAGES ----------------------------------*/
