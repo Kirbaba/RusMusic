@@ -1,10 +1,9 @@
 ﻿<?php get_header(); ?>
-
 	<section class="enter-slideshow">
 		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover" data-arrows="false">
 			<?= do_shortcode('[mainSlider]'); ?>
 			<!--<div data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg">
-		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover" data-arrows="false">					
+		<div class="fotorama" data-width="100%"  data-ratio="1568/658" data-fit="cover" data-arrows="false">
 			<div data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg">
 				<div class="container">
 					<div class="enter-slideshow__text">
@@ -29,12 +28,12 @@
 				</div>
 			</div>	-->
 			</div>
-		</div>	
+		</div>
 
 	</section>
 
 	<section class="becomeastar">
-		<canvas id="slider-canvas"></canvas>	
+		<canvas id="slider-canvas"></canvas>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-6 col-xs-12">
@@ -47,12 +46,12 @@
 					<?php echo do_shortcode('[mainDirection paged="0"]'); ?>
 					<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
 						<a href="#" class="becomeastar--link-line--item">
-							<span class="img-skew-wrap">							
+							<span class="img-skew-wrap">
 								<img src="<?php bloginfo('template_directory'); ?>/img/755645743456-(6).jpg" alt="">
 								<span class="becomeastar--link-line--item--text align-right">
 									<h3>Заработай на музыке</h3>
 									<p>ПРОДАЖА МУЗЫКАЛЬНО КОНТЕНТА НА ГИПЕР ПЛОЩАДКАХ: ITUNES, GOOGLE DRIVE</p>
-								</span>								
+								</span>
 							</span>
 							<span class="link-line--border"></span>
 						</a>
@@ -83,12 +82,12 @@
 						<?php echo do_shortcode('[mainDirection paged="2"]'); ?>
 						<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
 							<a href="#" class="becomeastar--link-line--item">
-								<span class="img-skew-wrap">							
+								<span class="img-skew-wrap">
 									<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_132936830.png" alt="">
 									<span class="becomeastar--link-line--item--text align-right">
 										<h3>Найди свой хит</h3>
 										<p>ТУТ можно купить песню для своего репертуара, а автор  сможет продать песни артистам.</p>
-									</span>								
+									</span>
 								</span>
 								<span class="link-line--border"></span>
 							</a>
@@ -116,12 +115,12 @@
 						<?php echo do_shortcode('[mainDirection paged="4"]'); ?>
 						<!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p0">
 							<a href="#" class="becomeastar--link-line--item">
-								<span class="img-skew-wrap">							
+								<span class="img-skew-wrap">
 									<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_88537570.png" alt="">
 									<span class="becomeastar--link-line--item--text align-right">
 										<h3>Детская творческая мастерская</h3>
 										<p>место, где дети и взрослые узнают о самых разных видах творчества в дружеской и свободной обстановке. </p>
-									</span>								
+									</span>
 								</span>
 								<span class="link-line--border"></span>
 							</a>
@@ -163,38 +162,8 @@
 								<p>19.06.2015</p>
 								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
 								<a href="#">> ПОДРОБНЕЕ</a>
-							</div>										                       
-		                </div>		
-		                				           
-						<div class="news__item">
-							<div class="news__item--img">
-								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
 							</div>
-							<div class="news__item--soc">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-vk"></i></a>
-							</div>
-							<div class="news__item--title">
-								<p>19.06.2015</p>
-								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
-								<a href="#">> ПОДРОБНЕЕ</a>
-							</div>										                       
-		                </div>	
-		                				           
-						<div class="news__item">
-							<div class="news__item--img">
-								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
-							</div>
-							<div class="news__item--soc">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-vk"></i></a>
-							</div>
-							<div class="news__item--title">
-								<p>19.06.2015</p>
-								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
-								<a href="#">> ПОДРОБНЕЕ</a>
-							</div>										                       
-		                </div>	
+		                </div>
 
 						<div class="news__item">
 							<div class="news__item--img">
@@ -208,7 +177,37 @@
 								<p>19.06.2015</p>
 								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
 								<a href="#">> ПОДРОБНЕЕ</a>
-							</div>										                       
+							</div>
+		                </div>
+
+						<div class="news__item">
+							<div class="news__item--img">
+								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
+							</div>
+							<div class="news__item--soc">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-vk"></i></a>
+							</div>
+							<div class="news__item--title">
+								<p>19.06.2015</p>
+								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
+								<a href="#">> ПОДРОБНЕЕ</a>
+							</div>
+		                </div>
+
+						<div class="news__item">
+							<div class="news__item--img">
+								<img src="<?php bloginfo('template_directory'); ?>/img/shutterstock_112378778.jpg" alt="">
+							</div>
+							<div class="news__item--soc">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-vk"></i></a>
+							</div>
+							<div class="news__item--title">
+								<p>19.06.2015</p>
+								<h4>АННА ШУЛЬГИНА:«БАЛ ДЕБЮТАНТОК — ЭТО ШАНС НАЙТИ ДРУЗЕЙ</h4>
+								<a href="#">> ПОДРОБНЕЕ</a>
+							</div>
 		                </div>		-->
 			        </div>
 				</div>
@@ -220,7 +219,7 @@
 		<div class="container">
 			<div class="row">
 			<div class="social-network-wrapper">
-				<div class="row">				
+				<div class="row">
 					<h4>НАШ ИНСТАГРАМ</h4>
 					<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 						<?= do_shortcode('[instagram]'); ?>
@@ -249,7 +248,7 @@
 								<h5>A-DESSA</h5>
 							</span>
 						</a>
-						
+
 						<a href="#" class="stars-slider__item">
 							<img src="<?php bloginfo('template_directory'); ?>/img/placebo.jpg" alt="">
 							<span class="stars-slider__item--text">
@@ -257,7 +256,7 @@
 								<h5>АНАСТАСИЯ КОВАЛЕВА</h5>
 							</span>
 						</a>
-						
+
 						<a href="#" class="stars-slider__item">
 							<img src="<?php bloginfo('template_directory'); ?>/img/mans.jpg" alt="">
 							<span class="stars-slider__item--text">
@@ -273,7 +272,7 @@
 								<h5>АННА СЕМЕНОВИЧ</h5>
 							</span>
 						</a>
-						
+
 						<a href="#" class="stars-slider__item">
 							<img src="<?php bloginfo('template_directory'); ?>/img/rodriges.jpg" alt="">
 							<span class="stars-slider__item--text">
@@ -297,10 +296,10 @@
 
 	<section class="partners">
 		<div class="container">
-			<div class="row">				
+			<div class="row">
 				<h4>НАШИ ПАРТНЕРЫ</h4>
 				<?= do_shortcode('[partners]'); ?>
-				
+
 				<!--<div class="col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-4 col-xs-6">
 					<div class="partners__item">
 						<img src="<?php bloginfo('template_directory'); ?>/img/partners_03.png" alt="">
@@ -329,5 +328,4 @@
 			</div>
 		</div>
 	</section>
-
 <?php get_footer(); ?>

@@ -100,7 +100,7 @@
 			</div>
 		</div>
 	</article>
-    
+
 <?php wp_footer(); ?>
 <script type="text/javascript">
 	addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};

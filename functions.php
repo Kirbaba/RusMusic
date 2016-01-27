@@ -28,6 +28,7 @@ function add_script(){
     wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/script.js', array(), '1');
     wp_enqueue_script( 'fotorama-js', get_template_directory_uri() . '/js/fotorama.js', array(), '1');
     wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js', array(), '1');
+    wp_enqueue_script( 'cabinet', get_template_directory_uri() . '/js/cabinet.js', array(), '1');
 
     $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
     wp_localize_script( 'jquery', 'path', $translation_array );
@@ -112,10 +113,8 @@ function excerpt_readmore($more) {
 }
 add_filter('excerpt_more', 'excerpt_readmore');
 
-
 if ( function_exists( 'add_theme_support' ) )
     add_theme_support( 'post-thumbnails' );
-
 
 /*-------------------------- МЕНЮ НАВИГАЦИИ ---------------------------------------*/
 
@@ -515,6 +514,7 @@ function create_news_hierarchical_taxonomy() {
 }
 
 function getNewsShortcode(){
+    wp_reset_query();
     $args = array(
         'numberposts'     => -1, // тоже самое что posts_per_page
         'post_type'       => 'post',
@@ -1799,3 +1799,74 @@ add_shortcode('authorsSlider', 'getAuthorsSliderShortcode');
 add_shortcode('authors', 'getAuthorsShortcode');
 
 /*--------------------------------- END AUTHORS ----------------------------------*/
+
+/*--------------------------------- VISITED PAGES ------------------------------------*/
+
+function addVisitedPage(){
+    global $wpdb;
+
+    $page_id     = get_queried_object_id();
+    $event_type = 'visited';
+    $user_id = get_current_user_id();
+
+    $last_visited = $wpdb->get_results("SELECT * FROM `visited` WHERE `user_id` = '{$user_id}' ORDER BY `id` DESC LIMIT 1", ARRAY_A);
+
+    if(is_front_page()){
+        $visit_post_id = 0;
+        $visit_post_title =  "Главная";
+        $visit_post_link = get_site_url();
+
+            if($page_id == 0 && (($last_visited[0]['post_id'] != $visit_post_id && $last_visited[0]['user_id'] == $user_id) || empty($last_visited ))){
+                if(isset($visit_post_title)){
+                    if($wpdb->insert('visited',
+                        array('post_id' => $visit_post_id,
+                            'post_title' => $visit_post_title,
+                            'link' => $visit_post_link,
+                            'user_id' => $user_id)
+                    )){
+                        //id вставленной записи
+                        $event_id = $wpdb->insert_id;
+                        $time = time();
+                        addFeed($event_id,$event_type,$user_id,$time);
+                    }
+                }
+            }
+
+
+    }
+    else {
+        $visit_post_id = get_the_ID();
+        $visit_post_title = get_the_title($visit_post_id);
+        $visit_post_link = get_the_permalink($visit_post_id);
+
+            if($page_id != 0 && (($last_visited[0]['post_id'] != $visit_post_id && $last_visited[0]['user_id'] == $user_id) || empty($last_visited ))){
+                if(isset($visit_post_title)){
+                    if($wpdb->insert('visited',
+                        array('post_id' => $visit_post_id,
+                            'post_title' => $visit_post_title,
+                            'link' => $visit_post_link,
+                            'user_id' => $user_id)
+                    )){
+                        //id вставленной записи
+                        $event_id = $wpdb->insert_id;
+                        $time = time();
+                        addFeed($event_id,$event_type,$user_id,$time);
+                    }
+                }
+            }
+    }
+
+}
+
+function addFeed($event_id,$event_type,$user_id,$time){
+        global $wpdb;
+
+        $wpdb->insert('feed',
+            array(  'event_id' => $event_id,
+                'event_type' => $event_type,
+                'user_id' => $user_id,
+                'dt' => $time),
+            array('%d','%s','%d','%d'));
+    }
+
+/*------------------------------- END VISITED PAGES ----------------------------------*/
