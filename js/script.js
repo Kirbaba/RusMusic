@@ -636,8 +636,7 @@ jQuery(function($) {
 
 jQuery( document ).ready(function() {
     (function($) {
-      var fold = $('.cabinet__sidebar--menu--bottom').prev();
-        
+      var fold = $('.cabinet__sidebar--menu--bottom').prev();   
       
         fold.on('click', function() {
             var $this = $(this);
