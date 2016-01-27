@@ -23,7 +23,6 @@
 				<aside class="cabinet__sidebar">
 					<div class="cabinet__sidebar--head">
 						<div class="cabinet__sidebar--avatar">
-
 							<img src="<?php bloginfo('template_directory'); ?>/img/Layer-1.jpg" alt="">
 						</div>
 						<div class="cabinet__sidebar--name">
@@ -53,7 +52,7 @@
 						</li>
 					</ul>
 					<div class="cabinet__sidebar--searchhit">
-						<a href="#">НАЙДИ СВОЙ ХИТ</a>
+						<a href="/findthehit">НАЙДИ СВОЙ ХИТ</a>
 					</div>
 				</aside>
 			</div>
