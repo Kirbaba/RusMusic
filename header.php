@@ -66,7 +66,7 @@
 									?>
 									<div class="header__account">
 										<?php if ( is_user_logged_in() ) { $current_user = wp_get_current_user();?>
-											<a href="/?logout=true" class="header__navigation--menu--account"><span><?php echo $current_user->user_login; ?> (Выход)</span></a>
+											<a href="/account" class="header__navigation--menu--account"><span><?php echo $current_user->user_login; ?></span></a><a href="/?logout=true" class="header__navigation--menu--account"><span> (Выход)</span></a>
 										<?php }else{ ?>
 										<a href="/registration" class="header__navigation--menu--account"><span>регистрация</span></a>
 										<a href="/enter" class="header__navigation--menu--account"><span>войти</span></a>

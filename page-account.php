@@ -1,6 +1,7 @@
 <? get_header()?>
 <?php if(is_user_logged_in()){
 	global $current_user;
+	global $wpdb;
 	get_currentuserinfo();
 
 	?>
@@ -15,7 +16,6 @@
 		</div>
 	</div>		
 </section>
-
 	<section class="cabinet__content">
 	<div class="container">
 		<div class="row">
@@ -23,14 +23,24 @@
 				<aside class="cabinet__sidebar">
 					<div class="cabinet__sidebar--head">
 						<div class="cabinet__sidebar--avatar">
-							<img src="<?php bloginfo('template_directory'); ?>/img/Layer-1.jpg" alt="">
+							<img src="<?php echo get_wp_user_avatar_src($current_user->ID, 96); ?>" alt="">
 						</div>
 						<div class="cabinet__sidebar--name">
 							<p><?= $current_user->nickname; ?></p>
 							<h4><?= $current_user->user_firstname; ?> <?= $current_user->user_lastname; ?></h4>
-						<!-- -----------------STARS------------------- -->
+						<!-------------------STARS------------------- -->
 							<div class="cabinet__sidebar--name--stars">
-								
+								<?php $rating = get_the_author_meta( 'stars',$current_user->ID ); ?>
+								<ul>
+									<?php for($i = 0; $i < 5; $i++){ ?>
+										<?php if($i < $rating){ ?>
+											<li class="cabinet__sidebar--name--stars__item is-active" ></li>
+										<?php }else{ ?>
+											<li class="cabinet__sidebar--name--stars__item" ></li>
+										<?php }?>
+
+									<?php } ?>
+								</ul>
 							</div>
 						<!-- -----------------STARS------------------- -->
 						</div>
@@ -164,8 +174,8 @@
 			</div>
 			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
 				<div class="cabinet__forwarding">
-					<a href="#" class="cabinet__forwarding--mastering">ОТПАРВИТЬ НА МАСТЕРИНГ</a>
-					<a href="#" class="cabinet__forwarding--reduction">ОТПАРВИТЬ НА СВЕДЕНИЕ</a>
+					<a href="#" class="cabinet__forwarding--mastering js-song-modal" data-type="mastering">ОТПАРВИТЬ НА МАСТЕРИНГ</a>
+					<a href="#" class="cabinet__forwarding--reduction js-song-modal" data-type="mixing">ОТПАРВИТЬ НА СВЕДЕНИЕ</a>
 					<a href="#" class="cabinet__forwarding--instructions">Инструкция по подготовке файлов для мастеринга и сведения</a>
 				</div>
 			</div>
@@ -194,5 +204,30 @@
 	</div>
 </section>
 
-<?php } ?>
+<!-- Modal -->
+<div class="modal fade" id="sendSong" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Отправить песню </h4>
+			</div>
+			<div class="modal-body">
+				<p>Название песни</p>
+				<input type="text" name="js-song-name">
+				<p>Ссылка на песню</p>
+				<input type="text" name="js-song-link">
+				<input type="hidden" name="js-song-type">
+				<input type="hidden" name="js-song-user" value="<?php echo $current_user->ID; ?>">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger js-send-song">Отправить</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php }else{
+	print "<script language='Javascript'>document.location.href='/enter' ;</script>";
+}  ?>
 <? get_footer()?>

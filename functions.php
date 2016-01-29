@@ -15,6 +15,7 @@ function add_style(){
     wp_enqueue_style( 'my-sass', get_template_directory_uri() . '/sass/style.css', array('my-bootstrap-extension'), '1');    
     wp_enqueue_style( 'slick-css', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css', array(), '1');
     wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/css/slick-theme.css', array(), '1');
+    wp_enqueue_style( 'rating', get_template_directory_uri() . '/css/rating.min.css', array(), '1');
 
 }
 
@@ -29,6 +30,7 @@ function add_script(){
     wp_enqueue_script( 'fotorama-js', get_template_directory_uri() . '/js/fotorama.js', array(), '1');
     wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js', array(), '1');
     wp_enqueue_script( 'cabinet', get_template_directory_uri() . '/js/cabinet.js', array(), '1');
+    wp_enqueue_script( 'rating-js', get_template_directory_uri() . '/js/rating.min.js', array(), '1');
 
     $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
     wp_localize_script( 'jquery', 'path', $translation_array );
@@ -45,6 +47,9 @@ function add_admin_script(){
     wp_enqueue_style( 'my-bootstrap-extension-admin', get_template_directory_uri() . '/css/bootstrap.css', array(), '1');
     wp_enqueue_script( 'my-bootstrap-extension', get_template_directory_uri() . '/js/bootstrap.js', array(), '1');
     wp_enqueue_style( 'my-style-admin', get_template_directory_uri() . '/css/admin.css', array(), '1');
+    wp_enqueue_style( 'rating-admin', get_template_directory_uri() . '/css/rating.min.css', array(), '1');
+    wp_enqueue_script( 'rating-js-admin', get_template_directory_uri() . '/js/rating.min.js', array(), '1');
+    wp_enqueue_script( 'stars-js-admin', get_template_directory_uri() . '/js/stars.js', array('jquery'), '1');
 }
 
 add_action('admin_enqueue_scripts', 'add_admin_script');
@@ -115,6 +120,22 @@ add_filter('excerpt_more', 'excerpt_readmore');
 
 if ( function_exists( 'add_theme_support' ) )
     add_theme_support( 'post-thumbnails' );
+
+function remove_admin_menu_items() {
+    if( !current_user_can( 'administrator' ) ){
+        remove_menu_page( 'edit.php?post_type=mainslider' );
+        remove_menu_page( 'edit.php?post_type=maindirection' );
+        remove_menu_page( 'edit.php?post_type=team' );
+        remove_menu_page( 'edit.php?post_type=partners' );
+        remove_menu_page( 'edit.php?post_type=artists' );
+        remove_menu_page( 'edit.php?post_type=organizing' );
+        remove_menu_page( 'edit.php?post_type=albums' );
+        remove_menu_page( 'edit.php?post_type=course' );
+        remove_menu_page( 'edit.php?post_type=earnmoney' );
+        remove_menu_page( 'edit.php?post_type=authors' );
+    }
+}
+add_action( 'admin_menu', 'remove_admin_menu_items' );
 
 /*-------------------------- МЕНЮ НАВИГАЦИИ ---------------------------------------*/
 
@@ -1806,6 +1827,7 @@ function addVisitedPage(){
     global $wpdb;
 
     $page_id     = get_queried_object_id();
+
     $event_type = 'visited';
     $user_id = get_current_user_id();
 
@@ -1914,3 +1936,91 @@ function new_time($a) { // преобразовываем время в норм
 }
 
 /*------------------------------- END VISITED PAGES ----------------------------------*/
+
+/*-------------------------------------------------- ACCOUNT ---------------------------------------------------------*/
+
+    //custom field stars for user
+add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+
+function my_show_extra_profile_fields( $user ) {
+
+    if(is_admin()){
+        ?><h3>Дополнительная информация</h3>
+
+        <table class="form-table">
+
+            <tr>
+                <th><label for="stars">Рейтинг</label></th>
+                <td>
+
+                    <?php $rating = esc_attr( get_the_author_meta( 'stars', $user->ID ) ); ?>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <span>Рейтинг </span><ul class="c-rating" ></ul>
+                        <input type="hidden" name="stars" value="<?= $rating; ?>">
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    <?php } ?>
+
+<?php }
+
+add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+
+function my_save_extra_profile_fields( $user_id ) {
+
+    if ( !current_user_can( 'edit_user', $user_id ) )
+        return false;
+
+    /* Copy and paste this line for additional fields. Make sure to change 'twitter' to the field ID. */
+    update_usermeta( $user_id, 'stars', $_POST['stars'] );
+}
+
+//add song
+// AJAX ACTION
+add_action('wp_ajax_sendSong', 'addSong');
+add_action('wp_ajax_nopriv_sendSong', 'addSong');
+
+function addSong(){
+    global $wpdb;
+    $event_type = 'project';
+
+    if($_POST){
+        $name = $_POST['name'];
+        $link = $_POST['link'];
+        $type = $_POST['type'];
+        $user_id = $_POST['user'];
+
+        if($wpdb->insert('songs',
+            array('user_id' => $user_id,
+                'name' => $name,
+                'link' => $link,
+            )
+        )){
+            $song_id = $wpdb->insert_id;
+            $time = time();
+            $time_end = strtotime('+1 day', $time);
+            if($wpdb->insert(
+                'projects',
+                array(
+                    'user_id' => $user_id,
+                    'song_id' => $song_id,
+                    'status' => 'pending',
+                    'type' => $type,
+                    'dt_add' => $time,
+                    'dt_end' => $time_end,
+                )
+            )){
+                $project_id = $wpdb->insert_id;
+                //id вставленной записи
+                addFeed($project_id,$event_type,$user_id,$time);
+            }
+        }
+    }
+    die();
+}
+/*------------------------------------------------ END ACCOUNT -------------------------------------------------------*/
