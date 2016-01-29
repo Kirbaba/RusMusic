@@ -1838,7 +1838,7 @@ function addVisitedPage(){
         $visit_post_title =  "Главная";
         $visit_post_link = get_site_url();
 
-            if($page_id == 0 && (($last_visited[0]['post_id'] != $visit_post_id && $last_visited[0]['user_id'] == $user_id) || empty($last_visited ))){
+            if($page_id == 0 && $visit_post_title != '' && $visit_post_link != '' && (($last_visited[0]['post_id'] != $visit_post_id && $last_visited[0]['user_id'] == $user_id) || empty($last_visited ))){
                 if(isset($visit_post_title)){
                     if($wpdb->insert('visited',
                         array('post_id' => $visit_post_id,
@@ -1853,8 +1853,6 @@ function addVisitedPage(){
                     }
                 }
             }
-
-
     }
     else {
         $visit_post_id = get_the_ID();
@@ -1896,12 +1894,13 @@ function getFeed($atts){
 
     $args = shortcode_atts( array(
         'user_id' => '',
+        'current_time' => '',
     ), $atts );
 
-    $events = $wpdb->get_results("SELECT * FROM `feed` WHERE `user_id` = '{$args['user_id']}' ORDER BY `id` DESC", ARRAY_A);
+    $events = $wpdb->get_results("SELECT * FROM `feed` WHERE `user_id` = '{$args['user_id']}' ORDER BY `id` DESC LIMIT 10", ARRAY_A);
 
     $parser = new Parser();
-    $parser->render(TM_DIR . '/view/account/visited.php', ['events' => $events]);
+    $parser->render(TM_DIR . '/view/account/feed.php', ['events' => $events, 'current_time' => $args['current_time']]);
 }
 
 add_shortcode('feed', 'getFeed');
@@ -1987,7 +1986,7 @@ add_action('wp_ajax_nopriv_sendSong', 'addSong');
 
 function addSong(){
     global $wpdb;
-    $event_type = 'project';
+    $event_type = 'projects';
 
     if($_POST){
         $name = $_POST['name'];
@@ -2003,7 +2002,7 @@ function addSong(){
         )){
             $song_id = $wpdb->insert_id;
             $time = time();
-            $time_end = strtotime('+1 day', $time);
+            $time_end = strtotime('+3 day', $time);
             if($wpdb->insert(
                 'projects',
                 array(

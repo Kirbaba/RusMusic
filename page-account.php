@@ -3,6 +3,33 @@
 	global $current_user;
 	global $wpdb;
 	get_currentuserinfo();
+	//получаем информацию о ленте
+	$projects = $wpdb->get_results( "SELECT * FROM `projects` WHERE `user_id` = '{$current_user->ID}'", ARRAY_A );
+
+	$projects_count = count($projects);
+	$mixing = 0;
+	$mastering = 0;
+	$pending = 0;
+	$atwork = 0;
+	$done = 0;
+
+	foreach($projects as $project){
+		if($project['status'] == 'pending'){
+			$pending++;
+		}
+		if($project['status'] == 'atwork'){
+			$atwork++;
+		}
+		if($project['status'] == 'done'){
+			$done++;
+		}
+		if($project['type'] == 'mastering'){
+			$mastering++;
+		}
+		if($project['type'] == 'mixing'){
+			$mixing++;
+		}
+	}
 
 	?>
 
@@ -53,11 +80,11 @@
 							<a href="#"><i class="fa fa-commenting-o"></i>Сообщения<span class="counter--active">32</span></a>
 						</li>
 						<li>
-							<a href="#nowhere"><i class="fa fa-flask"></i>Проекты<span class="counter">12</span></a>
+							<a href="#nowhere"><i class="fa fa-flask"></i>Проекты<span class="counter"><?= count($projects); ?></span></a>
 							<ul class="cabinet__sidebar--menu--bottom">
-								<li><a href="#">На рассмотрении <span class="counter">1</span></a></li>
-								<li><a href="#">В работе<span class="counter--passive">23</span></a></li>
-								<li><a href="#">Сделано<span class="counter--active">5</span></a></li>
+								<li><a href="#">На рассмотрении <span class="counter"><?= $pending ?></span></a></li>
+								<li><a href="#">В работе<span class="counter--passive"><?= $atwork ?></span></a></li>
+								<li><a href="#">Сделано<span class="counter--active"><?= $done ?></span></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -73,7 +100,7 @@
 							<div class="cabinet__processes--icon"></div>
 							<div class="cabinet__processes--title">
 								<h4>НА МАСТЕРИНГЕ</h4>
-								<h3>24 композиции</h3>
+								<h3><?= $mastering ?> композиции</h3>
 							</div>
 						</div>
 					</div>
@@ -82,14 +109,14 @@
 							<div class="cabinet__processes--icon"></div>
 							<div class="cabinet__processes--title">
 								<h4>НА СВЕДЕНИИ</h4>
-								<h3>12 композиции</h3>
+								<h3><?= $mixing ?> композиции</h3>
 							</div>
 						</div>
 					</div>
 					<div class="col-xs-12">
 						<div class="cabinet__board">
-							<?php echo do_shortcode('[feed user_id= '.$current_user->ID.' ]'); ?>
-							<article class="cabinet__board__item dropping">
+							<?php echo do_shortcode('[feed user_id= '.$current_user->ID.' current_time= '.time().']'); ?>
+							<!--<article class="cabinet__board__item dropping">
 								<div class="cabinet__board__item--head">
 									<small>СЕГОДНЯ, 12:30</small>
 								</div>
@@ -104,7 +131,6 @@
 									</a>
 								</div>
 							</article>
-
 							<article class="cabinet__board__item">
 								<div class="cabinet__board__item--head">
 									<small>СЕГОДНЯ, 12:30</small>
@@ -113,7 +139,6 @@
 									<h3>Вы были в разделе «О компании»</h3>
 								</div>
 							</article>
-
 							<article class="cabinet__board__item dropping">
 								<div class="cabinet__board__item--head">
 									<small>СЕГОДНЯ, 12:30</small>
@@ -167,7 +192,7 @@
 										В других стилях это ритм, в некоторых - дистошн и так далее.  </p>										
 									</div>
 								</article>
-							</div>
+							</div>-->
 						</div>
 					</div>
 				</div>
