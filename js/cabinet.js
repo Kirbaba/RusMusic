@@ -27,4 +27,20 @@ jQuery(function() {
         });
         return false;
     });
+
+    jQuery(document).on('click','.js-send-new-message', function(){
+        var proj_id = jQuery(this).attr('data-proj-id');
+        var block = jQuery(this).parent();
+        var message = block.children('textarea').val();
+
+        jQuery.ajax({
+            url: ajaxurl, //url, к которому обращаемся
+            type: "POST",
+            data: "action=sendMessage&proj_id=" + proj_id + "&message=" + message, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+                location.reload();
+            }
+        });
+        return false;
+    });
 });

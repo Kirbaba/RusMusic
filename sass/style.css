@@ -3339,7 +3339,6 @@ a.news--read {
         color: #2F3E4A;
         text-decoration: none; }
     .cabinet__board__item--open {
-      display: block;
       float: left;
       width: 100%; }
     .cabinet__board__item--comment {

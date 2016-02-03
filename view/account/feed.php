@@ -14,6 +14,7 @@ foreach ($events as $event) {
         </article>
 
     <?php }else if($event['event_type'] == 'projects'){
+        //prn($data);
             if($data[0]['type'] == 'mixing'){
                 $title = ' в стадии сведения';
                 $type =  'СВЕДЕНИЕ';
@@ -43,12 +44,64 @@ foreach ($events as $event) {
             </div>
             <div class="cabinet__board__item--controls">
                 <span class="cabinet__board__item--controls--type"><?= $type; ?></span>
-                <a href="#" class="cabinet__board__item--controls--dropbtn">
+                <a class="cabinet__board__item--controls--dropbtn" data-toggle="collapse" href="#collapse<?= $data[0]['id']; ?>" aria-expanded="false" aria-controls="collapse<?= $data[0]['id']; ?>">
                     <i class="fa fa-angle-down"></i>
                 </a>
             </div>
         </article>
+        <div class="cabinet__board__item--open collapse" id="collapse<?= $data[0]['id']; ?>">
+        <?php
+        //получаем сообщения по ид проекта
+            $messages = $wpdb->get_results("SELECT * FROM `messages` WHERE `proj_id`= '{$data[0]['id']}'",ARRAY_A);
 
+        //если нет сообщений то выводим форму
+
+        if(empty($messages)){ ?>
+
+            <article class="cabinet__board__item from-admin">
+                <div class="cabinet__board__item--comment">
+                    <p>Задать вопрос:</p>
+                    <textarea  name="mes" class="cabinet__board__item--comment--text"></textarea>
+                    <a href="#" class="cabinet__board__item--comment--reply js-send-new-message" data-proj-id="<?= $data[0]['id']; ?>" >ОТПРАВИТЬ</a>
+                </div>
+            </article>
+
+        <?php } else {?>
+            <div class="collapse" id="answer<?= $data[0]['id']; ?>">
+                <article class="cabinet__board__item from-admin">
+                    <div class="cabinet__board__item--comment">
+                        <p>Задать вопрос:</p>
+                        <textarea  name="mes" class="cabinet__board__item--comment--text"></textarea>
+                        <a href="#" class="cabinet__board__item--comment--reply js-send-new-message" data-proj-id="<?= $data[0]['id']; ?>" >ОТПРАВИТЬ</a>
+                    </div>
+                </article>
+            </div>
+            <?php foreach ($messages as $message) {
+                    if($message['from_user_id'] == 1){ ?>
+                        <article class="cabinet__board__item from-admin">
+                            <div class="cabinet__board__item--head">
+                                <small><?php echo new_time($message['dt']); ?></small>
+                                <small>ОТВЕТ ОТ АДМИНИСТРАТОРА</small>
+                            </div>
+                            <div class="cabinet__board__item--comment ">
+                                <p><?= $message['message']; ?></p>
+                                <a class="cabinet__board__item--comment--reply" data-toggle="collapse" href="#answer<?= $data[0]['id']; ?>" aria-expanded="false" aria-controls="answer<?= $data[0]['id']; ?>">ОТВЕТИТЬ</a>
+                            </div>
+                        </article>
+                <?php }else{?>
+                        <article class="cabinet__board__item  from-user">
+                            <div class="cabinet__board__item--head">
+                                <small><?php echo new_time($message['dt']); ?></small>
+                                <small>ОТВЕТ ОТ <?php $user = get_user_by('id',$message['from_user_id']);  echo $user->nickname; ?>1</small>
+                            </div>
+                            <div class="cabinet__board__item--comment">
+                                <p><?= $message['message']; ?></p>
+                            </div>
+                        </article>
+                    <?php }} ?>
+
+            <?php } ?>
+            </div>
 <?php  } ?>
 
 <?php } ?>

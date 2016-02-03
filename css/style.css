@@ -2,3 +2,7 @@ audio{
     display: none;
 }
 
+.cabinet__board__item--answer{
+    display: none;
+}
+

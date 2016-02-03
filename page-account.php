@@ -12,8 +12,12 @@
 	$pending = 0;
 	$atwork = 0;
 	$done = 0;
+	$count = 0;
 
 	foreach($projects as $project){
+		$proj_count = $wpdb->get_results( "SELECT COUNT(*) FROM `messages` WHERE `proj_id` = '{$project['id']}'", ARRAY_A );
+		$count += $proj_count[0]['COUNT(*)'];
+
 		if($project['status'] == 'pending'){
 			$pending++;
 		}
@@ -77,14 +81,14 @@
 							<a href="/account"><i class="fa fa-home"></i>Личный кабинет</a>
 						</li>
 						<li>
-							<a href="#"><i class="fa fa-commenting-o"></i>Сообщения<span class="counter--active">32</span></a>
+							<a href="#"><i class="fa fa-commenting-o"></i>Сообщения<span class="counter--active"><?= $count; ?></span></a>
 						</li>
 						<li>
 							<a href="#nowhere"><i class="fa fa-flask"></i>Проекты<span class="counter"><?= count($projects); ?></span></a>
 							<ul class="cabinet__sidebar--menu--bottom">
-								<li><a href="#">На рассмотрении <span class="counter"><?= $pending ?></span></a></li>
-								<li><a href="#">В работе<span class="counter--passive"><?= $atwork ?></span></a></li>
-								<li><a href="#">Сделано<span class="counter--active"><?= $done ?></span></a></li>
+								<li><a href="#">На рассмотрении <span class="counter"><?= $pending; ?></span></a></li>
+								<li><a href="#">В работе<span class="counter--passive"><?= $atwork; ?></span></a></li>
+								<li><a href="#">Сделано<span class="counter--active"><?= $done; ?></span></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -153,7 +157,7 @@
 										<i class="fa fa-angle-down"></i>
 									</a>
 								</div>
-								
+
 							</article>
 							<div class="cabinet__board__item--open">
 								<article class="cabinet__board__item from-admin">
@@ -162,8 +166,8 @@
 										<small>ОТВЕТ ОТ АДМИНИСТРАТОРА</small>
 									</div>
 									<div class="cabinet__board__item--comment ">
-										<p>До мастеринга внимательно прослушайте материал. 
-										Во многих музыкальных жанрах вокал является наиболее важным. 
+										<p>До мастеринга внимательно прослушайте материал.
+										Во многих музыкальных жанрах вокал является наиболее важным.
 										В других стилях это ритм, в некоторых - дистошн и так далее. </p>
 										<a href="#" class="cabinet__board__item--comment--reply">ОТВЕТИТЬ</a>
 									</div>
@@ -174,8 +178,8 @@
 										<small>ОТВЕТ ОТ АДМИНИСТРАТОРА</small>
 									</div>
 									<div class="cabinet__board__item--comment ">
-										<p>До мастеринга внимательно прослушайте материал. 
-										Во многих музыкальных жанрах вокал является наиболее важным. 
+										<p>До мастеринга внимательно прослушайте материал.
+										Во многих музыкальных жанрах вокал является наиболее важным.
 										В других стилях это ритм, в некоторых - дистошн и так далее.  </p>
 										<textarea name="mes" class="cabinet__board__item--comment--text"></textarea>
 										<a href="#" class="cabinet__board__item--comment--reply">ОТПРАВИТЬ</a>
@@ -187,9 +191,9 @@
 										<small>ОТВЕТ ОТ nikiforof01</small>
 									</div>
 									<div class="cabinet__board__item--comment">
-										<p>До мастеринга внимательно прослушайте материал. 
-										Во многих музыкальных жанрах вокал является наиболее важным. 
-										В других стилях это ритм, в некоторых - дистошн и так далее.  </p>										
+										<p>До мастеринга внимательно прослушайте материал.
+										Во многих музыкальных жанрах вокал является наиболее важным.
+										В других стилях это ритм, в некоторых - дистошн и так далее.  </p>
 									</div>
 								</article>
 							</div>-->

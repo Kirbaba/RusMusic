@@ -2022,4 +2022,33 @@ function addSong(){
     }
     die();
 }
+
+//add message
+// AJAX ACTION
+add_action('wp_ajax_sendMessage', 'addMessage');
+add_action('wp_ajax_nopriv_sendMessage', 'addMessage');
+
+function addMessage(){
+    global $wpdb;
+    global $current_user;
+    get_currentuserinfo();
+
+    if($_POST){
+        $from_user_id = $current_user->ID;
+        $project_id = $_POST['proj_id'];
+        $message = $_POST['message'];
+        $to_user_id = 1;
+        $dt = time();
+
+        $wpdb->insert('messages',
+            array('from_user_id' => $from_user_id,
+                'to_user_id' => $to_user_id,
+                'proj_id' => $project_id,
+                'message' => $message,
+                'dt' => $dt,
+            )
+        );
+    }
+    die();
+}
 /*------------------------------------------------ END ACCOUNT -------------------------------------------------------*/
