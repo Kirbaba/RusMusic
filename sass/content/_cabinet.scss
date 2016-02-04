@@ -438,6 +438,16 @@
 			}
 		}
 	}
+	&__history{
+		&--btn{
+			border-radius: 13px;
+			padding: 6px 25px;
+			text-transform: uppercase;
+			display: block;
+			margin: 0 auto;
+			border: 1px solid #808080;
+		}
+	}
 }
 
 .mastering {

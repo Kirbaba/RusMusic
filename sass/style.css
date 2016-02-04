@@ -3418,6 +3418,13 @@ a.news--read {
     top: 0;
     left: 0;
     background-color: #CB0000; }
+.cabinet__history--btn {
+  border-radius: 13px;
+  padding: 6px 25px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #808080; }
 
 .mastering .cabinet__processes--icon {
   background-color: #FF8761;

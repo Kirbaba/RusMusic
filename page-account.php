@@ -6,6 +6,7 @@
 	//получаем информацию о ленте
 	$projects = $wpdb->get_results( "SELECT * FROM `projects` WHERE `user_id` = '{$current_user->ID}'", ARRAY_A );
 
+	$current_time = time();
 	$projects_count = count($projects);
 	$mixing = 0;
 	$mastering = 0;
@@ -119,7 +120,7 @@
 					</div>
 					<div class="col-xs-12">
 						<div class="cabinet__board">
-							<?php echo do_shortcode('[feed user_id= '.$current_user->ID.' current_time= '.time().']'); ?>
+							<?php echo do_shortcode('[feed user_id= '.$current_user->ID.' offset= 0 current_time='.$current_time.']'); ?>
 							<!--<article class="cabinet__board__item dropping">
 								<div class="cabinet__board__item--head">
 									<small>СЕГОДНЯ, 12:30</small>
@@ -198,6 +199,9 @@
 								</article>
 							</div>-->
 						</div>
+						<button class="btn cabinet__history--btn" data-user-id="<?php echo $current_user->ID; ?>" data-time="<?php echo $current_time; ?>" data-offset="10">
+							Подгрузить историю
+						</button>
 					</div>
 				</div>
 			</div>

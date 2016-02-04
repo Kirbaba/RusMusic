@@ -1889,18 +1889,35 @@ function addFeed($event_id,$event_type,$user_id,$time){
             array('%d','%s','%d','%d'));
     }
 
+// AJAX ACTION
+add_action('wp_ajax_getFeed', 'getFeed');
+add_action('wp_ajax_nopriv_getFeed', 'getFeed');
+
 function getFeed($atts){
     global $wpdb;
 
     $args = shortcode_atts( array(
         'user_id' => '',
-        'current_time' => '',
+        'offset' => 0,
+        'current_time' => 0,
     ), $atts );
 
-    $events = $wpdb->get_results("SELECT * FROM `feed` WHERE `user_id` = '{$args['user_id']}' ORDER BY `id` DESC LIMIT 10", ARRAY_A);
+    if($_POST){
+        $user_id = $_POST['user_id'];
+        $offset = $_POST['offset'];
+        $current_time = $_POST['time'];
 
-    $parser = new Parser();
-    $parser->render(TM_DIR . '/view/account/feed.php', ['events' => $events, 'current_time' => $args['current_time']]);
+        $events = $wpdb->get_results("SELECT * FROM `feed` WHERE `user_id` = '{$user_id}' ORDER BY `id` DESC LIMIT {$offset}, 10", ARRAY_A);
+        $parser = new Parser();
+        $parser->render(TM_DIR . '/view/account/feed.php', ['events' => $events, 'current_time' => $current_time]);
+        die();
+    }else{
+        $events = $wpdb->get_results("SELECT * FROM `feed` WHERE `user_id` = '{$args['user_id']}' ORDER BY `id` DESC LIMIT {$args['offset']}, 10", ARRAY_A);
+        $parser = new Parser();
+        $parser->render(TM_DIR . '/view/account/feed.php', ['events' => $events, 'current_time' => $args['current_time']]);
+    }
+
+
 }
 
 add_shortcode('feed', 'getFeed');

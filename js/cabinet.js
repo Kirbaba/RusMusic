@@ -43,4 +43,22 @@ jQuery(function() {
         });
         return false;
     });
+
+    jQuery(document).on('click','.cabinet__history--btn', function(){
+        var user_id = jQuery(this).attr('data-user-id');
+        var time = jQuery(this).attr('data-time');
+        var offset = jQuery(this).attr('data-offset');
+
+
+        jQuery.ajax({
+            url: ajaxurl, //url, к которому обращаемся
+            type: "POST",
+            data: "action=getFeed&user_id=" + user_id + "&time=" + time + "&offset=" + offset, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+                jQuery('.cabinet__board').append(data);
+                jQuery('.cabinet__history--btn').attr('data-offset',parseInt(offset)+10);
+            }
+        });
+        return false;
+    });
 });
